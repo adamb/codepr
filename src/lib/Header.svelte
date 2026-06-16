@@ -4,11 +4,9 @@
 
 	const nav = [
 		{ label: 'Events', href: '/upcoming-events' },
-		{ label: 'Workshops', href: '/workshops' },
 		{ label: 'Dev Agency', href: '/agency' },
 		{ label: 'Blog', href: '/blog' },
-		{ label: 'About', href: '/about-us' },
-		{ label: 'Pricing', href: '/pricing' }
+		{ label: 'About', href: '/about-us' }
 	];
 
 	function toggleMobile() {
@@ -61,7 +59,9 @@
 
 <style>
 	header {
-		background: var(--color-dark);
+		background: #fff;
+		border-bottom: 1px solid var(--color-border);
+		box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
 		position: sticky;
 		top: 0;
 		z-index: 100;
@@ -97,19 +97,17 @@
 		align-items: center;
 		flex-shrink: 0;
 		margin-right: 2rem;
-		opacity: 0.92;
 		transition: opacity 0.15s;
 	}
 
 	.logo-link:hover {
-		opacity: 1;
+		opacity: 0.85;
 	}
 
 	.logo-link img {
-		height: 36px;
+		height: 40px;
 		width: auto;
 		display: block;
-		filter: brightness(0) invert(1);
 	}
 
 	.primary {
@@ -133,8 +131,8 @@
 		display: flex;
 		align-items: center;
 		height: 100%;
-		padding: 0 0.875rem;
-		color: rgba(255, 255, 255, 0.65);
+		padding: 0 1rem;
+		color: #444;
 		font-weight: 500;
 		font-size: 0.9rem;
 		text-decoration: none;
@@ -144,8 +142,8 @@
 	}
 
 	.primary a:hover {
-		color: #fff;
-		border-bottom-color: var(--color-primary);
+		color: var(--color-accent);
+		border-bottom-color: var(--color-accent);
 	}
 
 	.nav-cta {
@@ -169,7 +167,6 @@
 		background: var(--color-primary-hover);
 		color: #fff;
 		text-decoration: none;
-		transform: none;
 	}
 
 	.mobile-toggle {
@@ -182,10 +179,10 @@
 		height: 40px;
 		padding: 0;
 		background: transparent;
-		border: 1px solid rgba(255, 255, 255, 0.15);
+		border: 1px solid var(--color-border);
 		border-radius: var(--radius);
 		cursor: pointer;
-		margin-left: 0.75rem;
+		margin-left: auto;
 	}
 
 	.mobile-toggle:focus {
@@ -197,14 +194,15 @@
 		display: block;
 		width: 18px;
 		height: 2px;
-		background: rgba(255, 255, 255, 0.8);
+		background: #555;
 		border-radius: 2px;
 	}
 
 	.mobile-nav {
-		background: #111d2c;
-		border-top: 1px solid rgba(255, 255, 255, 0.08);
+		background: #fff;
+		border-top: 1px solid var(--color-border);
 		padding: 1rem 1.5rem 1.25rem;
+		box-shadow: 0 4px 8px rgba(0, 0, 0, 0.06);
 	}
 
 	.mobile-links {
@@ -214,13 +212,13 @@
 	}
 
 	.mobile-links li {
-		border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+		border-bottom: 1px solid var(--color-border);
 	}
 
 	.mobile-links a {
 		display: block;
 		padding: 0.875rem 0;
-		color: rgba(255, 255, 255, 0.75);
+		color: #444;
 		font-size: 1rem;
 		font-weight: 500;
 		text-decoration: none;
@@ -228,7 +226,7 @@
 	}
 
 	.mobile-links a:hover {
-		color: #fff;
+		color: var(--color-accent);
 	}
 
 	.mobile-cta {
@@ -258,7 +256,6 @@
 
 		.mobile-toggle {
 			display: flex;
-			margin-left: auto;
 		}
 	}
 

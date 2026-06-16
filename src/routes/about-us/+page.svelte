@@ -144,7 +144,7 @@
 	}
 
 	.role {
-		color: var(--color-primary);
+		color: var(--color-accent);
 		font-size: 0.82rem;
 		font-weight: 600;
 		margin: 0 0 0.625rem;

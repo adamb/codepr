@@ -265,8 +265,8 @@
 	.form-group input:focus,
 	.form-group textarea:focus {
 		outline: none;
-		border-color: var(--color-primary);
-		box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.12);
+		border-color: var(--color-accent);
+		box-shadow: 0 0 0 3px rgba(27, 169, 202, 0.12);
 	}
 
 	@media (max-width: 900px) {

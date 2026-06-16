@@ -434,8 +434,8 @@
 		width: 56px;
 		height: 56px;
 		border-radius: 10px;
-		background: rgba(249, 115, 22, 0.1);
-		color: var(--color-primary);
+		background: rgba(27, 169, 202, 0.1);
+		color: var(--color-accent);
 		display: flex;
 		align-items: center;
 		justify-content: center;

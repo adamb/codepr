@@ -70,8 +70,8 @@
 	}
 
 	.ws-tag {
-		background: rgba(249, 115, 22, 0.1);
-		color: var(--color-primary);
+		background: rgba(27, 169, 202, 0.1);
+		color: var(--color-accent);
 		font-size: 0.72rem;
 		font-weight: 700;
 		text-transform: uppercase;

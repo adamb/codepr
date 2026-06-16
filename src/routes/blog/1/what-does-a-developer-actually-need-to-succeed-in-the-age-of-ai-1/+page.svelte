@@ -178,7 +178,7 @@
 	}
 
 	.kicker {
-		color: var(--color-primary);
+		color: var(--color-accent);
 		font-weight: 700;
 		text-transform: uppercase;
 		letter-spacing: 0.05em;
@@ -260,7 +260,7 @@
 	.content h3 {
 		margin-top: 1.75rem;
 		font-size: 1.35rem;
-		color: var(--color-primary);
+		color: var(--color-accent);
 	}
 
 	.content ul {

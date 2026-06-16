@@ -315,7 +315,7 @@ function deliverProject(client) {
 		display: inline-block;
 		font-family: var(--font-mono);
 		font-size: 0.75rem;
-		color: var(--color-primary);
+		color: var(--color-accent);
 		letter-spacing: 0.08em;
 		text-transform: uppercase;
 		margin-bottom: 1rem;
@@ -461,7 +461,7 @@ function deliverProject(client) {
 
 	.service-card.featured {
 		border-color: var(--color-primary);
-		background: #fffaf7;
+		background: var(--color-light);
 	}
 
 	.featured-tag {
@@ -561,7 +561,7 @@ function deliverProject(client) {
 	.benefit-label {
 		display: block;
 		font-weight: 700;
-		color: var(--color-primary);
+		color: var(--color-accent);
 		font-size: 0.8rem;
 		text-transform: uppercase;
 		letter-spacing: 0.04em;
@@ -593,7 +593,7 @@ function deliverProject(client) {
 		font-family: var(--font-mono);
 		font-size: 0.75rem;
 		font-weight: 600;
-		color: var(--color-primary);
+		color: var(--color-accent);
 		letter-spacing: 0.05em;
 		margin-bottom: 0.875rem;
 	}

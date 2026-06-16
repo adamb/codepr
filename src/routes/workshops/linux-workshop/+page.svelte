@@ -116,7 +116,7 @@
 		display: inline-block;
 		font-family: var(--font-mono);
 		font-size: 0.75rem;
-		color: var(--color-primary);
+		color: var(--color-accent);
 		letter-spacing: 0.06em;
 		margin-bottom: 0.75rem;
 	}
