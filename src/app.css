@@ -30,6 +30,7 @@ body {
 	color: var(--color-text);
 	background: #fff;
 	-webkit-text-size-adjust: 100%;
+	overflow-x: hidden;
 }
 
 a {
@@ -172,20 +173,3 @@ img {
 	}
 }
 
-@media (max-width: 768px) {
-	h1 {
-		font-size: 2.5rem;
-	}
-
-	h2 {
-		font-size: 2rem;
-	}
-
-	h3 {
-		font-size: 1.6rem;
-	}
-
-	.lead {
-		font-size: 1.05rem;
-	}
-}

@@ -54,7 +54,7 @@
 	}
 
 	nav {
-		max-width: 1200px;
+		max-width: 1140px;
 		margin: 0 auto;
 		padding: 0;
 		display: flex;

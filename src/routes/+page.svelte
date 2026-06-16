@@ -140,7 +140,6 @@
 	/* Hero Cover */
 	.hero-cover {
 		position: relative;
-		min-height: 560px;
 		display: flex;
 		align-items: center;
 		padding: 96px 0;
@@ -431,11 +430,11 @@
 	}
 
 	.offering-icon {
-		width: 52px;
-		height: 52px;
+		width: 56px;
+		height: 56px;
 		border-radius: 8px;
-		background: var(--color-primary);
-		color: #fff;
+		background: #eaeaeb;
+		color: #212529;
 		display: flex;
 		align-items: center;
 		justify-content: center;
@@ -443,13 +442,13 @@
 	}
 
 	.offering-title {
-		font-size: 1.25rem;
+		font-size: 1.5rem;
 		font-weight: 700;
 		margin-bottom: 0.75rem;
 	}
 
 	.offering p {
-		color: var(--color-text-muted);
+		color: #212529;
 		font-size: 0.95rem;
 		line-height: 1.6;
 		margin-bottom: 0;
@@ -523,7 +522,6 @@
 		.hero-cover,
 		.community {
 			padding: 64px 0;
-			min-height: auto;
 		}
 
 		.agency-section {
