@@ -1,5 +1,10 @@
 <script lang="ts">
 	import SEO from '$lib/SEO.svelte';
+	import { enhance } from '$app/forms';
+	import type { ActionData } from './$types';
+
+	let { form }: { form: ActionData } = $props();
+	let submitting = $state(false);
 </script>
 
 <SEO
@@ -157,18 +162,47 @@
 				<h2>Recurring Events — Notify Me</h2>
 				<p class="lead">Check the ones you're interested in and we'll notify you when they're scheduled.</p>
 
-				<form class="notify-form" action="/upcoming-events-thanks" method="GET">
-					<fieldset>
-						<legend>Select events to receive notifications when scheduled.</legend>
-						<label><input type="checkbox" name="events" value="Demo Day" /> Demo Day</label>
-						<label><input type="checkbox" name="events" value="Demo Nights & Lightning Talks" /> Demo Nights & Lightning Talks</label>
-						<label><input type="checkbox" name="events" value="AI Coding Tools Introduction" /> AI Coding Tools Introduction</label>
-						<label><input type="checkbox" name="events" value="Pitch and Prototype" /> Pitch and Prototype</label>
-						<label><input type="checkbox" name="events" value="Cloudflare Meetup" /> Cloudflare Meetup</label>
-						<label><input type="checkbox" name="events" value="Home Assistant Meetup" /> Home Assistant Meetup</label>
-					</fieldset>
-					<button type="submit" class="btn">Notify Me →</button>
-				</form>
+				{#if form?.success}
+					<div class="notify-success" role="alert">
+						<strong>Check your inbox!</strong> We sent a confirmation link to <strong>{form.email}</strong>. Click it to complete your signup.
+					</div>
+				{:else}
+					<form
+						class="notify-form"
+						method="POST"
+						action="?/notify"
+						use:enhance={() => {
+							submitting = true;
+							return async ({ update }) => {
+								submitting = false;
+								await update();
+							};
+						}}
+					>
+						{#if form?.error}
+							<p class="notify-error" role="alert">{form.error}</p>
+						{/if}
+
+						<fieldset>
+							<legend>Select events to receive notifications when scheduled.</legend>
+							<label><input type="checkbox" name="demo_day" value="1" /> Demo Day</label>
+							<label><input type="checkbox" name="demo_nights" value="1" /> Demo Nights &amp; Lightning Talks</label>
+							<label><input type="checkbox" name="ai_coding" value="1" /> AI Coding Tools Introduction</label>
+							<label><input type="checkbox" name="pitch_prototype" value="1" /> Pitch and Prototype</label>
+							<label><input type="checkbox" name="cloudflare" value="1" /> Cloudflare Meetup</label>
+							<label><input type="checkbox" name="home_assistant" value="1" /> Home Assistant Meetup</label>
+						</fieldset>
+
+						<div class="notify-contact">
+							<input type="text" name="name" placeholder="Your name" required autocomplete="name" />
+							<input type="email" name="email" placeholder="Your email" required autocomplete="email" />
+						</div>
+
+						<button type="submit" class="btn" disabled={submitting}>
+							{submitting ? 'Sending…' : 'Notify Me →'}
+						</button>
+					</form>
+				{/if}
 
 				<ul class="recurring-list">
 					<li><strong>Demo Nights & Lightning Talks:</strong> Monthly showcase. 10-min project demos + 5-min insight bursts.</li>
@@ -418,6 +452,55 @@
 		font-size: 0.875rem;
 	}
 
+	.notify-success {
+		background: rgba(27, 169, 202, 0.08);
+		border: 1px solid var(--color-accent);
+		border-radius: var(--radius);
+		padding: 1rem 1.25rem;
+		font-size: 0.9rem;
+		color: var(--color-text);
+		margin-bottom: 1rem;
+	}
+
+	.notify-error {
+		background: rgba(220, 38, 38, 0.07);
+		border: 1px solid rgba(220, 38, 38, 0.3);
+		border-radius: var(--radius);
+		padding: 0.75rem 1rem;
+		font-size: 0.875rem;
+		color: #b91c1c;
+		margin-bottom: 0.875rem;
+	}
+
+	.notify-contact {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 0.625rem;
+		margin: 0.875rem 0;
+	}
+
+	.notify-contact input {
+		padding: 0.6rem 0.875rem;
+		border: 1.5px solid var(--color-border);
+		border-radius: var(--radius);
+		font-size: 0.9rem;
+		font-family: var(--font-body);
+		color: var(--color-text);
+		background: #fff;
+		transition: border-color 0.15s;
+	}
+
+	.notify-contact input:focus {
+		outline: none;
+		border-color: var(--color-accent);
+		box-shadow: 0 0 0 3px rgba(27, 169, 202, 0.12);
+	}
+
+	.notify-form button:disabled {
+		opacity: 0.65;
+		cursor: not-allowed;
+	}
+
 	.recurring-list {
 		background: white;
 		padding: 1.25rem 1.5rem;
@@ -473,6 +556,12 @@
 	}
 
 	/* Responsive */
+	@media (max-width: 540px) {
+		.notify-contact {
+			grid-template-columns: 1fr;
+		}
+	}
+
 	@media (max-width: 900px) {
 		.events-layout {
 			grid-template-columns: 1fr;
