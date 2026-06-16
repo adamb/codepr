@@ -12,6 +12,7 @@
 	image="https://code.pr/blog/blog-1182.jpeg"
 />
 
+<div class="post-container container">
 <article class="post">
 	<header>
 		<p class="kicker">Event Recap</p>
@@ -163,8 +164,15 @@
 		<p>Want to be part of the next conversation? Join us at an upcoming <a href="/upcoming-events">event</a> or <a href="/contactus">get in touch</a>.</p>
 	</section>
 </article>
+</div>
 
 <style>
+	.post-container {
+		padding-top: 3.5rem;
+		padding-bottom: 5rem;
+	}
+
+
 	.post {
 		max-width: 800px;
 	}
@@ -284,10 +292,10 @@
 	}
 
 	.tips {
-		background: #f0f9fb;
+		background: #fff8f2;
 		padding: 1.25rem 1.5rem;
-		border-radius: 8px;
-		border-left: 4px solid var(--color-primary);
+		border-radius: var(--radius);
+		border-left: 3px solid var(--color-primary);
 	}
 
 	.tips li {
@@ -326,10 +334,10 @@
 	}
 
 	.cta-alpfa {
-		background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+		background: var(--color-dark);
 		color: white;
 		padding: 2rem;
-		border-radius: 12px;
+		border-radius: var(--radius-lg);
 		margin: 2.5rem 0;
 		text-align: center;
 	}
@@ -340,32 +348,29 @@
 	}
 
 	.cta-alpfa p {
-		color: rgba(255, 255, 255, 0.9);
+		color: rgba(255, 255, 255, 0.7);
 	}
 
 	.btn {
-		display: inline-block;
+		display: inline-flex;
+		align-items: center;
 		padding: 0.75rem 1.5rem;
-		border-radius: 8px;
+		border-radius: var(--radius);
 		text-decoration: none;
+		font-family: var(--font-headings);
 		font-weight: 600;
-		border: 2px solid white;
-		color: white;
-		transition: background 0.2s, color 0.2s;
+		font-size: 0.9rem;
+		border: 2px solid var(--color-primary);
+		background: var(--color-primary);
+		color: #fff;
+		transition: background 0.15s;
 	}
 
 	.btn:hover {
-		background: white;
-		color: var(--color-primary-dark);
-	}
-
-	.btn.primary {
-		background: white;
-		color: var(--color-primary-dark);
-	}
-
-	.btn.primary:hover {
-		background: rgba(255, 255, 255, 0.9);
+		background: var(--color-primary-hover);
+		border-color: var(--color-primary-hover);
+		color: #fff;
+		text-decoration: none;
 	}
 
 	.whats-next {

@@ -8,37 +8,29 @@
 	canonical="https://code.pr/web/login"
 />
 
-<section class="login">
-	<h1>Sign in</h1>
-	<p>This is a static mirror of the public Code Puerto Rico website. The members-only portal is not available here.</p>
-	<a href="/" class="btn">Back to home</a>
-</section>
+<div class="page-body container">
+	<section class="login">
+		<h1>Sign in</h1>
+		<p>This is a static mirror of the public Code Puerto Rico website. The members-only portal is not available here.</p>
+		<a href="/" class="btn btn-lg">Back to home</a>
+	</section>
+</div>
 
 <style>
 	.login {
 		text-align: center;
-		padding: 4rem 2rem;
-		background: #f8f9fa;
-		border-radius: 12px;
+		padding: 5rem 2rem;
 	}
 
 	.login h1 {
-		font-size: 2.5rem;
 		margin-bottom: 1rem;
 	}
 
 	.login p {
-		color: #666;
+		color: var(--color-text-muted);
 		margin-bottom: 2rem;
-	}
-
-	.btn {
-		display: inline-block;
-		padding: 0.75rem 1.5rem;
-		border-radius: 8px;
-		text-decoration: none;
-		font-weight: 600;
-		background: var(--color-primary);
-		color: white;
+		max-width: 480px;
+		margin-left: auto;
+		margin-right: auto;
 	}
 </style>

@@ -8,38 +8,27 @@
 	canonical="https://code.pr/upcoming-events-verify"
 />
 
-<section class="verify">
-	<h1>Verification Failed</h1>
-	<p>The verification link is invalid or has expired.</p>
-	<a href="/upcoming-events" class="btn">Back to Events</a>
-</section>
+<div class="page-body container">
+	<section class="verify">
+		<h1>Verification Failed</h1>
+		<p>The verification link is invalid or has expired.</p>
+		<a href="/upcoming-events" class="btn btn-lg">Back to Events</a>
+	</section>
+</div>
 
 <style>
 	.verify {
 		text-align: center;
-		padding: 4rem 2rem;
-		background: #f8f9fa;
-		border-radius: 12px;
+		padding: 5rem 2rem;
 	}
 
 	.verify h1 {
-		font-size: 2.5rem;
 		margin-bottom: 1rem;
 	}
 
 	.verify p {
-		font-size: 1.125rem;
-		color: #666;
+		font-size: 1.1rem;
+		color: var(--color-text-muted);
 		margin-bottom: 2rem;
-	}
-
-	.btn {
-		display: inline-block;
-		padding: 0.75rem 1.5rem;
-		border-radius: 8px;
-		text-decoration: none;
-		font-weight: 600;
-		background: var(--color-primary);
-		color: white;
 	}
 </style>

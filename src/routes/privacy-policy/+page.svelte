@@ -8,6 +8,7 @@
 	canonical="https://code.pr/privacy-policy"
 />
 
+<div class="page-body container">
 <article class="privacy">
 	<h1>Privacy Policy</h1>
 	<p class="updated"><strong>Last updated: December 1, 2025</strong></p>
@@ -84,20 +85,23 @@
 	</p>
 	<p><a href="mailto:info@code.pr">info@code.pr</a> • <a href="tel:+17872969300">+1 787-296-9300</a></p>
 </article>
+</div>
 
 <style>
 	.privacy {
-		max-width: 800px;
+		max-width: 760px;
 	}
 
 	.updated {
-		color: #666;
+		color: var(--color-text-muted);
+		font-family: var(--font-mono);
+		font-size: 0.85rem;
 		margin-bottom: 2rem;
 	}
 
 	.privacy h2 {
 		margin-top: 2.5rem;
-		font-size: 1.5rem;
+		font-size: 1.35rem;
 	}
 
 	.privacy ul {
@@ -106,5 +110,13 @@
 
 	.privacy li {
 		margin-bottom: 0.5rem;
+		color: var(--color-text-muted);
+		font-size: 0.95rem;
+	}
+
+	.privacy p {
+		color: var(--color-text-muted);
+		font-size: 0.95rem;
+		line-height: 1.7;
 	}
 </style>

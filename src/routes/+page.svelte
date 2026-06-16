@@ -14,7 +14,7 @@
 	<div class="container">
 		<div class="hero-content">
 			<h1>Puerto Rico's tech hub for builders, founders & innovators.</h1>
-			<p><a href="/upcoming-events" class="btn btn-lg">See upcoming events</a></p>
+			<p><a href="/upcoming-events" class="btn btn-lg btn-white">See upcoming events</a></p>
 		</div>
 	</div>
 </section>
@@ -431,11 +431,11 @@
 	}
 
 	.offering-icon {
-		width: 64px;
-		height: 64px;
+		width: 56px;
+		height: 56px;
 		border-radius: 10px;
-		background: #eaeaeb;
-		color: #212529;
+		background: rgba(249, 115, 22, 0.1);
+		color: var(--color-primary);
 		display: flex;
 		align-items: center;
 		justify-content: center;
@@ -443,9 +443,11 @@
 	}
 
 	.offering-title {
-		font-size: 1.5rem;
+		font-size: 1.35rem;
 		font-weight: 700;
-		margin-bottom: 0.75rem;
+		margin-bottom: 0.625rem;
+		font-family: var(--font-headings);
+		letter-spacing: -0.02em;
 	}
 
 	.offering p {

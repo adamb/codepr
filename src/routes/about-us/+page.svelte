@@ -47,137 +47,115 @@
 	canonical="https://code.pr/about-us"
 />
 
-<section class="page-title">
+<section class="page-hero">
 	<div class="container">
 		<h1>Where Puerto Rico Builds Tech</h1>
+		<p class="page-lead">AI-first dev shop, coding school, tech hub, and community — all in San Juan.</p>
 	</div>
 </section>
 
-<section class="intro">
-	<div class="container">
-		<div class="intro-inner">
-			<h2>About Code Puerto Rico</h2>
-			<p class="lead">Code Puerto Rico is the parent organization behind Holberton Coding School Puerto Rico and our growing coworking + events community. We share one space in San Juan: the school trains the next generation of developers, and Code PR opens the doors to builders, founders, and the broader tech community.</p>
-			<p>Whether you're here to take a class, rent a desk, host a meetup, or just meet other people building things in Puerto Rico — you're in the right place.</p>
+<div class="page-body">
+	<section class="intro">
+		<div class="container">
+			<div class="intro-inner">
+				<h2>About Code Puerto Rico</h2>
+				<p class="lead">Code Puerto Rico is the parent organization behind Holberton Coding School Puerto Rico and our growing coworking + events community. We share one space in San Juan: the school trains the next generation of developers, and Code PR opens the doors to builders, founders, and the broader tech community.</p>
+				<p>Whether you're here to take a class, rent a desk, host a meetup, or just meet other people building things in Puerto Rico — you're in the right place.</p>
+			</div>
 		</div>
-	</div>
-</section>
+	</section>
 
-<section class="team">
-	<div class="container">
-		<h3>Meet Our Team</h3>
-		<p class="lead team-subtitle">Community-driven environment fostering collaboration</p>
+	<section class="team">
+		<div class="container">
+			<div class="team-header">
+				<h2>Meet Our Team</h2>
+				<p class="lead">The people behind Code Puerto Rico.</p>
+			</div>
 
-		<div class="team-grid">
-			{#each team as member}
-				<div class="team-member">
-					<img src={member.photo} alt={member.name} class="photo" width="300" height="300" />
-					<div class="team-info">
-						<h4>{member.name}</h4>
-						<p class="role">{member.role}</p>
-						<p class="bio">{member.bio}</p>
+			<div class="team-grid">
+				{#each team as member}
+					<div class="team-member">
+						<img src={member.photo} alt={member.name} class="photo" width="300" height="300" />
+						<div class="team-info">
+							<h4>{member.name}</h4>
+							<p class="role">{member.role}</p>
+							<p class="bio">{member.bio}</p>
+						</div>
 					</div>
-				</div>
-			{/each}
+				{/each}
+			</div>
 		</div>
-	</div>
-</section>
+	</section>
+</div>
 
 <style>
-	.page-title {
-		background: rgba(0, 0, 0, 0.5);
-		padding: 48px 0;
-		width: 100%;
-		color: #fff;
-		text-align: center;
-	}
-
-	.page-title h1 {
-		color: #fff;
-		margin-bottom: 0;
-		font-size: 2.5rem;
-		font-weight: 700;
-	}
-
 	.intro {
-		padding: 48px 0 24px;
+		padding-bottom: 0;
 	}
 
 	.intro-inner {
-		max-width: 83.3333%;
+		max-width: 760px;
 	}
 
 	.intro h2 {
-		font-size: 2rem;
-		font-weight: 700;
+		font-size: clamp(1.5rem, 3vw, 2.25rem);
 		margin-bottom: 1rem;
 	}
 
-	.intro .lead {
-		font-size: 1.125rem;
-		font-weight: 300;
-		color: var(--color-text-muted);
-		line-height: 1.6;
-	}
-
-	.intro p {
-		font-size: 1rem;
-		line-height: 1.6;
-	}
-
 	.team {
-		padding: 48px 0 64px;
+		padding-top: 3rem;
 	}
 
-	.team h3 {
-		font-size: 1.75rem;
-		font-weight: 700;
+	.team-header {
+		margin-bottom: 2.5rem;
+	}
+
+	.team-header h2 {
+		font-size: clamp(1.5rem, 3vw, 2.25rem);
 		margin-bottom: 0.5rem;
-	}
-
-	.team-subtitle {
-		font-size: 1.125rem;
-		font-weight: 300;
-		color: var(--color-text-muted);
-		margin-bottom: 2rem;
 	}
 
 	.team-grid {
 		display: grid;
 		grid-template-columns: repeat(2, 1fr);
-		gap: 2rem;
-		margin-top: 2rem;
+		gap: 2rem 3rem;
 	}
 
 	.team-member {
 		display: flex;
-		gap: 1.5rem;
-		padding: 2rem 0;
+		gap: 1.25rem;
+		padding: 1.75rem 0;
+		border-top: 1px solid var(--color-border);
 	}
 
 	.photo {
-		width: 110px;
-		height: 110px;
+		width: 88px;
+		height: 88px;
 		object-fit: cover;
 		border-radius: 50%;
 		flex-shrink: 0;
 	}
 
 	.team-info h4 {
-		font-size: 1.25rem;
+		font-size: 1.05rem;
 		font-weight: 700;
-		margin: 0 0 0.25rem;
+		margin: 0 0 0.2rem;
+		letter-spacing: -0.01em;
 	}
 
 	.role {
-		color: var(--color-text-muted);
-		font-size: 0.9rem;
-		margin: 0 0 0.75rem;
+		color: var(--color-primary);
+		font-size: 0.82rem;
+		font-weight: 600;
+		margin: 0 0 0.625rem;
+		text-transform: uppercase;
+		letter-spacing: 0.03em;
 	}
 
 	.bio {
-		font-size: 1rem;
-		line-height: 1.6;
+		font-size: 0.9rem;
+		line-height: 1.65;
+		color: var(--color-text-muted);
 		margin-bottom: 0;
 	}
 
@@ -188,12 +166,7 @@
 
 		.team-member {
 			flex-direction: column;
-			align-items: center;
-			text-align: center;
-		}
-
-		.intro-inner {
-			max-width: 100%;
+			align-items: flex-start;
 		}
 	}
 </style>

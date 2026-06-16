@@ -8,38 +8,30 @@
 	canonical="https://code.pr/upcoming-events-thanks"
 />
 
-<section class="thanks">
-	<h1>Almost there!</h1>
-	<p>We just sent you a verification email. Click the link in it to confirm your signup. Check your spam folder if you don't see it within a few minutes.</p>
-	<a href="/upcoming-events" class="btn">Back to Events</a>
-</section>
+<div class="page-body container">
+	<section class="thanks">
+		<h1>Almost there!</h1>
+		<p>We just sent you a verification email. Click the link in it to confirm your signup. Check your spam folder if you don't see it within a few minutes.</p>
+		<a href="/upcoming-events" class="btn btn-lg">Back to Events</a>
+	</section>
+</div>
 
 <style>
 	.thanks {
 		text-align: center;
-		padding: 4rem 2rem;
-		background: #f8f9fa;
-		border-radius: 12px;
+		padding: 5rem 2rem;
 	}
 
 	.thanks h1 {
-		font-size: 2.5rem;
 		margin-bottom: 1rem;
 	}
 
 	.thanks p {
-		font-size: 1.125rem;
-		color: #666;
+		font-size: 1.1rem;
+		color: var(--color-text-muted);
 		margin-bottom: 2rem;
-	}
-
-	.btn {
-		display: inline-block;
-		padding: 0.75rem 1.5rem;
-		border-radius: 8px;
-		text-decoration: none;
-		font-weight: 600;
-		background: var(--color-primary);
-		color: white;
+		max-width: 500px;
+		margin-left: auto;
+		margin-right: auto;
 	}
 </style>
