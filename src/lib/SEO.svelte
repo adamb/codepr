@@ -11,9 +11,9 @@
 
 	const siteName = 'Code Puerto Rico';
 	const defaultDescription = 'Tech Hub, Coworking & Events in San Juan, Puerto Rico.';
-	const fullTitle = title === siteName || title.includes(siteName)
-		? title
-		: `${title} | ${siteName} Tech Hub`;
+	const fullTitle = $derived(
+		title === siteName || title.includes(siteName) ? title : `${title} | ${siteName} Tech Hub`
+	);
 </script>
 
 <svelte:head>
