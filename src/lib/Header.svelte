@@ -22,7 +22,7 @@
 	<a href="#wrap" class="skip-link">Skip to Content</a>
 	<nav aria-label="Main navigation">
 		<a href="/" class="logo-link" aria-label="Code Puerto Rico Tech Hub home">
-			<img src="/images/logo.webp" alt="Code Puerto Rico" width="95" height="40" />
+			<img src="/images/logo.webp" alt="Code Puerto Rico" width="52" height="52" />
 		</a>
 		<ul class="primary">
 			{#each nav as { label, href }}
@@ -88,7 +88,7 @@
 		padding: 0 1.5rem;
 		display: flex;
 		align-items: center;
-		height: 64px;
+		height: 72px;
 		gap: 0;
 	}
 
@@ -105,7 +105,7 @@
 	}
 
 	.logo-link img {
-		height: 40px;
+		height: 52px;
 		width: auto;
 		display: block;
 	}

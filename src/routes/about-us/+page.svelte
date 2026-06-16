@@ -129,9 +129,10 @@
 	}
 
 	.photo {
-		width: 88px;
-		height: 88px;
+		width: 96px;
+		height: 96px;
 		object-fit: cover;
+		object-position: top center;
 		border-radius: 50%;
 		flex-shrink: 0;
 	}
