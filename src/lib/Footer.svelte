@@ -1,23 +1,22 @@
 <!-- Footer.svelte -->
 <footer>
-	<div class="footer-inner">
-		<div class="social">
-			<h5>Follow us</h5>
-			<div class="icons">
-				<a href="https://x.com/codepr" target="_blank" rel="noopener" aria-label="X">
-					<svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
-						<path fill="currentColor" d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
-					</svg>
-				</a>
-				<a href="https://instagram.com/codepr" target="_blank" rel="noopener" aria-label="Instagram">
-					<svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
-						<path fill="currentColor" d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z" />
-					</svg>
-				</a>
+	<div class="footer-top">
+		<div class="container footer-inner">
+			<div class="social">
+				<div class="icons">
+					<a href="https://x.com/codepr" target="_blank" rel="noopener" aria-label="X">
+						<svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
+							<path fill="currentColor" d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+						</svg>
+					</a>
+					<a href="https://instagram.com/codepr" target="_blank" rel="noopener" aria-label="Instagram">
+						<svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
+							<path fill="currentColor" d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z" />
+						</svg>
+					</a>
+				</div>
 			</div>
-		</div>
 
-		<div class="contact">
 			<p class="address">1550 PR-25, 2nd Floor • San Juan PR 00909 • United States</p>
 			<p class="phone-email">
 				<a href="tel:+17872969300">+1 787-296-9300</a>
@@ -26,7 +25,7 @@
 			</p>
 		</div>
 
-		<div class="brand">
+		<div class="footer-logo">
 			<a href="/" aria-label="Code Puerto Rico home">
 				<img src="/images/code-pr-big.webp" alt="Code Puerto Rico" width="220" height="74" />
 			</a>
@@ -34,7 +33,9 @@
 	</div>
 
 	<div class="copyright-bar">
-		<p class="copyright">Copyright © Code Puerto Rico, LLC</p>
+		<div class="container copyright-inner">
+			<p class="copyright">Copyright © Code Puerto Rico, LLC</p>
+		</div>
 	</div>
 </footer>
 
@@ -42,38 +43,53 @@
 	footer {
 		background: var(--color-dark);
 		color: rgba(255, 255, 255, 0.7);
-		padding-top: 2.5rem;
+	}
+
+	.footer-top {
+		padding: 2rem 0;
 	}
 
 	.footer-inner {
-		max-width: 1200px;
-		margin: 0 auto;
-		padding: 0 1.5rem 2rem;
-		display: grid;
-		grid-template-columns: 1fr 2fr 1fr;
-		gap: 2rem;
-		align-items: start;
-	}
-
-	.brand {
-		justify-self: end;
-		text-align: right;
-	}
-
-	.brand img {
-		height: 70px;
-		width: auto;
-		display: block;
-		opacity: 0.9;
-	}
-
-	.contact {
 		text-align: center;
-		font-size: 0.9rem;
 	}
 
-	.contact p {
-		margin: 0 0 0.5rem;
+	.social {
+		margin-bottom: 1rem;
+	}
+
+	.icons {
+		display: flex;
+		justify-content: center;
+		gap: 0.75rem;
+	}
+
+	.icons a {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		width: 38px;
+		height: 38px;
+		border-radius: 50%;
+		background: rgba(255, 255, 255, 0.1);
+		color: rgba(255, 255, 255, 0.8);
+		box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+		transition: all 0.2s;
+	}
+
+	.icons a:hover {
+		background: var(--color-primary);
+		color: #fff;
+		text-decoration: none;
+	}
+
+	.address {
+		font-size: 0.9rem;
+		margin-bottom: 0.5rem;
+	}
+
+	.phone-email {
+		font-size: 0.9rem;
+		margin-bottom: 0;
 	}
 
 	.phone-email a {
@@ -91,40 +107,16 @@
 		color: rgba(255, 255, 255, 0.3);
 	}
 
-	.social {
-		justify-self: start;
+	.footer-logo {
+		text-align: center;
+		padding: 1.5rem 0 0;
 	}
 
-	.social h5 {
-		margin: 0 0 0.5rem;
-		font-size: 0.9rem;
-		color: rgba(255, 255, 255, 0.5);
-		text-transform: uppercase;
-		letter-spacing: 0.05em;
-	}
-
-	.icons {
-		display: flex;
-		gap: 1rem;
-	}
-
-	.icons a {
-		display: inline-flex;
-		align-items: center;
-		justify-content: center;
-		width: 36px;
-		height: 36px;
-		border-radius: 50%;
-		background: rgba(255, 255, 255, 0.1);
-		color: rgba(255, 255, 255, 0.8);
-		box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
-		transition: all 0.2s;
-	}
-
-	.icons a:hover {
-		background: var(--color-primary);
-		color: #fff;
-		text-decoration: none;
+	.footer-logo img {
+		height: 70px;
+		width: auto;
+		display: inline-block;
+		opacity: 0.9;
 	}
 
 	.copyright-bar {
@@ -132,32 +124,21 @@
 		padding: 1rem 1.5rem;
 	}
 
+	.copyright-inner {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+
 	.copyright {
-		max-width: 1200px;
-		margin: 0 auto;
-		text-align: left;
 		font-size: 0.85rem;
 		color: rgba(255, 255, 255, 0.5);
+		margin: 0;
 	}
 
 	@media (max-width: 768px) {
-		.footer-inner {
-			grid-template-columns: 1fr;
-			text-align: center;
-		}
-
-		.brand,
-		.social,
-		.contact {
-			justify-self: center;
-			text-align: center;
-		}
-
-		.icons {
+		.copyright-inner {
 			justify-content: center;
-		}
-
-		.copyright {
 			text-align: center;
 		}
 	}

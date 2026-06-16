@@ -10,9 +10,11 @@
 <!-- Hero Cover -->
 <section class="hero-cover">
 	<div class="hero-overlay"></div>
-	<div class="container hero-content">
-		<h1>Puerto Rico's tech hub for builders, founders & innovators.</h1>
-		<a href="/upcoming-events" class="btn btn-lg">See upcoming events</a>
+	<div class="container">
+		<div class="hero-content">
+			<h1>Puerto Rico's tech hub for builders, founders & innovators.</h1>
+			<p><a href="/upcoming-events" class="btn btn-lg">See upcoming events</a></p>
+		</div>
 	</div>
 </section>
 
@@ -93,7 +95,7 @@
 						<path fill="currentColor" d="M9.4 16.6 4.8 12l4.6-4.6L8 6l-6 6 6 6 1.4-1.4zm5.2 0 4.6-4.6-4.6-4.6L16 6l6 6-6 6-1.4-1.4z" />
 					</svg>
 				</div>
-				<h3>Bespoke Dev Agency</h3>
+				<h3 class="offering-title">Bespoke Dev Agency</h3>
 				<p>Our development agency puts Holberton-trained engineers on your project — websites, CRM migrations, and custom software at nearshore rates.</p>
 			</div>
 			<div class="offering">
@@ -103,7 +105,7 @@
 						<path fill="currentColor" d="M7 2v11h3v9l7-12h-4l4-8z" />
 					</svg>
 				</div>
-				<h3>Events & Meetups</h3>
+				<h3 class="offering-title">Events & Meetups</h3>
 				<p>Workshops, lightning talks, hack nights, and community gatherings that bring Puerto Rico's tech scene together.</p>
 			</div>
 			<div class="offering">
@@ -113,7 +115,7 @@
 						<path fill="currentColor" d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5s-3 1.34-3 3 1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z" />
 					</svg>
 				</div>
-				<h3>Tech Community</h3>
+				<h3 class="offering-title">Tech Community</h3>
 				<p>Connect with developers, founders, designers, and remote workers building cool things in Puerto Rico.</p>
 			</div>
 		</div>
@@ -127,10 +129,10 @@
 		<h2>More Than a Space — A Tech Hub</h2>
 		<p>Code Puerto Rico is where the island's tech community comes together. We host lightning talks, hack nights, workshops, demo days, and community meetups — all in our San Juan space. Whether you want to learn, present, or just meet other builders, there's something on the calendar for you.</p>
 		<p>We also run Holberton Coding School Puerto Rico out of the same building, so you'll be surrounded by students, alumni, and mentors who are all building things.</p>
-		<div class="actions">
+		<p class="community-actions">
 			<a href="/upcoming-events" class="btn">See upcoming events</a>
-			<a href="/about-us" class="btn btn-outline ms-2">About us</a>
-		</div>
+			<a href="/about-us" class="btn btn-outline">About us</a>
+		</p>
 	</div>
 </section>
 
@@ -138,12 +140,12 @@
 	/* Hero Cover */
 	.hero-cover {
 		position: relative;
-		min-height: 520px;
+		min-height: 560px;
 		display: flex;
 		align-items: center;
+		padding: 96px 0;
 		background: url('/images/cover.jpg') center center / cover no-repeat;
-		margin: -2rem -1.5rem 0;
-		width: calc(100% + 3rem);
+		width: 100%;
 	}
 
 	.hero-overlay {
@@ -155,29 +157,29 @@
 	.hero-content {
 		position: relative;
 		z-index: 1;
+		max-width: 66.6667%;
 		color: #fff;
-		max-width: 760px;
 	}
 
 	.hero-content h1 {
-		font-size: clamp(2rem, 5vw, 3.2rem);
-		font-weight: 800;
-		line-height: 1.15;
+		font-size: calc(1.5125rem + 3.15vw);
+		font-weight: 700;
+		line-height: 1.2;
+		color: #fff;
 		margin-bottom: 1.5rem;
+	}
+
+	@media (min-width: 1200px) {
+		.hero-content h1 {
+			font-size: 3.875rem;
+		}
 	}
 
 	/* Agency Section */
 	.agency-section {
 		background: linear-gradient(135deg, #0d1f3c 0%, #1b3b6b 100%);
-		padding: 5rem 0;
-		margin: 0 -1.5rem;
-		width: calc(100% + 3rem);
-	}
-
-	.agency-section .container {
-		max-width: 1200px;
-		margin: 0 auto;
-		padding: 0 1.5rem;
+		padding: 80px 0;
+		width: 100%;
 	}
 
 	.section-tag {
@@ -196,7 +198,7 @@
 	.agency-grid {
 		display: grid;
 		grid-template-columns: 1fr 1fr;
-		gap: 3.5rem;
+		gap: 56px;
 		align-items: center;
 	}
 
@@ -389,13 +391,25 @@
 
 	/* What We Offer */
 	.offerings {
-		padding: 5rem 0;
+		padding: 64px 0;
 	}
 
-	.offerings .container {
-		max-width: 1200px;
-		margin: 0 auto;
-		padding: 0 1.5rem;
+	.offerings :global(h2) {
+		font-size: calc(1.425rem + 2.1vw);
+		font-weight: 700;
+		margin-bottom: 0.5rem;
+	}
+
+	@media (min-width: 1200px) {
+		.offerings :global(h2) {
+			font-size: 3rem;
+		}
+	}
+
+	.offerings :global(.lead) {
+		font-size: 1.125rem;
+		font-weight: 300;
+		color: var(--color-text-muted);
 	}
 
 	.offerings-grid {
@@ -406,7 +420,7 @@
 	}
 
 	.offering {
-		padding: 1rem;
+		padding: 1rem 0.5rem;
 	}
 
 	.offering hr {
@@ -428,8 +442,9 @@
 		margin-bottom: 1rem;
 	}
 
-	.offering h3 {
+	.offering-title {
 		font-size: 1.25rem;
+		font-weight: 700;
 		margin-bottom: 0.75rem;
 	}
 
@@ -437,32 +452,30 @@
 		color: var(--color-text-muted);
 		font-size: 0.95rem;
 		line-height: 1.6;
+		margin-bottom: 0;
 	}
 
 	/* Community */
 	.community {
 		position: relative;
-		padding: 5rem 0;
+		padding: 96px 0;
 		background: #fff;
 		overflow: hidden;
-		margin: 0 -1.5rem;
-		width: calc(100% + 3rem);
+		width: 100%;
 	}
 
 	.community-shape {
 		position: absolute;
 		inset: 0;
 		background: url('/images/hero-shape.svg') center center / cover no-repeat;
-		opacity: 0.4;
+		opacity: 0.35;
 		z-index: 0;
 	}
 
 	.community-content {
 		position: relative;
 		z-index: 1;
-		max-width: 800px;
-		margin: 0 auto;
-		padding: 0 1.5rem;
+		max-width: 66.6667%;
 	}
 
 	.community-content h2 {
@@ -471,19 +484,27 @@
 
 	.community-content p {
 		color: var(--color-text-muted);
-		font-size: 1.05rem;
+		font-size: 1rem;
 		line-height: 1.7;
 	}
 
-	.community-content .actions {
+	.community-actions {
 		margin-top: 1.5rem;
+		display: flex;
+		gap: 0.75rem;
+		flex-wrap: wrap;
 	}
 
-	.ms-2 {
-		margin-left: 0.5rem;
+	.community-actions .btn-outline {
+		margin-left: 0;
 	}
 
 	@media (max-width: 900px) {
+		.hero-content,
+		.community-content {
+			max-width: 100%;
+		}
+
 		.agency-grid {
 			grid-template-columns: 1fr;
 			gap: 2.5rem;
@@ -499,14 +520,14 @@
 	}
 
 	@media (max-width: 768px) {
-		.hero-cover {
-			min-height: 380px;
-			padding: 3rem 1.5rem;
+		.hero-cover,
+		.community {
+			padding: 64px 0;
+			min-height: auto;
 		}
 
-		.agency-section,
-		.community {
-			padding: 3rem 0;
+		.agency-section {
+			padding: 64px 0;
 		}
 
 		.agency-stats-grid {
@@ -514,7 +535,7 @@
 		}
 
 		.offerings {
-			padding: 3rem 0;
+			padding: 48px 0;
 		}
 	}
 </style>

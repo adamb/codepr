@@ -1,4 +1,4 @@
-/* Global styles */
+/* Global styles - matched to production Odoo theme */
 * {
 	box-sizing: border-box;
 }
@@ -6,21 +6,30 @@
 :root {
 	--color-primary: #1ba9ca;
 	--color-primary-hover: #3db6d2;
+	--color-primary-dark: #116d82;
 	--color-dark: #2d2f35;
 	--color-text: #212529;
 	--color-text-muted: #6c757d;
 	--color-light: #f8f9fa;
 	--color-border: #eaeaeb;
-	--font-body: 'Assistant', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-	--font-headings: 'Assistant', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+	--container-max: 1140px;
+	--font-body: 'Assistant', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Ubuntu, 'Noto Sans', Arial, sans-serif;
+	--font-headings: 'Assistant', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Ubuntu, 'Noto Sans', Arial, sans-serif;
+}
+
+html {
+	font-size: 16px;
 }
 
 body {
 	margin: 0;
 	font-family: var(--font-body);
-	line-height: 1.6;
+	font-size: 1rem;
+	font-weight: 400;
+	line-height: 1.5;
 	color: var(--color-text);
 	background: #fff;
+	-webkit-text-size-adjust: 100%;
 }
 
 a {
@@ -29,40 +38,58 @@ a {
 }
 
 a:hover {
+	color: var(--color-primary-dark);
 	text-decoration: underline;
 }
 
 h1, h2, h3, h4, h5, h6 {
 	font-family: var(--font-headings);
+	font-weight: 700;
 	line-height: 1.2;
+	color: var(--color-text);
 	margin-top: 0;
 }
 
 h1 {
-	font-size: 2.75rem;
-	margin-bottom: 1.5rem;
-	font-weight: 800;
+	font-size: calc(1.5125rem + 3.15vw);
+	margin-bottom: 0.5rem;
+}
+
+@media (min-width: 1200px) {
+	h1 {
+		font-size: 3.875rem;
+	}
 }
 
 h2 {
-	font-size: 2rem;
-	margin-bottom: 1rem;
-	font-weight: 700;
+	font-size: calc(1.425rem + 2.1vw);
+	margin-bottom: 0.5rem;
+}
+
+@media (min-width: 1200px) {
+	h2 {
+		font-size: 3rem;
+	}
 }
 
 h3 {
-	font-size: 1.5rem;
-	margin-bottom: 0.75rem;
-	font-weight: 700;
+	font-size: calc(1.35rem + 1.2vw);
+	margin-bottom: 0.5rem;
+}
+
+@media (min-width: 1200px) {
+	h3 {
+		font-size: 2.25rem;
+	}
 }
 
 h4 {
 	font-size: 1.15rem;
 	margin-bottom: 0.5rem;
-	font-weight: 700;
 }
 
 p {
+	margin-top: 0;
 	margin-bottom: 1rem;
 }
 
@@ -75,18 +102,25 @@ img {
 	height: auto;
 }
 
+.lead {
+	font-size: 1.125rem;
+	font-weight: 300;
+	line-height: 1.6;
+	color: var(--color-text-muted);
+}
+
 .btn {
 	display: inline-flex;
 	align-items: center;
 	justify-content: center;
-	padding: 0.75rem 1.5rem;
+	padding: 0.875rem 1.75rem;
 	border-radius: 8px;
 	text-decoration: none;
 	font-weight: 700;
 	font-size: 0.95rem;
 	border: 2px solid var(--color-primary);
 	background: var(--color-primary);
-	color: #fff;
+	color: #212529;
 	cursor: pointer;
 	transition: all 0.2s ease;
 }
@@ -94,6 +128,7 @@ img {
 .btn:hover {
 	background: var(--color-primary-hover);
 	border-color: var(--color-primary-hover);
+	color: #212529;
 	transform: translateY(-1px);
 	text-decoration: none;
 }
@@ -106,25 +141,51 @@ img {
 
 .btn-outline:hover {
 	background: var(--color-primary);
-	color: #fff;
+	color: #212529;
 }
 
 .btn-lg {
-	padding: 0.875rem 1.75rem;
+	padding: 1rem 2rem;
 	font-size: 1.05rem;
 }
 
-.lead {
-	font-size: 1.25rem;
-	color: var(--color-text-muted);
+.container {
+	width: 100%;
+	max-width: var(--container-max);
+	margin-left: auto;
+	margin-right: auto;
+	padding-left: 0.75rem;
+	padding-right: 0.75rem;
+}
+
+@media (min-width: 768px) {
+	.container {
+		padding-left: 1rem;
+		padding-right: 1rem;
+	}
+}
+
+@media (min-width: 992px) {
+	.container {
+		padding-left: 1.5rem;
+		padding-right: 1.5rem;
+	}
 }
 
 @media (max-width: 768px) {
 	h1 {
-		font-size: 2rem;
+		font-size: 2.5rem;
 	}
 
 	h2 {
+		font-size: 2rem;
+	}
+
+	h3 {
 		font-size: 1.6rem;
+	}
+
+	.lead {
+		font-size: 1.05rem;
 	}
 }
