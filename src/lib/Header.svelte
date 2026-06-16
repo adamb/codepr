@@ -66,7 +66,7 @@
 	.logo-link {
 		display: flex;
 		align-items: center;
-		padding: 0.75rem 1.25rem;
+		padding: 0.5rem 1rem;
 		border-right: 1px solid var(--color-border);
 	}
 
@@ -93,10 +93,10 @@
 		display: flex;
 		align-items: center;
 		height: 100%;
-		padding: 0 1.25rem;
+		padding: 0 1rem;
 		color: #333;
-		font-weight: 600;
-		font-size: 0.95rem;
+		font-weight: 400;
+		font-size: 1rem;
 		text-decoration: none;
 		transition: background 0.15s;
 	}
@@ -123,7 +123,7 @@
 	.signin {
 		display: flex;
 		align-items: center;
-		padding: 0 1.25rem;
+		padding: 0 1rem;
 		color: #333;
 		font-weight: 700;
 		border-left: 1px solid var(--color-border);
@@ -138,7 +138,7 @@
 	.contact {
 		display: flex;
 		align-items: center;
-		padding: 0 1.25rem;
+		padding: 0 1rem;
 		background: var(--color-primary);
 		color: #fff;
 		font-weight: 700;
