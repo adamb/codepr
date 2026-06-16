@@ -15,7 +15,7 @@
 	<a href="#wrap" class="skip-link">Skip to Content</a>
 	<nav aria-label="Main navigation">
 		<a href="/" class="logo-link" aria-label="Code Puerto Rico Tech Hub home">
-			<img src="/images/logo.webp" alt="Code Puerto Rico Tech Hub" width="180" height="40" />
+			<img src="/images/logo.webp" alt="Code Puerto Rico Tech Hub" width="95" height="40" />
 		</a>
 		<ul class="primary">
 			{#each nav as { label, href }}
@@ -31,8 +31,9 @@
 
 <style>
 	header {
-		border-bottom: 1px solid #eaeaea;
 		background: #fff;
+		border-bottom: 1px solid var(--color-border);
+		box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
 		position: sticky;
 		top: 0;
 		z-index: 100;
@@ -55,11 +56,18 @@
 	nav {
 		max-width: 1200px;
 		margin: 0 auto;
-		padding: 0.75rem 1.5rem;
+		padding: 0;
+		display: flex;
+		align-items: stretch;
+		justify-content: space-between;
+		gap: 0;
+	}
+
+	.logo-link {
 		display: flex;
 		align-items: center;
-		justify-content: space-between;
-		gap: 1rem;
+		padding: 0.75rem 1.25rem;
+		border-right: 1px solid var(--color-border);
 	}
 
 	.logo-link img {
@@ -70,48 +78,76 @@
 
 	.primary {
 		display: flex;
-		gap: 1.5rem;
+		align-items: stretch;
 		list-style: none;
 		margin: 0;
 		padding: 0;
+		flex: 1;
+	}
+
+	.primary li {
+		border-right: 1px solid var(--color-border);
 	}
 
 	.primary a {
+		display: flex;
+		align-items: center;
+		height: 100%;
+		padding: 0 1.25rem;
 		color: #333;
-		font-weight: 500;
+		font-weight: 600;
 		font-size: 0.95rem;
 		text-decoration: none;
+		transition: background 0.15s;
 	}
 
 	.primary a:hover {
-		color: #0066cc;
-		text-decoration: underline;
+		background: #f8f9fa;
+		color: var(--color-primary);
 	}
 
 	.utility {
 		display: flex;
-		align-items: center;
-		gap: 1rem;
+		align-items: stretch;
 		list-style: none;
 		margin: 0;
 		padding: 0;
-		font-size: 0.9rem;
+		font-size: 0.95rem;
+	}
+
+	.utility li {
+		display: flex;
+		align-items: stretch;
 	}
 
 	.signin {
-		color: #666;
+		display: flex;
+		align-items: center;
+		padding: 0 1.25rem;
+		color: #333;
+		font-weight: 700;
+		border-left: 1px solid var(--color-border);
+	}
+
+	.signin:hover {
+		background: #f8f9fa;
+		color: var(--color-primary);
+		text-decoration: none;
 	}
 
 	.contact {
-		background: #667eea;
+		display: flex;
+		align-items: center;
+		padding: 0 1.25rem;
+		background: var(--color-primary);
 		color: #fff;
-		padding: 0.5rem 1rem;
-		border-radius: 6px;
-		font-weight: 600;
+		font-weight: 700;
+		text-decoration: none;
 	}
 
 	.contact:hover {
-		background: #5568d3;
+		background: var(--color-primary-hover);
+		text-decoration: none;
 	}
 
 	@media (max-width: 900px) {

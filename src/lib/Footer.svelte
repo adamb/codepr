@@ -1,25 +1,10 @@
 <!-- Footer.svelte -->
 <footer>
 	<div class="footer-inner">
-		<div class="brand">
-			<a href="/" aria-label="Code Puerto Rico home">
-				<img src="/images/code-pr-big.webp" alt="Code Puerto Rico" width="240" height="80" />
-			</a>
-		</div>
-
-		<div class="contact">
-			<p class="address">1550 PR-25, 2nd Floor • San Juan PR 00909 • United States</p>
-			<p class="phone-email">
-				<a href="tel:+17872969300">+1 787-296-9300</a>
-				<span>•</span>
-				<a href="mailto:info@code.pr">info@code.pr</a>
-			</p>
-		</div>
-
 		<div class="social">
 			<h5>Follow us</h5>
 			<div class="icons">
-				<a href="https://x.com/codepr" target="_blank" rel="noopener" aria-label="Twitter">
+				<a href="https://x.com/codepr" target="_blank" rel="noopener" aria-label="X">
 					<svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
 						<path fill="currentColor" d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
 					</svg>
@@ -32,35 +17,58 @@
 			</div>
 		</div>
 
+		<div class="contact">
+			<p class="address">1550 PR-25, 2nd Floor • San Juan PR 00909 • United States</p>
+			<p class="phone-email">
+				<a href="tel:+17872969300">+1 787-296-9300</a>
+				<span>•</span>
+				<a href="mailto:info@code.pr">info@code.pr</a>
+			</p>
+		</div>
+
+		<div class="brand">
+			<a href="/" aria-label="Code Puerto Rico home">
+				<img src="/images/code-pr-big.webp" alt="Code Puerto Rico" width="220" height="74" />
+			</a>
+		</div>
+	</div>
+
+	<div class="copyright-bar">
 		<p class="copyright">Copyright © Code Puerto Rico, LLC</p>
 	</div>
 </footer>
 
 <style>
 	footer {
-		border-top: 1px solid #eaeaea;
-		background: #fff;
-		padding: 3rem 1.5rem 2rem;
+		background: var(--color-dark);
+		color: rgba(255, 255, 255, 0.7);
+		padding-top: 2.5rem;
 	}
 
 	.footer-inner {
 		max-width: 1200px;
 		margin: 0 auto;
+		padding: 0 1.5rem 2rem;
 		display: grid;
-		grid-template-columns: 1fr auto 1fr;
+		grid-template-columns: 1fr 2fr 1fr;
 		gap: 2rem;
 		align-items: start;
+	}
+
+	.brand {
+		justify-self: end;
+		text-align: right;
 	}
 
 	.brand img {
 		height: 70px;
 		width: auto;
 		display: block;
+		opacity: 0.9;
 	}
 
 	.contact {
 		text-align: center;
-		color: #666;
 		font-size: 0.9rem;
 	}
 
@@ -69,50 +77,67 @@
 	}
 
 	.phone-email a {
-		color: #667eea;
+		color: rgba(255, 255, 255, 0.8);
 		text-decoration: none;
 	}
 
 	.phone-email a:hover {
+		color: var(--color-primary);
 		text-decoration: underline;
 	}
 
 	.phone-email span {
 		margin: 0 0.5rem;
-		color: #999;
+		color: rgba(255, 255, 255, 0.3);
 	}
 
 	.social {
-		justify-self: end;
-		text-align: right;
+		justify-self: start;
 	}
 
 	.social h5 {
 		margin: 0 0 0.5rem;
 		font-size: 0.9rem;
-		color: #666;
+		color: rgba(255, 255, 255, 0.5);
+		text-transform: uppercase;
+		letter-spacing: 0.05em;
 	}
 
 	.icons {
 		display: flex;
 		gap: 1rem;
-		justify-content: flex-end;
 	}
 
 	.icons a {
-		color: #666;
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		width: 36px;
+		height: 36px;
+		border-radius: 50%;
+		background: rgba(255, 255, 255, 0.1);
+		color: rgba(255, 255, 255, 0.8);
+		box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+		transition: all 0.2s;
 	}
 
 	.icons a:hover {
-		color: #667eea;
+		background: var(--color-primary);
+		color: #fff;
+		text-decoration: none;
+	}
+
+	.copyright-bar {
+		border-top: 1px solid rgba(255, 255, 255, 0.1);
+		padding: 1rem 1.5rem;
 	}
 
 	.copyright {
-		grid-column: 1 / -1;
-		text-align: center;
-		margin: 1rem 0 0;
+		max-width: 1200px;
+		margin: 0 auto;
+		text-align: left;
 		font-size: 0.85rem;
-		color: #999;
+		color: rgba(255, 255, 255, 0.5);
 	}
 
 	@media (max-width: 768px) {
@@ -130,6 +155,10 @@
 
 		.icons {
 			justify-content: center;
+		}
+
+		.copyright {
+			text-align: center;
 		}
 	}
 </style>
