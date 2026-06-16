@@ -3,7 +3,7 @@
 </script>
 
 <SEO
-	title="Code Puerto Rico"
+	title="Code Puerto Rico | Tech Hub, Coworking & Events in San Juan"
 	description="Puerto Rico's tech hub for builders, founders & innovators. Coworking, events, and a development agency in San Juan."
 />
 
