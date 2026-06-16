@@ -1,6 +1,11 @@
 <script lang="ts">
-	import '../../app.css';
+	import SEO from '$lib/SEO.svelte';
 </script>
+
+<SEO
+	title="Dev Agency"
+	description="World-class software, built in Puerto Rico. Website development and Salesforce → Odoo CRM migrations by Holberton-trained engineers."
+/>
 
 <div class="hero">
 	<h1>Development Agency</h1>
@@ -8,31 +13,42 @@
 </div>
 
 <section class="intro">
-	<h2>Trained here. Built for you.</h2>
+	<h2>Our Model</h2>
+	<p class="lead">Trained here. Built for you.</p>
 	<p>Holberton School at Code Puerto Rico produces some of the most rigorously trained software engineers in the Caribbean. Our development agency puts that talent to work on real client projects — with senior engineer oversight on every engagement.</p>
+	<ul class="model-highlights">
+		<li>Developers trained in-house at Holberton School</li>
+		<li>Senior QA and architecture review on every deliverable</li>
+		<li>US timezone, English-fluent, nearshore rates</li>
+		<li>Projects that create local tech jobs in Puerto Rico</li>
+	</ul>
 </section>
 
 <section class="services">
-	<h2>Our Services</h2>
-	<p class="lead">We launch with two focused service lines — chosen because we can deliver them exceptionally well from day one.</p>
-	
+	<h2>What We Build</h2>
+	<p class="lead">Our Services</p>
+	<p>We launch with two focused service lines — chosen because we can deliver them exceptionally well from day one.</p>
+
 	<div class="service-cards">
 		<div class="service-card">
 			<h3>Website Development</h3>
 			<p>From polished marketing sites to full-featured web applications, we design and build fast, mobile-responsive websites that represent your brand and convert visitors into customers.</p>
+			<p>Discovery, wireframes, visual design, React/Next.js/Webflow/WordPress front ends, CMS integration, SEO, accessibility, e-commerce/booking features, and 30-day post-launch support. Starting at $3,000.</p>
 		</div>
 		<div class="service-card featured">
 			<h3>CRM Outmigration & Odoo</h3>
 			<p>Still paying Salesforce per-seat fees? We migrate your CRM to <strong>Odoo</strong> — an open-source platform that covers CRM, sales, marketing, invoicing, and project management at a fraction of the cost.</p>
 			<p>Odoo is an open-source ERP/CRM that handles everything Salesforce does — and more — without the per-seat licensing trap. It covers contact management, sales pipelines, email marketing, project management, HR, invoicing, and reporting in a single integrated platform. We use it ourselves at Code Puerto Rico, so we know it inside and out.</p>
+			<p>Data audit, zero-loss migration, custom field mapping, workflow recreation, user training, 30-day hypercare, and ongoing consulting. Typical savings: 60–80% vs. Salesforce.</p>
 		</div>
 	</div>
 </section>
 
 <section class="process">
-	<h2>How a Project Works</h2>
-	<p class="lead">From first conversation to launch, here's what to expect when you work with us.</p>
-	
+	<h2>Process</h2>
+	<p class="lead">How a Project Works</p>
+	<p>From first conversation to launch, here's what to expect when you work with us.</p>
+
 	<div class="steps">
 		<div class="step">
 			<span class="step-number">1</span>
@@ -58,10 +74,11 @@
 </section>
 
 <section class="migration">
-	<h2>The Migration Process</h2>
+	<h2>Salesforce → Odoo</h2>
+	<p class="lead">The Migration Process</p>
 	<p>We've developed a proven, five-phase migration methodology. Your Salesforce data stays read-only for 30 days after cutover — so there's always a safety net.</p>
 	<p class="timeline">Typical timeline: <strong>5–6 weeks</strong> for a standard Salesforce instance. Complex customizations or high data volumes may extend this — we'll tell you upfront.</p>
-	
+
 	<table class="migration-table">
 		<thead>
 			<tr>
@@ -101,9 +118,10 @@
 </section>
 
 <section class="projects">
-	<h2>Current Projects</h2>
+	<h2>In Progress</h2>
+	<p class="lead">Current Projects</p>
 	<p>We opened with three anchor engagements that will become our first published case studies.</p>
-	
+
 	<div class="project-list">
 		<div class="project">
 			<h3>Private Equity Firm Website</h3>
@@ -121,8 +139,9 @@
 </section>
 
 <section class="difference">
-	<h2>The Code PR Difference</h2>
-	
+	<h2>Why Us</h2>
+	<p class="lead">The Code PR Difference</p>
+
 	<div class="benefits">
 		<div class="benefit">
 			<h3>We Trained Your Team</h3>
@@ -161,97 +180,94 @@
 <style>
 	.hero {
 		text-align: center;
-		padding: 4rem 2rem;
+		padding: 5rem 2rem;
 		background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
 		color: white;
-		border-radius: 12px;
+		border-radius: 16px;
 		margin-bottom: 3rem;
 	}
-	
+
 	.hero h1 {
 		font-size: 3rem;
 		margin: 0 0 0.5rem 0;
+		font-weight: 800;
 	}
-	
+
 	.subtitle {
 		font-size: 1.5rem;
 		opacity: 0.9;
 		margin: 0;
 	}
-	
-	.intro {
-		margin-bottom: 3rem;
+
+	section {
+		margin-bottom: 4rem;
 	}
-	
-	.intro h2 {
-		margin-top: 0;
-	}
-	
+
 	.lead {
 		font-size: 1.25rem;
 		color: #666;
 	}
-	
-	.services {
-		margin-bottom: 4rem;
+
+	.model-highlights {
+		background: #f8f9fa;
+		padding: 1.5rem 2rem;
+		border-radius: 12px;
+		margin-top: 1.5rem;
 	}
-	
+
 	.service-cards {
 		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+		grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
 		gap: 2rem;
 		margin-top: 2rem;
 	}
-	
+
 	.service-card {
 		padding: 2rem;
 		border: 1px solid #eaeaea;
 		border-radius: 12px;
+		background: #fff;
 	}
-	
+
 	.service-card.featured {
 		background: #f8f9fa;
 		border-color: #667eea;
 	}
-	
-	.process {
-		margin-bottom: 4rem;
-	}
-	
+
 	.steps {
 		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-		gap: 2rem;
+		grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+		gap: 1.5rem;
 		margin-top: 2rem;
 	}
-	
+
 	.step {
 		text-align: center;
-		padding: 2rem;
+		padding: 2rem 1.5rem;
 		background: #f8f9fa;
 		border-radius: 12px;
 	}
-	
+
 	.step-number {
-		display: inline-block;
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
 		width: 48px;
 		height: 48px;
 		background: #667eea;
 		color: white;
 		border-radius: 50%;
-		line-height: 48px;
-		font-size: 1.5rem;
+		font-size: 1.25rem;
 		font-weight: 700;
 		margin-bottom: 1rem;
 	}
-	
+
 	.migration {
-		margin-bottom: 4rem;
 		padding: 2rem;
 		background: #f8f9fa;
-		border-radius: 12px;
+		border-radius: 16px;
 	}
-	
+
 	.timeline {
 		font-size: 1.125rem;
 		padding: 1rem;
@@ -259,7 +275,7 @@
 		border-radius: 8px;
 		margin: 1.5rem 0;
 	}
-	
+
 	.migration-table {
 		width: 100%;
 		border-collapse: collapse;
@@ -267,75 +283,68 @@
 		border-radius: 8px;
 		overflow: hidden;
 	}
-	
+
 	.migration-table th,
 	.migration-table td {
 		padding: 1rem;
 		text-align: left;
 		border-bottom: 1px solid #eaeaea;
 	}
-	
+
 	.migration-table th {
 		background: #667eea;
 		color: white;
 		font-weight: 600;
 	}
-	
-	.projects {
-		margin-bottom: 4rem;
-	}
-	
+
 	.project-list {
-		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-		gap: 1.5rem;
-		margin-top: 2rem;
-	}
-	
-	.project {
-		padding: 1.5rem;
-		border: 1px solid #eaeaea;
-		border-radius: 8px;
-	}
-	
-	.difference {
-		margin-bottom: 4rem;
-	}
-	
-	.benefits {
 		display: grid;
 		grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
 		gap: 1.5rem;
 		margin-top: 2rem;
 	}
-	
+
+	.project {
+		padding: 1.5rem;
+		border: 1px solid #eaeaea;
+		border-radius: 8px;
+	}
+
+	.benefits {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+		gap: 1.5rem;
+		margin-top: 2rem;
+	}
+
 	.benefit {
 		padding: 1.5rem;
 		background: #f8f9fa;
 		border-radius: 8px;
 	}
-	
+
 	.cta-section {
 		text-align: center;
-		padding: 3rem 2rem;
+		padding: 4rem 2rem;
 		background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
 		color: white;
-		border-radius: 12px;
+		border-radius: 16px;
 	}
-	
+
 	.cta-section h2 {
 		margin: 0 0 1rem 0;
+		font-size: 2rem;
 	}
-	
+
 	.contact-direct {
 		margin-bottom: 2rem;
 	}
-	
+
 	.contact-direct a {
 		color: white;
 		font-weight: 600;
 	}
-	
+
 	.btn {
 		display: inline-block;
 		padding: 0.75rem 1.5rem;
@@ -345,17 +354,21 @@
 		border: 2px solid white;
 		color: white;
 	}
-	
+
 	.btn.primary {
 		background: white;
 		color: #667eea;
 	}
-	
+
+	.btn:hover {
+		opacity: 0.95;
+	}
+
 	@media (max-width: 768px) {
 		.hero h1 {
 			font-size: 2rem;
 		}
-		
+
 		.subtitle {
 			font-size: 1.25rem;
 		}

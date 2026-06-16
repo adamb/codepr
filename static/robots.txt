@@ -1,3 +1,9 @@
-# allow crawling everything by default
 User-agent: *
-Disallow:
+Sitemap: https://codepr.pages.dev/sitemap.xml
+
+##############
+#   custom   #
+##############
+
+Disallow: /web/login
+Allow: *

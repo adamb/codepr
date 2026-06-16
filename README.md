@@ -2,7 +2,8 @@
 
 SvelteKit 2.x website for Code Puerto Rico, migrated from Odoo.
 
-**Live:** https://code.pr  
+**Production:** https://code.pr  
+**Cloudflare Pages mirror:** https://codepr.pages.dev  
 **Deploy:** Cloudflare Pages (auto-deploys on push to `main`)
 
 ## Stack
@@ -18,10 +19,18 @@ SvelteKit 2.x website for Code Puerto Rico, migrated from Odoo.
 | Route | Description |
 |-------|-------------|
 | `/` | Homepage — hero, agency services, stats, current projects |
-| `/about-us` | Team bios (Mercedes, Raphael, Jeandres, Ellen, Adam, Cyril) |
+| `/about-us` | About Code Puerto Rico + team bios with photos |
 | `/agency` | Dev agency services, Salesforce→Odoo migration process |
 | `/upcoming-events` | Demo Days, past events, recurring meetups |
+| `/workshops` | Workshop listings |
+| `/workshops/linux-workshop` | Linux installation workshop details |
+| `/pricing` | Coworking, virtual office, event space pricing |
+| `/blog` | Blog index |
+| `/blog/1/what-does-a-developer-actually-need-to-succeed-in-the-age-of-ai-1` | AI panel event recap |
+| `/privacy-policy` | Privacy policy |
 | `/contactus` | Contact form, map embed, location info |
+| `/upcoming-events-thanks` | Event interest signup confirmation |
+| `/upcoming-events-verify` | Event signup verification failure |
 
 ## Developing
 
@@ -54,14 +63,8 @@ npx wrangler pages deploy
 
 ## Migration Notes
 
-- Migrated from Odoo CMS to static/SSR SvelteKit
-- All content extracted from live Odoo site
-- Images: currently using placeholders (team photos need to be added to `/static`)
-- Contact form: frontend only — needs Cloudflare Worker or backend integration
-
-## TODO
-
-- [ ] Add team photos to `/static` and update `about-us` page
-- [ ] Wire up contact form to Cloudflare Worker / email service
-- [ ] Add Open Graph meta tags for social sharing
-- [ ] Set up custom domain in Cloudflare Pages
+- Migrated from Odoo CMS to SvelteKit on Cloudflare Pages.
+- All public content extracted from the live Odoo site.
+- Images downloaded from production and served from `/static`.
+- Social links (`/website/social/*`) redirect to real profiles.
+- Contact form is frontend-only (mailto action).
