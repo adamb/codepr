@@ -75,7 +75,7 @@
 			<div class="team-grid">
 				{#each team as member}
 					<div class="team-member">
-						<img src={member.photo} alt={member.name} class="photo" width="300" height="300" />
+						<img src={member.photo} alt={member.name} class="photo" width="414" height="610" />
 						<div class="team-info">
 							<h4>{member.name}</h4>
 							<p class="role">{member.role}</p>
@@ -117,40 +117,42 @@
 
 	.team-grid {
 		display: grid;
-		grid-template-columns: repeat(2, 1fr);
-		gap: 2rem 3rem;
+		grid-template-columns: repeat(3, 1fr);
+		gap: 2.5rem 2rem;
 	}
 
 	.team-member {
 		display: flex;
-		gap: 1.25rem;
-		padding: 1.75rem 0;
-		border-top: 1px solid var(--color-border);
+		flex-direction: column;
+		align-items: center;
+		text-align: center;
 	}
 
 	.photo {
-		width: 96px;
-		height: 96px;
+		width: 160px;
+		height: 160px;
 		object-fit: cover;
 		object-position: top center;
 		border-radius: 50%;
 		flex-shrink: 0;
+		margin-bottom: 1.25rem;
+		box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
 	}
 
 	.team-info h4 {
-		font-size: 1.05rem;
+		font-size: 1.15rem;
 		font-weight: 700;
-		margin: 0 0 0.2rem;
+		margin: 0 0 0.3rem;
 		letter-spacing: -0.01em;
 	}
 
 	.role {
 		color: var(--color-accent);
-		font-size: 0.82rem;
+		font-size: 0.8rem;
 		font-weight: 600;
-		margin: 0 0 0.625rem;
+		margin: 0 0 0.75rem;
 		text-transform: uppercase;
-		letter-spacing: 0.03em;
+		letter-spacing: 0.04em;
 	}
 
 	.bio {
@@ -160,14 +162,15 @@
 		margin-bottom: 0;
 	}
 
-	@media (max-width: 768px) {
+	@media (max-width: 900px) {
+		.team-grid {
+			grid-template-columns: repeat(2, 1fr);
+		}
+	}
+
+	@media (max-width: 540px) {
 		.team-grid {
 			grid-template-columns: 1fr;
-		}
-
-		.team-member {
-			flex-direction: column;
-			align-items: flex-start;
 		}
 	}
 </style>

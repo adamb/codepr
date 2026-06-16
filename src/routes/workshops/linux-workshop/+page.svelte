@@ -206,7 +206,7 @@
 		border-radius: var(--radius-lg);
 		padding: 2rem;
 		position: sticky;
-		top: 80px;
+		top: 96px;
 	}
 
 	.register-card h2 {
