@@ -1,10 +1,21 @@
 <script lang="ts">
 	import SEO from '$lib/SEO.svelte';
+
+	const codeSnippet = `// Code Puerto Rico Dev Agency
+function deliverProject(client) {
+  const team = hireLocalTalent(client.scope);
+  const design = seniorReview(team.plan());
+  const build = iterateWithClient(team.code(), design);
+  return launchWithSupport(build, '30-days');
+}
+
+// Output: US-quality software, nearshore rates, local jobs.`;
 </script>
 
 <SEO
 	title="Dev Agency"
 	description="World-class software, built in Puerto Rico. Website development and Salesforce → Odoo CRM migrations by Holberton-trained engineers."
+	canonical="https://code.pr/agency"
 />
 
 <div class="hero">
@@ -16,6 +27,9 @@
 	<h2>Our Model</h2>
 	<p class="lead">Trained here. Built for you.</p>
 	<p>Holberton School at Code Puerto Rico produces some of the most rigorously trained software engineers in the Caribbean. Our development agency puts that talent to work on real client projects — with senior engineer oversight on every engagement.</p>
+
+	<pre class="code-block" aria-label="Our development model in pseudocode"><code>{@html codeSnippet}</code></pre>
+
 	<ul class="model-highlights">
 		<li>Developers trained in-house at Holberton School</li>
 		<li>Senior QA and architecture review on every deliverable</li>
@@ -33,15 +47,40 @@
 		<div class="service-card">
 			<h3>Website Development</h3>
 			<p>From polished marketing sites to full-featured web applications, we design and build fast, mobile-responsive websites that represent your brand and convert visitors into customers.</p>
-			<p>Discovery, wireframes, visual design, React/Next.js/Webflow/WordPress front ends, CMS integration, SEO, accessibility, e-commerce/booking features, and 30-day post-launch support. Starting at $3,000.</p>
+			<ul class="service-list">
+				<li>Discovery, wireframes, and visual design</li>
+				<li>React, Next.js, Webflow, and WordPress front ends</li>
+				<li>CMS integration, SEO, and accessibility</li>
+				<li>E-commerce, booking, and membership features</li>
+				<li>30-day post-launch support</li>
+			</ul>
+			<p><strong>Starting at $3,000.</strong></p>
 		</div>
 		<div class="service-card featured">
 			<h3>CRM Outmigration & Odoo</h3>
 			<p>Still paying Salesforce per-seat fees? We migrate your CRM to <strong>Odoo</strong> — an open-source platform that covers CRM, sales, marketing, invoicing, and project management at a fraction of the cost.</p>
-			<p>Odoo is an open-source ERP/CRM that handles everything Salesforce does — and more — without the per-seat licensing trap. It covers contact management, sales pipelines, email marketing, project management, HR, invoicing, and reporting in a single integrated platform. We use it ourselves at Code Puerto Rico, so we know it inside and out.</p>
-			<p>Data audit, zero-loss migration, custom field mapping, workflow recreation, user training, 30-day hypercare, and ongoing consulting. Typical savings: 60–80% vs. Salesforce.</p>
+			<ul class="service-list">
+				<li>Data audit and zero-loss migration</li>
+				<li>Custom field mapping and workflow recreation</li>
+				<li>User training and documentation</li>
+				<li>30-day hypercare after cutover</li>
+				<li>Ongoing consulting and optimization</li>
+			</ul>
+			<p><strong>Typical savings: 60–80% vs. Salesforce.</strong></p>
 		</div>
 	</div>
+</section>
+
+<section class="why-odoo">
+	<h2>Why Odoo?</h2>
+	<p class="lead">One platform. No per-seat trap.</p>
+	<p>Odoo is an open-source ERP/CRM that handles everything Salesforce does — and more — without the per-seat licensing trap. It covers contact management, sales pipelines, email marketing, project management, HR, invoicing, and reporting in a single integrated platform. We use it ourselves at Code Puerto Rico, so we know it inside and out.</p>
+	<ul class="odoo-benefits">
+		<li><strong>Open source:</strong> No ongoing licensing fees per user.</li>
+		<li><strong>All-in-one:</strong> CRM, sales, marketing, projects, HR, and invoicing in one database.</li>
+		<li><strong>Flexible:</strong> Custom modules and workflows built for how you actually work.</li>
+		<li><strong>Proven:</strong> Used by startups, nonprofits, and enterprise teams worldwide.</li>
+	</ul>
 </section>
 
 <section class="process">
@@ -181,7 +220,7 @@
 	.hero {
 		text-align: center;
 		padding: 5rem 2rem;
-		background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+		background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
 		color: white;
 		border-radius: 16px;
 		margin-bottom: 3rem;
@@ -208,6 +247,24 @@
 		color: #666;
 	}
 
+	.code-block {
+		background: #1e1e2f;
+		color: #a5d6ff;
+		padding: 1.5rem;
+		border-radius: 12px;
+		overflow-x: auto;
+		font-family: 'Source Code Pro', 'Fira Code', monospace;
+		font-size: 0.95rem;
+		line-height: 1.6;
+		margin: 1.5rem 0;
+		border-left: 4px solid var(--color-primary);
+	}
+
+	.code-block code {
+		font-family: inherit;
+		white-space: pre;
+	}
+
 	.model-highlights {
 		background: #f8f9fa;
 		padding: 1.5rem 2rem;
@@ -231,7 +288,31 @@
 
 	.service-card.featured {
 		background: #f8f9fa;
-		border-color: #667eea;
+		border-color: var(--color-primary);
+	}
+
+	.service-list {
+		margin: 1rem 0 1.25rem;
+		padding-left: 1.25rem;
+	}
+
+	.service-list li {
+		margin-bottom: 0.5rem;
+	}
+
+	.why-odoo {
+		padding: 2rem;
+		background: #f8f9fa;
+		border-radius: 16px;
+	}
+
+	.odoo-benefits {
+		margin: 1.5rem 0 0;
+		padding-left: 1.25rem;
+	}
+
+	.odoo-benefits li {
+		margin-bottom: 0.75rem;
 	}
 
 	.steps {
@@ -254,7 +335,7 @@
 		justify-content: center;
 		width: 48px;
 		height: 48px;
-		background: #667eea;
+		background: var(--color-primary);
 		color: white;
 		border-radius: 50%;
 		font-size: 1.25rem;
@@ -292,7 +373,7 @@
 	}
 
 	.migration-table th {
-		background: #667eea;
+		background: var(--color-primary);
 		color: white;
 		font-weight: 600;
 	}
@@ -326,7 +407,7 @@
 	.cta-section {
 		text-align: center;
 		padding: 4rem 2rem;
-		background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+		background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
 		color: white;
 		border-radius: 16px;
 	}
@@ -353,15 +434,22 @@
 		font-weight: 600;
 		border: 2px solid white;
 		color: white;
+		transition: background 0.2s, color 0.2s;
 	}
 
 	.btn.primary {
 		background: white;
-		color: #667eea;
+		color: var(--color-primary-dark);
 	}
 
 	.btn:hover {
-		opacity: 0.95;
+		background: rgba(255, 255, 255, 0.15);
+		opacity: 1;
+	}
+
+	.btn.primary:hover {
+		background: #f0f9fb;
+		color: var(--color-primary-dark);
 	}
 
 	@media (max-width: 768px) {
@@ -371,6 +459,11 @@
 
 		.subtitle {
 			font-size: 1.25rem;
+		}
+
+		.code-block {
+			font-size: 0.8rem;
+			padding: 1rem;
 		}
 	}
 </style>

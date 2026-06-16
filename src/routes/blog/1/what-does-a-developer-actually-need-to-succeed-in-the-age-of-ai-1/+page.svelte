@@ -5,6 +5,11 @@
 <SEO
 	title="What Does a Developer Actually Need to Succeed in the Age of AI?"
 	description="Five tech leaders share what they look for, what's changing, and how to stay relevant — straight from a packed panel in Puerto Rico."
+	canonical="https://code.pr/blog/1/what-does-a-developer-actually-need-to-succeed-in-the-age-of-ai-1"
+	type="article"
+	publishedTime="2026-04-08"
+	modifiedTime="2026-04-16"
+	image="https://code.pr/blog/blog-1182.jpeg"
 />
 
 <article class="post">
@@ -22,12 +27,13 @@
 		</div>
 	</header>
 
-	<section class="gallery">
-		<img src="/blog/blog-1182.jpeg" alt="AI panel event at Code Puerto Rico" />
-		<img src="/blog/blog-1183.jpeg" alt="Audience at the AI Across Industries event" />
-		<img src="/blog/blog-1184.jpeg" alt="Panel discussion" />
-		<img src="/blog/blog-1185.jpeg" alt="Networking after the panel" />
-	</section>
+	<figure class="hero-cover">
+		<img src="/blog/blog-1182.jpeg" alt="Panelists on stage at the AI Across Industries event" />
+		<figcaption>
+			Panelists discuss AI, adaptability, and what it takes to build a tech career in Puerto Rico.
+			<span class="credit">Photo: Code Puerto Rico</span>
+		</figcaption>
+	</figure>
 
 	<section class="content">
 		<p>On Wednesday, April 8, 2026, Code Puerto Rico hosted <strong>“AI Across Industries: Two Pathways to Careers in Puerto Rico”</strong> in partnership with ALPFA PR and Libre Analytics. The room was packed with Holberton students, alumni, and members of the local tech community, all trying to answer the same question: in the age of AI, what does a developer actually need to succeed?</p>
@@ -36,29 +42,52 @@
 
 		<h2>The Panelists</h2>
 		<ul class="panelists">
-			<li><strong>Javier Rosario</strong> — Freelance DevOps Engineer (<a href="https://www.cumbrestrategies.com/" target="_blank" rel="noopener">cumbrestrategies.com</a>)</li>
-			<li><strong>Gabe Pérez</strong> — Co-Founder & Fractional CTO, Multiple Startups (<a href="https://indiehackerspr.com" target="_blank" rel="noopener">indiehackerspr.com</a>)</li>
-			<li><strong>Antonio J. Rodríguez</strong> — CEO at <a href="https://techfirst.io" target="_blank" rel="noopener">Tech First</a> (<a href="https://www.linkedin.com/in/antonio-j-rodriguez-soto-821ba413/" target="_blank" rel="noopener">LinkedIn</a>)</li>
-			<li><strong>Adam Beguelin</strong> — Co-Founder, Holberton Coding School (<a href="http://blog.beguelin.com" target="_blank" rel="noopener">blog.beguelin.com</a>)</li>
-			<li><strong>Luis R. Esteves</strong> — Moderator, Founder of <a href="https://libreanalytics.ai" target="_blank" rel="noopener">Libre Analytics</a> (<a href="https://www.linkedin.com/in/lesteves32/" target="_blank" rel="noopener">LinkedIn</a>)</li>
+			<li><strong><a href="https://www.cumbrestrategies.com/" target="_blank" rel="noopener">Javier Rosario</a></strong> — Freelance DevOps Engineer</li>
+			<li><strong><a href="https://indiehackerspr.com" target="_blank" rel="noopener">Gabe Pérez</a></strong> — Co-Founder & Fractional CTO, Multiple Startups</li>
+			<li><strong><a href="https://techfirst.io" target="_blank" rel="noopener">Antonio J. Rodríguez</a></strong> — CEO at Tech First</li>
+			<li><strong><a href="http://blog.beguelin.com" target="_blank" rel="noopener">Adam Beguelin</a></strong> — Co-Founder, Holberton Coding School</li>
+			<li><strong><a href="https://libreanalytics.ai" target="_blank" rel="noopener">Luis R. Esteves</a></strong> — Moderator, Founder of Libre Analytics</li>
 		</ul>
 
 		<h2>Top Skills, by Panelist</h2>
 
 		<h3>Gabe Pérez</h3>
-		<p>Understand modern CI/CD pipelines, use tools like Claude Code, develop design sense and testability, and practice translating technical ideas for non-technical stakeholders.</p>
+		<ol class="skills">
+			<li>Understand modern CI/CD pipelines and deployment workflows.</li>
+			<li>Use AI coding assistants like Claude Code responsibly.</li>
+			<li>Develop design sense and testability in your work.</li>
+			<li>Practice translating technical ideas for non-technical stakeholders.</li>
+		</ol>
 
 		<h3>Javier Rosario</h3>
-		<p>Prompt engineering, Python, self-knowledge, environment awareness (generalist at small firms, specialist at large ones), and DevOps fundamentals including Docker, virtual machines, and servers.</p>
+		<ol class="skills">
+			<li>Prompt engineering — know how to ask models for useful output.</li>
+			<li>Python and scripting fundamentals.</li>
+			<li>Self-knowledge: know where you thrive and where you need support.</li>
+			<li>Environment awareness: generalist at small firms, specialist at large ones.</li>
+			<li>DevOps fundamentals including Docker, virtual machines, and servers.</li>
+		</ol>
 
 		<h3>Antonio J. Rodríguez</h3>
-		<p>Real coding ability in languages like Python, Java, TypeScript, Vue, and React; knowledge of design patterns; positive attitude and feedback reception; the ability to contribute quickly to existing codebases; and willingness to support production releases beyond normal hours.</p>
+		<ol class="skills">
+			<li>Real coding ability in languages like Python, Java, TypeScript, Vue, and React.</li>
+			<li>Knowledge of design patterns and how codebases are organized.</li>
+			<li>Positive attitude and the ability to receive feedback.</li>
+			<li>Ability to contribute quickly to existing codebases.</li>
+			<li>Willingness to support production releases beyond normal hours.</li>
+		</ol>
 
 		<h3>Adam Beguelin</h3>
-		<p>“Just build something. Pick your tools, ship, iterate.” Adam mentioned using <a href="https://github.com/NateBJones-Projects/OB1/" target="_blank" rel="noopener">OpenBrain</a> recently.</p>
+		<ol class="skills">
+			<li>“Just build something.”</li>
+			<li>Pick your tools, ship, iterate.</li>
+			<li>Useful recent experiment: <a href="https://github.com/NateBJones-Projects/OB1/" target="_blank" rel="noopener">OpenBrain</a>.</li>
+		</ol>
 
 		<h3>Luis Esteves</h3>
-		<p>“Creativity — still the one thing AI can’t fully replace.”</p>
+		<ol class="skills">
+			<li>Creativity — still the one thing AI can’t fully replace.</li>
+		</ol>
 
 		<h2>What Should Developers Learn Right Now?</h2>
 		<ul>
@@ -69,6 +98,15 @@
 			<li>Use the Pomodoro technique.</li>
 			<li>Discover your ideal working style.</li>
 			<li>Understand why software development became a commodity.</li>
+		</ul>
+
+		<h2>Practical Advice / Tips You Can Apply This Week</h2>
+		<ul class="tips">
+			<li><strong>Ship one small thing.</strong> A landing page, a script, a CLI tool — the fastest way to learn is to finish.</li>
+			<li><strong>Pair with AI, don’t hide behind it.</strong> Use Claude Code or Cursor to accelerate work you could also do by hand.</li>
+			<li><strong>Explain your code out loud.</strong> Communication separates good developers from great teammates.</li>
+			<li><strong>Backup your projects and set up CI/CD.</strong> Professional habits matter more than raw speed.</li>
+			<li><strong>Join one local community.</strong> Events like this are where referrals, co-founders, and mentors come from.</li>
 		</ul>
 
 		<h2>On AI & Industry Change</h2>
@@ -83,14 +121,37 @@
 
 		<h2>From the Audience</h2>
 		<p>Students and attendees shared their biggest takeaways:</p>
-		<ul>
-			<li>Joshua learned about the entrepreneurship vs. company employment paths and the value of continuous building.</li>
-			<li>Alberto learned to step outside his comfort zone and work alongside AI tools.</li>
-			<li>Joshua S. learned about local machine AI workflows for tasks with token limits.</li>
-			<li>Guillermo saw the range of AI opportunities and wanted to learn more.</li>
-			<li>Víctor identified agent orchestration, management skills, and creativity as priorities.</li>
+		<ul class="audience">
+			<li>“I learned about the entrepreneurship vs. company employment paths and the value of continuous building.” <span class="attribution">— Joshua, Holberton student</span></li>
+			<li>“I learned to step outside my comfort zone and work alongside AI tools.” <span class="attribution">— Alberto, attendee</span></li>
+			<li>“I learned about local machine AI workflows for tasks with token limits.” <span class="attribution">— Joshua S., Holberton student</span></li>
+			<li>“I saw the range of AI opportunities and wanted to learn more.” <span class="attribution">— Guillermo, attendee</span></li>
+			<li>“Agent orchestration, management skills, and creativity are my priorities now.” <span class="attribution">— Víctor, attendee</span></li>
 		</ul>
+	</section>
 
+	<section class="gallery">
+		<figure>
+			<img src="/blog/blog-1183.jpeg" alt="Audience at the AI Across Industries event" />
+			<figcaption>A packed room of students, alumni, and community members.</figcaption>
+		</figure>
+		<figure>
+			<img src="/blog/blog-1184.jpeg" alt="Panel discussion" />
+			<figcaption>The panel answered questions on careers, AI tools, and enterprise work.</figcaption>
+		</figure>
+		<figure>
+			<img src="/blog/blog-1185.jpeg" alt="Networking after the panel" />
+			<figcaption>Attendees stayed after the panel to keep the conversation going.</figcaption>
+		</figure>
+	</section>
+
+	<section class="cta-alpfa">
+		<h2>Join ALPFA PR</h2>
+		<p>ALPFA PR is building a community of Latino professionals in finance, tech, and business across Puerto Rico. Connect with mentors, events, and career opportunities.</p>
+		<a href="https://alpfa.org/puerto-rico" target="_blank" rel="noopener" class="btn primary">Join ALPFA PR →</a>
+	</section>
+
+	<section class="whats-next">
 		<h2>What's Next</h2>
 		<p>Communities recommended for the Puerto Rico tech ecosystem:</p>
 		<ul>
@@ -109,7 +170,7 @@
 	}
 
 	.kicker {
-		color: #667eea;
+		color: var(--color-primary);
 		font-weight: 700;
 		text-transform: uppercase;
 		letter-spacing: 0.05em;
@@ -156,18 +217,31 @@
 		margin: 0.25rem 0 0;
 	}
 
-	.gallery {
-		display: grid;
-		grid-template-columns: repeat(2, 1fr);
-		gap: 1rem;
-		margin-bottom: 2.5rem;
+	.hero-cover {
+		margin: 0 0 2.5rem;
 	}
 
-	.gallery img {
+	.hero-cover img {
 		width: 100%;
-		height: 220px;
-		object-fit: cover;
+		height: auto;
 		border-radius: 8px;
+		display: block;
+	}
+
+	.hero-cover figcaption,
+	.gallery figcaption {
+		font-size: 0.875rem;
+		color: #666;
+		margin-top: 0.5rem;
+		font-style: italic;
+	}
+
+	.credit {
+		display: block;
+		color: #888;
+		font-size: 0.8rem;
+		font-style: normal;
+		margin-top: 0.25rem;
 	}
 
 	.content h2 {
@@ -178,7 +252,7 @@
 	.content h3 {
 		margin-top: 1.75rem;
 		font-size: 1.35rem;
-		color: #667eea;
+		color: var(--color-primary);
 	}
 
 	.content ul {
@@ -189,6 +263,113 @@
 		background: #f8f9fa;
 		padding: 1.25rem 1.5rem;
 		border-radius: 8px;
+	}
+
+	.panelists a {
+		color: var(--color-text);
+		text-decoration: none;
+		border-bottom: 1px solid var(--color-primary);
+	}
+
+	.panelists a:hover {
+		color: var(--color-primary);
+	}
+
+	.skills {
+		margin-bottom: 1.5rem;
+	}
+
+	.skills li {
+		margin-bottom: 0.5rem;
+	}
+
+	.tips {
+		background: #f0f9fb;
+		padding: 1.25rem 1.5rem;
+		border-radius: 8px;
+		border-left: 4px solid var(--color-primary);
+	}
+
+	.tips li {
+		margin-bottom: 0.75rem;
+	}
+
+	.audience li {
+		margin-bottom: 1rem;
+	}
+
+	.attribution {
+		display: block;
+		color: #888;
+		font-size: 0.875rem;
+		font-style: italic;
+		margin-top: 0.25rem;
+	}
+
+	.gallery {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: 1rem;
+		margin: 2.5rem 0;
+	}
+
+	.gallery figure {
+		margin: 0;
+	}
+
+	.gallery img {
+		width: 100%;
+		height: 180px;
+		object-fit: cover;
+		border-radius: 8px;
+		display: block;
+	}
+
+	.cta-alpfa {
+		background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+		color: white;
+		padding: 2rem;
+		border-radius: 12px;
+		margin: 2.5rem 0;
+		text-align: center;
+	}
+
+	.cta-alpfa h2 {
+		margin-top: 0;
+		color: white;
+	}
+
+	.cta-alpfa p {
+		color: rgba(255, 255, 255, 0.9);
+	}
+
+	.btn {
+		display: inline-block;
+		padding: 0.75rem 1.5rem;
+		border-radius: 8px;
+		text-decoration: none;
+		font-weight: 600;
+		border: 2px solid white;
+		color: white;
+		transition: background 0.2s, color 0.2s;
+	}
+
+	.btn:hover {
+		background: white;
+		color: var(--color-primary-dark);
+	}
+
+	.btn.primary {
+		background: white;
+		color: var(--color-primary-dark);
+	}
+
+	.btn.primary:hover {
+		background: rgba(255, 255, 255, 0.9);
+	}
+
+	.whats-next {
+		margin-top: 2.5rem;
 	}
 
 	@media (max-width: 600px) {

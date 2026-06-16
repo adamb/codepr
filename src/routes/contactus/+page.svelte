@@ -1,10 +1,18 @@
 <script lang="ts">
 	import SEO from '$lib/SEO.svelte';
+	import type { ActionData } from './$types';
+
+	interface Props {
+		form: ActionData;
+	}
+
+	let { form }: Props = $props();
 </script>
 
 <SEO
 	title="Contact Us"
 	description="Contact us about anything related to our company or services. We'll do our best to get back to you as soon as possible."
+	canonical="https://code.pr/contactus"
 />
 
 <h1>Contact us</h1>
@@ -58,41 +66,43 @@
 <section class="form-section">
 	<h2>Send us a message</h2>
 
-	<form class="contact-form" action="mailto:info@code.pr" method="GET" enctype="text/plain">
+	{#if form?.message}
+		<div class="form-error" role="alert">
+			<p>{form.message}</p>
+		</div>
+	{/if}
+
+	<form class="contact-form" method="POST" action="?/contact">
 		<div class="form-row">
 			<div class="form-group">
 				<label for="name">Name *</label>
-				<input type="text" id="name" name="name" required />
+				<input type="text" id="name" name="name" value={form?.values?.name ?? ''} required />
 			</div>
 			<div class="form-group">
 				<label for="phone">Phone Number</label>
-				<input type="tel" id="phone" name="phone" />
+				<input type="tel" id="phone" name="phone" value={form?.values?.phone ?? ''} />
 			</div>
 		</div>
 
 		<div class="form-row">
 			<div class="form-group">
 				<label for="email">Email *</label>
-				<input type="email" id="email" name="email" required />
+				<input type="email" id="email" name="email" value={form?.values?.email ?? ''} required />
 			</div>
 			<div class="form-group">
 				<label for="company">Company</label>
-				<input type="text" id="company" name="company" />
+				<input type="text" id="company" name="company" value={form?.values?.company ?? ''} />
 			</div>
 		</div>
 
 		<div class="form-group">
 			<label for="subject">Subject *</label>
-			<input type="text" id="subject" name="subject" required />
+			<input type="text" id="subject" name="subject" value={form?.values?.subject ?? ''} required />
 		</div>
 
 		<div class="form-group">
 			<label for="question">Question *</label>
-			<textarea id="question" name="question" rows="6" required></textarea>
-		</div>
-
-		<div class="form-group checkbox">
-			<label for="email-to"><input type="checkbox" id="email-to" name="email-to" /> Email To</label>
+			<textarea id="question" name="question" rows="6" required>{form?.values?.question ?? ''}</textarea>
 		</div>
 
 		<button type="submit" class="btn primary">Send Message →</button>
@@ -141,7 +151,7 @@
 	.contact-item strong {
 		display: block;
 		margin-bottom: 0.25rem;
-		color: #667eea;
+		color: var(--color-primary);
 	}
 
 	.contact-item p {
@@ -154,7 +164,7 @@
 	}
 
 	.contact-item a:hover {
-		color: #667eea;
+		color: var(--color-primary);
 	}
 
 	.map {
@@ -164,6 +174,19 @@
 
 	.form-section {
 		max-width: 700px;
+	}
+
+	.form-error {
+		background: #fff5f5;
+		border: 1px solid #feb2b2;
+		border-radius: 8px;
+		padding: 1rem 1.25rem;
+		margin-bottom: 1.5rem;
+		color: #c53030;
+	}
+
+	.form-error p {
+		margin: 0;
 	}
 
 	.contact-form {
@@ -201,16 +224,8 @@
 	.form-group input:focus,
 	.form-group textarea:focus {
 		outline: none;
-		border-color: #667eea;
-		box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
-	}
-
-	.checkbox label {
-		display: flex;
-		align-items: center;
-		gap: 0.5rem;
-		font-weight: 400;
-		cursor: pointer;
+		border-color: var(--color-primary);
+		box-shadow: 0 0 0 3px rgba(27, 169, 202, 0.1);
 	}
 
 	.btn {
@@ -219,16 +234,17 @@
 		border-radius: 8px;
 		text-decoration: none;
 		font-weight: 600;
-		border: 2px solid #667eea;
-		background: #667eea;
+		border: 2px solid var(--color-primary);
+		background: var(--color-primary);
 		color: white;
 		cursor: pointer;
 		font-size: 1rem;
+		transition: background 0.2s, border-color 0.2s;
 	}
 
 	.btn:hover {
-		background: #5568d3;
-		border-color: #5568d3;
+		background: var(--color-primary-dark);
+		border-color: var(--color-primary-dark);
 	}
 
 	@media (max-width: 768px) {

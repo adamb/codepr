@@ -5,6 +5,7 @@
 <SEO
 	title="Privacy Policy"
 	description="Code Puerto Rico's Privacy Policy explains what we collect, how we use it, and the choices you have."
+	canonical="https://code.pr/privacy-policy"
 />
 
 <article class="privacy">

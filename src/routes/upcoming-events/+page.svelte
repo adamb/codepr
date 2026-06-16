@@ -5,6 +5,7 @@
 <SEO
 	title="Upcoming Events"
 	description="Welcome to Code Puerto Rico's upcoming lineup of events! Demo Days, workshops, lightning talks, and community meetups in San Juan."
+	canonical="https://code.pr/upcoming-events"
 />
 
 <h1>Code Puerto Rico: Events</h1>
@@ -15,35 +16,37 @@
 </p>
 
 <section class="upcoming" id="upcoming">
-	<h2>📅 Upcoming Events</h2>
+	<h2>Upcoming Events</h2>
 
-	<table class="events-table">
-		<thead>
-			<tr>
-				<th>Event</th>
-				<th>Date & Time</th>
-				<th>Location</th>
-				<th>Admission</th>
-				<th>Registration</th>
-			</tr>
-		</thead>
-		<tbody>
-			<tr>
-				<td><strong>Demo Day — Cohort 28</strong></td>
-				<td><strong>Friday, July 31, 2026</strong><br />9:00 AM - 12:00 PM</td>
-				<td><a href="https://maps.app.goo.gl/e6p69iQqdQpftG4g9" target="_blank" rel="noopener">Code Puerto Rico, San Juan</a></td>
-				<td>Free</td>
-				<td><a href="mailto:info@code.pr">info@code.pr</a></td>
-			</tr>
-			<tr>
-				<td><strong>Demo Day — Cohort 29</strong></td>
-				<td><strong>Friday, November 13, 2026</strong><br />9:00 AM - 12:00 PM</td>
-				<td><a href="https://maps.app.goo.gl/e6p69iQqdQpftG4g9" target="_blank" rel="noopener">Code Puerto Rico, San Juan</a></td>
-				<td>Free</td>
-				<td><a href="mailto:info@code.pr">info@code.pr</a></td>
-			</tr>
-		</tbody>
-	</table>
+	<div class="table-wrapper">
+		<table class="events-table">
+			<thead>
+				<tr>
+					<th>Event</th>
+					<th>Date & Time</th>
+					<th>Location</th>
+					<th>Admission</th>
+					<th>Registration</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td data-label="Event"><strong>Demo Day — Cohort 28</strong></td>
+					<td data-label="Date & Time"><strong>Friday, July 31, 2026</strong><br />9:00 AM - 12:00 PM</td>
+					<td data-label="Location"><a href="https://maps.app.goo.gl/e6p69iQqdQpftG4g9" target="_blank" rel="noopener">Code Puerto Rico, San Juan</a></td>
+					<td data-label="Admission">Free</td>
+					<td data-label="Registration">Email info@code.pr</td>
+				</tr>
+				<tr>
+					<td data-label="Event"><strong>Demo Day — Cohort 29</strong></td>
+					<td data-label="Date & Time"><strong>Friday, November 13, 2026</strong><br />9:00 AM - 12:00 PM</td>
+					<td data-label="Location"><a href="https://maps.app.goo.gl/e6p69iQqdQpftG4g9" target="_blank" rel="noopener">Code Puerto Rico, San Juan</a></td>
+					<td data-label="Admission">Free</td>
+					<td data-label="Registration">Email info@code.pr</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
 
 	<blockquote>
 		<strong>Demo Day Purpose:</strong> “Opportunity to meet and recruit emerging tech talent, demo their capstone projects, and network with the local tech community. Join us to celebrate our newest graduates from the Software Engineering Intensive Program as they begin their tech career!”
@@ -51,56 +54,58 @@
 </section>
 
 <section class="past" id="past">
-	<h2>🕒 Past Events</h2>
+	<h2>Past Events</h2>
 
-	<table class="events-table">
-		<thead>
-			<tr>
-				<th>Event</th>
-				<th>Date & Time</th>
-				<th>Location</th>
-				<th>Admission</th>
-				<th>Link</th>
-			</tr>
-		</thead>
-		<tbody>
-			<tr>
-				<td><strong>Defenestration Workshop: Installing Linux on Your PC</strong></td>
-				<td>Tuesday, May 26, 2026<br />6:00 PM - 8:00 PM AST</td>
-				<td><a href="https://maps.app.goo.gl/e6p69iQqdQpftG4g9" target="_blank" rel="noopener">Code Puerto Rico, San Juan</a></td>
-				<td>Free</td>
-				<td><a href="/workshops/linux-workshop">View Details →</a></td>
-			</tr>
-			<tr>
-				<td><strong>Tech Lightning Talks</strong></td>
-				<td>Thursday, May 14, 2026<br />5:00 PM - 7:00 PM AST</td>
-				<td><a href="https://maps.app.goo.gl/e6p69iQqdQpftG4g9" target="_blank" rel="noopener">Code Puerto Rico, San Juan</a></td>
-				<td>Free</td>
-				<td><a href="https://luma.com/b8vxm247" target="_blank" rel="noopener">View on Luma →</a></td>
-			</tr>
-			<tr>
-				<td><strong>Tech Lightning Talks</strong></td>
-				<td>Thursday, April 9, 2026<br />5:00 PM - 7:00 PM EDT</td>
-				<td><a href="https://maps.app.goo.gl/e6p69iQqdQpftG4g9" target="_blank" rel="noopener">Code Puerto Rico, San Juan</a></td>
-				<td>Free</td>
-				<td><a href="https://luma.com/iaoka3rx" target="_blank" rel="noopener">View on Luma →</a></td>
-			</tr>
-			<tr>
-				<td><strong>AI Across Industries: Two Pathways to Careers in Puerto Rico</strong></td>
-				<td>Wednesday, April 8, 2026</td>
-				<td><a href="https://maps.app.goo.gl/e6p69iQqdQpftG4g9" target="_blank" rel="noopener">Code Puerto Rico, San Juan</a></td>
-				<td>Free</td>
-				<td><a href="https://www.eventbrite.com/e/ai-across-industries-two-pathways-to-careers-in-puerto-rico-tickets-1985248253969?aff=oddtdtcreator" target="_blank" rel="noopener">View on Eventbrite →</a></td>
-			</tr>
-			<tr>
-				<td><strong>Tech Lightning Talks</strong></td>
-				<td>Thursday, February 26, 2026<br />5:00 PM - 7:00 PM AST</td>
-				<td><a href="https://maps.app.goo.gl/e6p69iQqdQpftG4g9" target="_blank" rel="noopener">Code Puerto Rico, San Juan</a></td>
-				<td>Free</td>
-				<td><a href="https://luma.com/mvc2tiql" target="_blank" rel="noopener">View on Luma →</a></td>
-			</tr>
-		</tbody>
-	</table>
+	<div class="table-wrapper">
+		<table class="events-table">
+			<thead>
+				<tr>
+					<th>Event</th>
+					<th>Date & Time</th>
+					<th>Location</th>
+					<th>Admission</th>
+					<th>Link</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td data-label="Event"><strong>Defenestration Workshop: Installing Linux on Your PC</strong></td>
+					<td data-label="Date & Time">Tuesday, May 26, 2026<br />6:00 PM - 8:00 PM AST</td>
+					<td data-label="Location"><a href="https://maps.app.goo.gl/e6p69iQqdQpftG4g9" target="_blank" rel="noopener">Code Puerto Rico, San Juan</a></td>
+					<td data-label="Admission">Free</td>
+					<td data-label="Link"><a href="/workshops/linux-workshop">View Details →</a></td>
+				</tr>
+				<tr>
+					<td data-label="Event"><strong>Tech Lightning Talks</strong></td>
+					<td data-label="Date & Time">Thursday, May 14, 2026<br />5:00 PM - 7:00 PM AST</td>
+					<td data-label="Location"><a href="https://maps.app.goo.gl/e6p69iQqdQpftG4g9" target="_blank" rel="noopener">Code Puerto Rico, San Juan</a></td>
+					<td data-label="Admission">Free</td>
+					<td data-label="Link"><a href="https://luma.com/b8vxm247" target="_blank" rel="noopener">View on Luma →</a></td>
+				</tr>
+				<tr>
+					<td data-label="Event"><strong>Tech Lightning Talks</strong></td>
+					<td data-label="Date & Time">Thursday, April 9, 2026<br />5:00 PM - 7:00 PM EDT</td>
+					<td data-label="Location"><a href="https://maps.app.goo.gl/e6p69iQqdQpftG4g9" target="_blank" rel="noopener">Code Puerto Rico, San Juan</a></td>
+					<td data-label="Admission">Free</td>
+					<td data-label="Link"><a href="https://luma.com/iaoka3rx" target="_blank" rel="noopener">View on Luma →</a></td>
+				</tr>
+				<tr>
+					<td data-label="Event"><strong>AI Across Industries: Two Pathways to Careers in Puerto Rico</strong></td>
+					<td data-label="Date & Time">Wednesday, April 8, 2026</td>
+					<td data-label="Location"><a href="https://maps.app.goo.gl/e6p69iQqdQpftG4g9" target="_blank" rel="noopener">Code Puerto Rico, San Juan</a></td>
+					<td data-label="Admission">Free</td>
+					<td data-label="Link"><a href="https://www.eventbrite.com/e/ai-across-industries-two-pathways-to-careers-in-puerto-rico-tickets-1985248253969?aff=oddtdtcreator" target="_blank" rel="noopener">View on Eventbrite →</a></td>
+				</tr>
+				<tr>
+					<td data-label="Event"><strong>Tech Lightning Talks</strong></td>
+					<td data-label="Date & Time">Thursday, February 26, 2026<br />5:00 PM - 7:00 PM AST</td>
+					<td data-label="Location"><a href="https://maps.app.goo.gl/e6p69iQqdQpftG4g9" target="_blank" rel="noopener">Code Puerto Rico, San Juan</a></td>
+					<td data-label="Admission">Free</td>
+					<td data-label="Link"><a href="https://luma.com/mvc2tiql" target="_blank" rel="noopener">View on Luma →</a></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
 
 	<h3>Workshops & Panels</h3>
 	<div class="event">
@@ -151,7 +156,7 @@
 </section>
 
 <section class="recurring" id="recurring">
-	<h2>🔄 Recurring Events (Notify Me)</h2>
+	<h2>Recurring Events (Notify Me)</h2>
 	<p class="description">These events don't have dates yet. Check the ones you're interested in, and we'll notify you when they're scheduled.</p>
 
 	<form class="notify-form" action="/upcoming-events-thanks" method="GET">
@@ -176,27 +181,23 @@
 	</ul>
 </section>
 
-<section class="community" id="community">
-	<h2>🤝 Community Opportunities</h2>
+<section class="hosting" id="hosting">
+	<h2>Host Your Own Event</h2>
+	<ul>
+		<li><strong>Availability:</strong> Space open for meetups, workshops, hackathons, and study groups.</li>
+		<li><strong>Cost:</strong> Events strengthening the local tech community can be hosted at <strong>little or no cost</strong>.</li>
+		<li><strong>Support:</strong> Space and support provided by Code Puerto Rico.</li>
+	</ul>
+</section>
 
-	<div class="opportunity">
-		<h3>Host Your Own Event</h3>
-		<ul>
-			<li><strong>Availability:</strong> Space open for meetups, workshops, hackathons, and study groups.</li>
-			<li><strong>Cost:</strong> Events strengthening the local tech community can be hosted at <strong>little or no cost</strong>.</li>
-			<li><strong>Support:</strong> Space and support provided by Code Puerto Rico.</li>
-		</ul>
-	</div>
-
-	<div class="opportunity">
-		<h3>Invited Tech Talks</h3>
-		<ul>
-			<li><strong>Focus:</strong> World-class entrepreneurs and innovators sharing journeys, insights, and lessons.</li>
-			<li><strong>Topics:</strong> Global impact companies (AI transcription, medical imaging, etc.).</li>
-			<li><strong>Format:</strong> Presentation + Q&A session for direct connection.</li>
-			<li><strong>Status:</strong> Stay tuned for upcoming sessions.</li>
-		</ul>
-	</div>
+<section class="talks" id="talks">
+	<h2>Invited Tech Talks</h2>
+	<ul>
+		<li><strong>Focus:</strong> World-class entrepreneurs and innovators sharing journeys, insights, and lessons.</li>
+		<li><strong>Topics:</strong> Global impact companies (AI transcription, medical imaging, etc.).</li>
+		<li><strong>Format:</strong> Presentation + Q&A session for direct connection.</li>
+		<li><strong>Status:</strong> Stay tuned for upcoming sessions.</li>
+	</ul>
 </section>
 
 <style>
@@ -207,7 +208,7 @@
 	}
 
 	.lead a {
-		color: #667eea;
+		color: var(--color-primary);
 	}
 
 	section {
@@ -220,8 +221,15 @@
 		border-radius: 12px;
 	}
 
+	.table-wrapper {
+		width: 100%;
+		overflow-x: auto;
+		-webkit-overflow-scrolling: touch;
+	}
+
 	.events-table {
 		width: 100%;
+		min-width: 640px;
 		border-collapse: collapse;
 		background: white;
 		border-radius: 8px;
@@ -237,13 +245,13 @@
 	}
 
 	.events-table th {
-		background: #667eea;
+		background: var(--color-primary);
 		color: white;
 		font-weight: 600;
 	}
 
 	blockquote {
-		border-left: 4px solid #667eea;
+		border-left: 4px solid var(--color-primary);
 		padding-left: 1.5rem;
 		margin: 1.5rem 0;
 		color: #666;
@@ -259,11 +267,11 @@
 
 	.event h4 {
 		margin: 0 0 0.5rem 0;
-		color: #667eea;
+		color: var(--color-primary);
 	}
 
 	.event a {
-		color: #667eea;
+		color: var(--color-primary);
 		font-weight: 600;
 	}
 
@@ -308,16 +316,27 @@
 		border-radius: 8px;
 		text-decoration: none;
 		font-weight: 600;
-		border: 2px solid #667eea;
+		border: 2px solid var(--color-primary);
 		background: transparent;
-		color: #667eea;
+		color: var(--color-primary);
 		cursor: pointer;
 		font-size: 1rem;
+		transition: background 0.2s, color 0.2s, border-color 0.2s;
+	}
+
+	.btn:hover {
+		background: var(--color-primary);
+		color: white;
 	}
 
 	.btn.primary {
-		background: #667eea;
+		background: var(--color-primary);
 		color: white;
+	}
+
+	.btn.primary:hover {
+		background: var(--color-primary-dark);
+		border-color: var(--color-primary-dark);
 	}
 
 	.recurring-list {
@@ -331,28 +350,60 @@
 		margin-bottom: 1rem;
 	}
 
-	.community {
+	.hosting,
+	.talks {
 		padding: 2rem;
 		border: 1px solid #eaeaea;
 		border-radius: 12px;
 	}
 
-	.opportunity {
-		margin-bottom: 1.5rem;
-	}
-
-	.opportunity:last-child {
+	.hosting ul,
+	.talks ul {
 		margin-bottom: 0;
 	}
 
 	@media (max-width: 768px) {
-		.events-table {
-			font-size: 0.875rem;
+		.events-table,
+		.events-table thead,
+		.events-table tbody,
+		.events-table th,
+		.events-table td,
+		.events-table tr {
+			display: block;
 		}
 
-		.events-table th,
+		.events-table {
+			min-width: unset;
+		}
+
+		.events-table thead {
+			position: absolute;
+			left: -9999px;
+		}
+
+		.events-table tr {
+			margin-bottom: 1rem;
+			border: 1px solid #eaeaea;
+			border-radius: 8px;
+			padding: 0.75rem;
+			background: white;
+		}
+
 		.events-table td {
-			padding: 0.5rem;
+			border: none;
+			border-bottom: 1px solid #f0f0f0;
+			padding: 0.5rem 0;
+			position: relative;
+		}
+
+		.events-table td:last-child {
+			border-bottom: none;
+		}
+
+		.events-table td::before {
+			content: attr(data-label) ': ';
+			font-weight: 600;
+			color: var(--color-text);
 		}
 	}
 </style>

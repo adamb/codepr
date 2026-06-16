@@ -3,15 +3,15 @@
 </script>
 
 <SEO
-	title="Thanks (Event Interest)"
-	description="Thanks for signing up. We just sent you a verification email."
-	canonical="https://code.pr/upcoming-events-thanks"
+	title="Thanks for Contacting Us"
+	description="Thank you for reaching out to Code Puerto Rico. We'll get back to you as soon as possible."
+	canonical="https://code.pr/contactus-thank-you"
 />
 
 <section class="thanks">
-	<h1>Almost there!</h1>
-	<p>We just sent you a verification email. Click the link in it to confirm your signup. Check your spam folder if you don't see it within a few minutes.</p>
-	<a href="/upcoming-events" class="btn">Back to Events</a>
+	<h1>Thanks for reaching out!</h1>
+	<p>We've received your message and will get back to you as soon as possible.</p>
+	<a href="/" class="btn">Back to Home</a>
 </section>
 
 <style>
@@ -40,6 +40,10 @@
 		text-decoration: none;
 		font-weight: 600;
 		background: var(--color-primary);
-		color: white;
+		color: #fff;
+	}
+
+	.btn:hover {
+		background: var(--color-primary-dark);
 	}
 </style>

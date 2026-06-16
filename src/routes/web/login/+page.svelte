@@ -2,7 +2,11 @@
 	import SEO from '$lib/SEO.svelte';
 </script>
 
-<SEO title="Sign in" description="Sign in to Code Puerto Rico." />
+<SEO
+	title="Sign in"
+	description="Sign in to Code Puerto Rico."
+	canonical="https://code.pr/web/login"
+/>
 
 <section class="login">
 	<h1>Sign in</h1>
@@ -34,7 +38,7 @@
 		border-radius: 8px;
 		text-decoration: none;
 		font-weight: 600;
-		background: #667eea;
+		background: var(--color-primary);
 		color: white;
 	}
 </style>

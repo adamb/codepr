@@ -56,6 +56,7 @@
 <SEO
 	title="Pricing"
 	description="Coworking, virtual office, and event space pricing at Code Puerto Rico in San Juan."
+	canonical="https://code.pr/pricing"
 />
 
 <h1>Pricing</h1>
@@ -116,7 +117,7 @@
 	.price {
 		font-size: 1.75rem;
 		font-weight: 800;
-		color: #667eea;
+		color: var(--color-primary);
 		margin: 0 0 1rem;
 	}
 
@@ -131,19 +132,30 @@
 		border-radius: 8px;
 		text-decoration: none;
 		font-weight: 600;
-		border: 2px solid #667eea;
-		color: #667eea;
+		border: 2px solid var(--color-primary);
+		color: var(--color-primary);
 		text-align: center;
 		margin-top: 1rem;
+		transition: background 0.2s, color 0.2s, border-color 0.2s;
+	}
+
+	.btn:hover {
+		background: var(--color-primary);
+		color: white;
 	}
 
 	.btn.primary {
-		background: #667eea;
+		background: var(--color-primary);
 		color: white;
+	}
+
+	.btn.primary:hover {
+		background: var(--color-primary-dark);
+		border-color: var(--color-primary-dark);
 	}
 
 	.day-pass {
 		background: #f8f9fa;
-		border-color: #667eea;
+		border-color: var(--color-primary);
 	}
 </style>

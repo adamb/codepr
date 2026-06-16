@@ -5,6 +5,7 @@
 <SEO
 	title="Workshops"
 	description="Hands-on learning at Code Puerto Rico. Free technical workshops open to beginners — just bring curiosity and a willingness to learn."
+	canonical="https://code.pr/workshops"
 />
 
 <h1>Workshops</h1>
@@ -38,6 +39,10 @@
 		color: #666;
 	}
 
+	.intro h2 {
+		color: var(--color-primary);
+	}
+
 	.workshop-list {
 		margin: 2rem 0 3rem;
 	}
@@ -51,7 +56,7 @@
 
 	.workshop h3 {
 		margin-top: 0;
-		color: #667eea;
+		color: var(--color-primary);
 	}
 
 	.btn {
@@ -60,18 +65,29 @@
 		border-radius: 8px;
 		text-decoration: none;
 		font-weight: 600;
-		border: 2px solid #667eea;
-		color: #667eea;
+		border: 2px solid var(--color-primary);
+		color: var(--color-primary);
 		margin-top: 1rem;
+		transition: background 0.2s, color 0.2s, border-color 0.2s;
 	}
 
-	.btn.primary {
-		background: #667eea;
+	.btn:hover {
+		background: var(--color-primary);
 		color: white;
 	}
 
+	.btn.primary {
+		background: var(--color-primary);
+		color: white;
+	}
+
+	.btn.primary:hover {
+		background: var(--color-primary-dark);
+		border-color: var(--color-primary-dark);
+	}
+
 	.cta {
-		background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+		background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
 		color: white;
 		padding: 2.5rem;
 		border-radius: 12px;
@@ -85,5 +101,19 @@
 	.cta .btn {
 		border-color: white;
 		color: white;
+	}
+
+	.cta .btn:hover {
+		background: white;
+		color: var(--color-primary-dark);
+	}
+
+	.cta .btn.primary {
+		background: white;
+		color: var(--color-primary-dark);
+	}
+
+	.cta .btn.primary:hover {
+		background: rgba(255, 255, 255, 0.9);
 	}
 </style>

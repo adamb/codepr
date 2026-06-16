@@ -1,10 +1,18 @@
 <script lang="ts">
 	import SEO from '$lib/SEO.svelte';
+	import type { ActionData } from './$types';
+
+	interface Props {
+		form: ActionData;
+	}
+
+	let { form }: Props = $props();
 </script>
 
 <SEO
 	title="Linux Workshop"
 	description="Defenestration Workshop: Installing Linux on Your PC. A free, hands-on workshop at Code Puerto Rico."
+	canonical="https://code.pr/workshops/linux-workshop"
 />
 
 <h1>Defenestration Workshop: Installing Linux on Your PC</h1>
@@ -44,12 +52,30 @@
 
 <section class="registration">
 	<h2>Register for this workshop</h2>
-	<form class="registration-form" action="mailto:info@code.pr" method="GET" enctype="text/plain">
+
+	{#if form?.message}
+		<div class="form-error" role="alert">
+			<p>{form.message}</p>
+		</div>
+	{/if}
+
+	<form class="registration-form" method="POST" action="?/register">
+		<div class="form-row">
+			<div class="form-group">
+				<label for="name">Name *</label>
+				<input type="text" id="name" name="name" value={form?.values?.name ?? ''} required />
+			</div>
+			<div class="form-group">
+				<label for="email">Email *</label>
+				<input type="email" id="email" name="email" value={form?.values?.email ?? ''} required />
+			</div>
+		</div>
+
 		<label class="checkbox">
-			<input type="checkbox" required />
+			<input type="checkbox" name="acknowledgment" required />
 			<span>I understand I must bring my own <strong>working condition</strong> PC (not a MacBook), even if it’s old or slow. Linux will be installed on it, which will <strong>remove all existing data</strong>. I have backed up everything I need.</span>
 		</label>
-		<button type="submit" class="btn primary">Register via Email →</button>
+		<button type="submit" class="btn primary">Register →</button>
 	</form>
 </section>
 
@@ -92,6 +118,38 @@
 		border-radius: 12px;
 	}
 
+	.form-row {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 1rem;
+		margin-bottom: 1.5rem;
+	}
+
+	.form-group {
+		display: flex;
+		flex-direction: column;
+		gap: 0.5rem;
+	}
+
+	.form-group label {
+		font-weight: 600;
+		color: #333;
+	}
+
+	.form-group input {
+		padding: 0.75rem;
+		border: 1px solid #eaeaea;
+		border-radius: 8px;
+		font-size: 1rem;
+		font-family: inherit;
+	}
+
+	.form-group input:focus {
+		outline: none;
+		border-color: var(--color-primary);
+		box-shadow: 0 0 0 3px rgba(27, 169, 202, 0.1);
+	}
+
 	.checkbox {
 		display: flex;
 		align-items: flex-start;
@@ -104,21 +162,41 @@
 		margin-top: 0.25rem;
 	}
 
+	.form-error {
+		background: #fff5f5;
+		border: 1px solid #feb2b2;
+		border-radius: 8px;
+		padding: 1rem 1.25rem;
+		margin-bottom: 1.5rem;
+		color: #c53030;
+	}
+
+	.form-error p {
+		margin: 0;
+	}
+
 	.btn {
 		display: inline-block;
 		padding: 0.75rem 1.5rem;
 		border-radius: 8px;
 		text-decoration: none;
 		font-weight: 600;
-		border: 2px solid #667eea;
-		background: #667eea;
+		border: 2px solid var(--color-primary);
+		background: var(--color-primary);
 		color: white;
 		cursor: pointer;
 		font-size: 1rem;
+		transition: background 0.2s, border-color 0.2s;
 	}
 
 	.btn:hover {
-		background: #5568d3;
-		border-color: #5568d3;
+		background: var(--color-primary-dark);
+		border-color: var(--color-primary-dark);
+	}
+
+	@media (max-width: 768px) {
+		.form-row {
+			grid-template-columns: 1fr;
+		}
 	}
 </style>

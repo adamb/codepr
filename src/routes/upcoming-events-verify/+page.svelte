@@ -5,6 +5,7 @@
 <SEO
 	title="Email Verification"
 	description="Event signup verification."
+	canonical="https://code.pr/upcoming-events-verify"
 />
 
 <section class="verify">
@@ -38,7 +39,7 @@
 		border-radius: 8px;
 		text-decoration: none;
 		font-weight: 600;
-		background: #667eea;
+		background: var(--color-primary);
 		color: white;
 	}
 </style>

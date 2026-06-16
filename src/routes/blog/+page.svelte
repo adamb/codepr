@@ -5,6 +5,7 @@
 <SEO
 	title="Blog"
 	description="Event recaps, community voices, and lessons from the builders at Code Puerto Rico."
+	canonical="https://code.pr/blog"
 />
 
 <h1>Code Puerto Rico Blog</h1>
@@ -80,7 +81,7 @@
 	}
 
 	.post h2 a:hover {
-		color: #667eea;
+		color: var(--color-primary);
 	}
 
 	.excerpt {

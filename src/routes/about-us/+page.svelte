@@ -44,6 +44,7 @@
 <SEO
 	title="About Us"
 	description="Code Puerto Rico is the umbrella organization for Holberton Coding School Puerto Rico and a growing coworking + events community in San Juan."
+	canonical="https://code.pr/about-us"
 />
 
 <section class="page-title">

@@ -5,6 +5,7 @@
 <SEO
 	title="Code Puerto Rico | Tech Hub, Coworking & Events in San Juan"
 	description="A tech hub in San Juan offering coworking, community events, and a space for builders, founders, and creatives. Join Puerto Rico's growing tech ecosystem."
+	canonical="https://code.pr/"
 />
 
 <!-- Hero Cover -->
