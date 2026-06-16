@@ -46,81 +46,153 @@
 	description="Code Puerto Rico is the umbrella organization for Holberton Coding School Puerto Rico and a growing coworking + events community in San Juan."
 />
 
-<h1>Where Puerto Rico Builds Tech</h1>
+<section class="page-title">
+	<div class="container">
+		<h1>Where Puerto Rico Builds Tech</h1>
+	</div>
+</section>
 
 <section class="intro">
-	<h2>About Code Puerto Rico</h2>
-	<p class="lead">Code Puerto Rico is the parent organization behind Holberton Coding School Puerto Rico and our growing coworking + events community. We share one space in San Juan: the school trains the next generation of developers, and Code PR opens the doors to builders, founders, and the broader tech community.</p>
-	<p>Whether you're here to take a class, rent a desk, host a meetup, or just meet other people building things in Puerto Rico — you're in the right place.</p>
+	<div class="container">
+		<div class="intro-inner">
+			<h2>About Code Puerto Rico</h2>
+			<p class="lead">Code Puerto Rico is the parent organization behind Holberton Coding School Puerto Rico and our growing coworking + events community. We share one space in San Juan: the school trains the next generation of developers, and Code PR opens the doors to builders, founders, and the broader tech community.</p>
+			<p>Whether you're here to take a class, rent a desk, host a meetup, or just meet other people building things in Puerto Rico — you're in the right place.</p>
+		</div>
+	</div>
 </section>
 
 <section class="team">
-	<h2>Meet Our Team</h2>
+	<div class="container">
+		<h3>Meet Our Team</h3>
+		<p class="lead team-subtitle">Community-driven environment fostering collaboration</p>
 
-	<div class="team-grid">
-		{#each team as member}
-			<div class="team-member">
-				<img src={member.photo} alt={member.name} class="photo" width="300" height="300" />
-				<h3>{member.name}</h3>
-				<p class="role">{member.role}</p>
-				<p>{member.bio}</p>
-			</div>
-		{/each}
+		<div class="team-grid">
+			{#each team as member}
+				<div class="team-member">
+					<img src={member.photo} alt={member.name} class="photo" width="300" height="300" />
+					<div class="team-info">
+						<h4>{member.name}</h4>
+						<p class="role">{member.role}</p>
+						<p class="bio">{member.bio}</p>
+					</div>
+				</div>
+			{/each}
+		</div>
 	</div>
 </section>
 
 <style>
-	.lead {
-		font-size: 1.25rem;
-		color: #666;
-		line-height: 1.8;
+	.page-title {
+		background: rgba(0, 0, 0, 0.5);
+		padding: 48px 0;
+		width: 100%;
+		color: #fff;
+		text-align: center;
+	}
+
+	.page-title h1 {
+		color: #fff;
+		margin-bottom: 0;
+		font-size: 2.5rem;
+		font-weight: 700;
 	}
 
 	.intro {
-		margin-bottom: 3rem;
+		padding: 48px 0 24px;
+	}
+
+	.intro-inner {
+		max-width: 83.3333%;
+	}
+
+	.intro h2 {
+		font-size: 2rem;
+		font-weight: 700;
+		margin-bottom: 1rem;
+	}
+
+	.intro .lead {
+		font-size: 1.125rem;
+		font-weight: 300;
+		color: var(--color-text-muted);
+		line-height: 1.6;
+	}
+
+	.intro p {
+		font-size: 1rem;
+		line-height: 1.6;
 	}
 
 	.team {
-		margin-top: 4rem;
+		padding: 48px 0 64px;
+	}
+
+	.team h3 {
+		font-size: 1.75rem;
+		font-weight: 700;
+		margin-bottom: 0.5rem;
+	}
+
+	.team-subtitle {
+		font-size: 1.125rem;
+		font-weight: 300;
+		color: var(--color-text-muted);
+		margin-bottom: 2rem;
 	}
 
 	.team-grid {
 		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+		grid-template-columns: repeat(2, 1fr);
 		gap: 2rem;
 		margin-top: 2rem;
 	}
 
 	.team-member {
-		padding: 1.5rem;
-		border: 1px solid #eaeaea;
-		border-radius: 12px;
-		background: #fff;
+		display: flex;
+		gap: 1.5rem;
+		padding: 2rem 0;
 	}
 
 	.photo {
-		width: 100%;
-		height: 280px;
+		width: 110px;
+		height: 110px;
 		object-fit: cover;
-		border-radius: 8px;
-		margin-bottom: 1rem;
+		border-radius: 50%;
+		flex-shrink: 0;
 	}
 
-	.team-member h3 {
-		margin: 0 0 0.25rem 0;
+	.team-info h4 {
 		font-size: 1.25rem;
+		font-weight: 700;
+		margin: 0 0 0.25rem;
 	}
 
 	.role {
-		color: #667eea;
-		font-weight: 600;
-		margin: 0 0 1rem 0;
-		font-size: 0.875rem;
+		color: var(--color-text-muted);
+		font-size: 0.9rem;
+		margin: 0 0 0.75rem;
+	}
+
+	.bio {
+		font-size: 1rem;
+		line-height: 1.6;
+		margin-bottom: 0;
 	}
 
 	@media (max-width: 768px) {
-		.photo {
-			height: 240px;
+		.team-grid {
+			grid-template-columns: 1fr;
+		}
+
+		.team-member {
+			flex-direction: column;
+			align-items: center;
+			text-align: center;
+		}
+
+		.intro-inner {
+			max-width: 100%;
 		}
 	}
 </style>

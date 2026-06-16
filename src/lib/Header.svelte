@@ -23,7 +23,6 @@
 			{/each}
 		</ul>
 		<ul class="utility">
-			<li><a href="/web/login" class="signin">Sign in</a></li>
 			<li><a href="/contactus" class="contact">Contact Us</a></li>
 		</ul>
 	</nav>
@@ -66,12 +65,12 @@
 	.logo-link {
 		display: flex;
 		align-items: center;
-		padding: 0.5rem 0.75rem;
+		padding: 0.75rem 1rem;
 		border-right: 1px solid var(--color-border);
 	}
 
 	.logo-link img {
-		height: 40px;
+		height: 46px;
 		width: auto;
 		display: block;
 	}
@@ -93,10 +92,10 @@
 		display: flex;
 		align-items: center;
 		height: 100%;
-		padding: 0 0.75rem;
+		padding: 0 1rem;
 		color: #333;
 		font-weight: 400;
-		font-size: 1rem;
+		font-size: 1.05rem;
 		text-decoration: none;
 		transition: background 0.15s;
 	}
@@ -112,7 +111,7 @@
 		list-style: none;
 		margin: 0;
 		padding: 0;
-		font-size: 0.95rem;
+		font-size: 1rem;
 	}
 
 	.utility li {
@@ -120,25 +119,10 @@
 		align-items: stretch;
 	}
 
-	.signin {
-		display: flex;
-		align-items: center;
-		padding: 0 0.75rem;
-		color: #333;
-		font-weight: 700;
-		border-left: 1px solid var(--color-border);
-	}
-
-	.signin:hover {
-		background: #f8f9fa;
-		color: var(--color-primary);
-		text-decoration: none;
-	}
-
 	.contact {
 		display: flex;
 		align-items: center;
-		padding: 0 0.75rem;
+		padding: 0 1.25rem;
 		background: var(--color-primary);
 		color: #fff;
 		font-weight: 700;
