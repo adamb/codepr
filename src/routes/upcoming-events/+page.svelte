@@ -227,7 +227,7 @@
 	/* Sidebar */
 	.sidebar {
 		position: sticky;
-		top: 96px;
+		top: 68px;
 	}
 
 	.sidebar-nav {
