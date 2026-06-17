@@ -85,6 +85,7 @@ Odoo `res.partner.category` IDs:
 - 3 = Interest: Pitch and Prototype
 - 4 = Interest: Cloudflare Meetup
 - 5 = Interest: Home Assistant Meetup
+- 6 = Interest: Demo Day
 
 ### Odoo API client (`src/lib/odoo.ts`)
 Uses **XML-RPC** (not JSON-RPC). Odoo's `/web/session/authenticate` JSON-RPC endpoint rejects API keys — only XML-RPC `/xmlrpc/2/common` accepts them. The client includes a self-contained XML-RPC request builder and response parser (no dependencies).
