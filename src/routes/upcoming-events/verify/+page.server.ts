@@ -5,12 +5,12 @@ import { verifyToken } from '$lib/token';
 
 // res.partner.category IDs on code.pr Odoo instance
 const CATEGORY_IDS: Record<string, number> = {
+	demo_day: 6, // Interest: Demo Day
 	demo_nights: 1, // Interest: Demo Nights & Lightning Talks
 	ai_coding: 2, // Interest: AI Coding Tools
 	pitch_prototype: 3, // Interest: Pitch and Prototype
 	cloudflare: 4, // Interest: Cloudflare Meetup
 	home_assistant: 5 // Interest: Home Assistant Meetup
-	// demo_day has no category yet — skipped
 };
 
 function odooUrl() {
