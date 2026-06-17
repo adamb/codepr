@@ -20,7 +20,7 @@ This repository contains the source for **code.pr**, a SvelteKit website hosted 
 ```
 User → code.pr (Cloudflare Pages) → SvelteKit app
               ↓ server functions call
-         odoo.code.pr (Cloudflare Tunnel → Linode) → Odoo 17
+         odoo.code.pr (Cloudflare Tunnel → Linode) → Odoo 18
 ```
 
 ### Cloudflare Pages
@@ -33,7 +33,7 @@ User → code.pr (Cloudflare Pages) → SvelteKit app
 - URL: `https://odoo.code.pr`
 - Running on a Linode server via **Cloudflare Tunnel** (tunnel name: `odoo-prod`, systemd service `cloudflared`)
 - Tunnel config: `/etc/cloudflared/config.yml` on the Linode (`adam@odoo`)
-- Odoo 17, database: `cpr`
+- Odoo 18, database: `cpr`
 - Used only as CRM — not the public website anymore
 - Outgoing mail: Postfix → ImprovMX relay (configured in Odoo as mail server named "improvmx", `smtp_host: postfix`, port 25)
 
