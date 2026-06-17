@@ -34,7 +34,7 @@ export const load: PageServerLoad = async ({ url }) => {
 	const categoryIds = interests.map((i) => CATEGORY_IDS[i]).filter((id): id is number => id !== undefined);
 
 	try {
-		const { sessionId } = await authenticate(
+		const auth = await authenticate(
 			odooUrl(),
 			env.ODOO_DB ?? 'cpr',
 			env.ODOO_USER ?? '',
@@ -43,8 +43,7 @@ export const load: PageServerLoad = async ({ url }) => {
 
 		// Find existing partner by email
 		const existing = (await callKw(
-			odooUrl(),
-			sessionId,
+			auth,
 			'res.partner',
 			'search_read',
 			[[['email', '=', email]]],
@@ -54,13 +53,13 @@ export const load: PageServerLoad = async ({ url }) => {
 		if (existing.length) {
 			// Merge new category IDs with existing ones
 			const merged = [...new Set([...(existing[0].category_id ?? []), ...categoryIds])];
-			await callKw(odooUrl(), sessionId, 'res.partner', 'write', [
+			await callKw(auth, 'res.partner', 'write', [
 				[existing[0].id],
 				{ category_id: [[6, 0, merged]] }
 			]);
 		} else {
 			// Create new partner
-			await callKw(odooUrl(), sessionId, 'res.partner', 'create', [
+			await callKw(auth, 'res.partner', 'create', [
 				[
 					{
 						name,

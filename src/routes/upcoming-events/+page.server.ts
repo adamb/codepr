@@ -66,14 +66,14 @@ export const actions: Actions = {
 </div>`;
 
 		try {
-			const { sessionId } = await authenticate(
+			const auth = await authenticate(
 				odooUrl(),
 				env.ODOO_DB ?? 'cpr',
 				env.ODOO_USER ?? '',
 				env.ODOO_API_KEY ?? ''
 			);
 
-			const mailId = (await callKw(odooUrl(), sessionId, 'mail.mail', 'create', [
+			const mailId = (await callKw(auth, 'mail.mail', 'create', [
 				[
 					{
 						subject: 'Confirm your Code Puerto Rico event notifications',
@@ -85,7 +85,7 @@ export const actions: Actions = {
 				]
 			])) as number;
 
-			await callKw(odooUrl(), sessionId, 'mail.mail', 'send', [[mailId]]);
+			await callKw(auth, 'mail.mail', 'send', [[mailId]]);
 		} catch (err) {
 			console.error('Odoo mail error:', err);
 			return fail(503, {
