@@ -5,22 +5,25 @@ export interface OdooAuth {
 	db: string;
 	uid: number;
 	apiKey: string;
+	cfHeaders?: Record<string, string>;
 }
 
 export async function authenticate(
 	url: string,
 	db: string,
 	user: string,
-	apiKey: string
+	apiKey: string,
+	cfHeaders?: Record<string, string>
 ): Promise<OdooAuth> {
-	const uid = await xmlRpcCall<number>(url, '/xmlrpc/2/common', 'authenticate', [
-		db,
-		user,
-		apiKey,
-		{}
-	]);
+	const uid = await xmlRpcCall<number>(
+		url,
+		'/xmlrpc/2/common',
+		'authenticate',
+		[db, user, apiKey, {}],
+		cfHeaders
+	);
 	if (!uid) throw new Error('Odoo authentication failed: invalid credentials');
-	return { url, db, uid, apiKey };
+	return { url, db, uid, apiKey, cfHeaders };
 }
 
 export async function callKw(
@@ -30,15 +33,13 @@ export async function callKw(
 	args: unknown[],
 	kwargs: Record<string, unknown> = {}
 ): Promise<unknown> {
-	return xmlRpcCall(auth.url, '/xmlrpc/2/object', 'execute_kw', [
-		auth.db,
-		auth.uid,
-		auth.apiKey,
-		model,
-		method,
-		args,
-		kwargs
-	]);
+	return xmlRpcCall(
+		auth.url,
+		'/xmlrpc/2/object',
+		'execute_kw',
+		[auth.db, auth.uid, auth.apiKey, model, method, args, kwargs],
+		auth.cfHeaders
+	);
 }
 
 // ---- XML-RPC request builder ----
@@ -208,12 +209,13 @@ async function xmlRpcCall<T = unknown>(
 	url: string,
 	path: string,
 	method: string,
-	params: unknown[]
+	params: unknown[],
+	cfHeaders?: Record<string, string>
 ): Promise<T> {
 	const body = buildRequest(method, params);
 	const resp = await fetch(`${url}${path}`, {
 		method: 'POST',
-		headers: { 'Content-Type': 'text/xml', Accept: 'text/xml' },
+		headers: { 'Content-Type': 'text/xml', Accept: 'text/xml', ...cfHeaders },
 		body
 	});
 	if (!resp.ok) throw new Error(`Odoo HTTP ${resp.status}: ${resp.statusText}`);

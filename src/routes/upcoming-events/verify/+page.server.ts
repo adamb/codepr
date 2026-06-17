@@ -17,6 +17,13 @@ function odooUrl() {
 	return env.ODOO_URL ?? 'https://odoo.code.pr';
 }
 
+function cfAccessHeaders(e: typeof env): Record<string, string> {
+	const h: Record<string, string> = {};
+	if (e.CF_ACCESS_CLIENT_ID) h['CF-Access-Client-Id'] = e.CF_ACCESS_CLIENT_ID;
+	if (e.CF_ACCESS_CLIENT_SECRET) h['CF-Access-Client-Secret'] = e.CF_ACCESS_CLIENT_SECRET;
+	return h;
+}
+
 export const load: PageServerLoad = async ({ url }) => {
 	const token = url.searchParams.get('token');
 	if (!token) return { verified: false, message: 'No verification token provided.' };
@@ -38,7 +45,8 @@ export const load: PageServerLoad = async ({ url }) => {
 			odooUrl(),
 			env.ODOO_DB ?? 'cpr',
 			env.ODOO_USER ?? '',
-			env.ODOO_API_KEY ?? ''
+			env.ODOO_API_KEY ?? '',
+			cfAccessHeaders(env)
 		);
 
 		// Find existing partner by email

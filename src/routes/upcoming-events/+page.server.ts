@@ -17,6 +17,13 @@ function odooUrl() {
 	return env.ODOO_URL ?? 'https://odoo.code.pr';
 }
 
+function cfAccessHeaders(e: typeof env): Record<string, string> {
+	const h: Record<string, string> = {};
+	if (e.CF_ACCESS_CLIENT_ID) h['CF-Access-Client-Id'] = e.CF_ACCESS_CLIENT_ID;
+	if (e.CF_ACCESS_CLIENT_SECRET) h['CF-Access-Client-Secret'] = e.CF_ACCESS_CLIENT_SECRET;
+	return h;
+}
+
 export const actions: Actions = {
 	notify: async ({ request, url }) => {
 		const data = await request.formData();
@@ -70,7 +77,8 @@ export const actions: Actions = {
 				odooUrl(),
 				env.ODOO_DB ?? 'cpr',
 				env.ODOO_USER ?? '',
-				env.ODOO_API_KEY ?? ''
+				env.ODOO_API_KEY ?? '',
+				cfAccessHeaders(env)
 			);
 
 			const mailId = (await callKw(auth, 'mail.mail', 'create', [
