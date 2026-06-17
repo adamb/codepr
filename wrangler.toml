@@ -2,3 +2,8 @@ name = "codepr"
 compatibility_date = "2026-06-15"
 compatibility_flags = ["nodejs_compat"]
 pages_build_output_dir = ".svelte-kit/cloudflare"
+
+[vars]
+ODOO_URL = "https://odoo.code.pr"
+ODOO_DB = "cpr"
+ODOO_USER = "adam@code.pr"

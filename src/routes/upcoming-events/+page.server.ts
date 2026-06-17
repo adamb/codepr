@@ -14,7 +14,7 @@ const EVENT_LABELS: Record<string, string> = {
 };
 
 function odooUrl() {
-	return env.ODOO_URL ?? 'https://code.pr';
+	return env.ODOO_URL ?? 'https://odoo.code.pr';
 }
 
 export const actions: Actions = {

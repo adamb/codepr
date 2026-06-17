@@ -14,7 +14,7 @@ const CATEGORY_IDS: Record<string, number> = {
 };
 
 function odooUrl() {
-	return env.ODOO_URL ?? 'https://code.pr';
+	return env.ODOO_URL ?? 'https://odoo.code.pr';
 }
 
 export const load: PageServerLoad = async ({ url }) => {
