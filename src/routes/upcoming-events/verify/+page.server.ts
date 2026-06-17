@@ -60,14 +60,12 @@ export const load: PageServerLoad = async ({ url }) => {
 		} else {
 			// Create new partner
 			await callKw(auth, 'res.partner', 'create', [
-				[
-					{
-						name,
-						email,
-						category_id: [[6, 0, categoryIds]],
-						type: 'contact'
-					}
-				]
+				{
+					name,
+					email,
+					category_id: [[6, 0, categoryIds]],
+					type: 'contact'
+				}
 			]);
 		}
 	} catch (err) {

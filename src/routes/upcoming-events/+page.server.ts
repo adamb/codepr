@@ -74,15 +74,13 @@ export const actions: Actions = {
 			);
 
 			const mailId = (await callKw(auth, 'mail.mail', 'create', [
-				[
-					{
-						subject: 'Confirm your Code Puerto Rico event notifications',
-						email_to: email,
-						email_from: 'Code Puerto Rico <info@code.pr>',
-						body_html: bodyHtml,
-						auto_delete: true
-					}
-				]
+				{
+					subject: 'Confirm your Code Puerto Rico event notifications',
+					email_to: email,
+					email_from: 'Code Puerto Rico <info@code.pr>',
+					body_html: bodyHtml,
+					auto_delete: true
+				}
 			])) as number;
 
 			await callKw(auth, 'mail.mail', 'send', [[mailId]]);

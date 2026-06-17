@@ -194,6 +194,9 @@ function parseResponse(xml: string): unknown {
 	if (xml.includes('<fault>')) {
 		expect(c, '<fault>');
 		const fault = parseVal(c) as Record<string, unknown>;
+		// Odoo can't marshal None over XML-RPC (allow_none=False server-side).
+		// Void methods (like mail.mail.send) return None after succeeding — treat as null.
+		if (String(fault.faultString ?? '').includes('cannot marshal None')) return null;
 		throw new Error(`Odoo fault ${fault.faultCode}: ${fault.faultString}`);
 	}
 	expect(c, '<params>');
