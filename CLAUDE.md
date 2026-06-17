@@ -46,6 +46,9 @@ ingress:
 ```
 To restart after config changes: `sudo systemctl restart cloudflared`
 
+### Cloudflare Access (odoo.code.pr)
+`odoo.code.pr` is behind Cloudflare Access (Zero Trust). Employees log in with their `@code.pr` Google/email. The SvelteKit app bypasses the human auth flow using a **service token** — policy action must be **"Service Auth"** (not "Allow") on the `odoo.code.pr` application.
+
 ### DNS (code.pr zone — separate Cloudflare account)
 - `code.pr` → Cloudflare Pages (custom domain, managed by Pages)
 - `odoo.code.pr` → `odoo-prod` tunnel (CNAME to tunnel ID)
