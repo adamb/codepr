@@ -40,6 +40,13 @@
 					<span class="detail-label">Format</span>
 					<span>In-Person · Valet Parking Available</span>
 				</div>
+				<div class="detail-row">
+					<span class="detail-label">Cost</span>
+					<span>
+						<span class="price-early">$200 Early Bird <span class="price-deadline">— through July 2</span></span><br />
+						<span class="price-regular">$250 after July 2</span>
+					</span>
+				</div>
 			</div>
 
 			<section class="about">
@@ -92,7 +99,8 @@
 					<li>🎤 Strategic AI Leadership Briefing</li>
 					<li>💡 Live AI Demonstrations</li>
 					<li>🤝 Executive Networking Opportunities</li>
-					<li>🍷 Cocktail Reception Following the Seminar</li>
+					<li>🥘 Paella Dinner</li>
+					<li>🍷 Wine &amp; Cocktail Reception</li>
 					<li>🚗 Valet Parking Available</li>
 				</ul>
 			</section>
@@ -105,6 +113,13 @@
 					<div class="register-date">July 9, 2026</div>
 					<div class="register-time">3:30 PM – 7:00 PM AST</div>
 					<div class="register-venue">Aloft San Juan</div>
+				</div>
+				<div class="pricing-block">
+					<div class="pricing-early">
+						<span class="pricing-amount">$200</span>
+						<span class="pricing-label">Early Bird — ends July 2</span>
+					</div>
+					<div class="pricing-regular">$250 after July 2</div>
 				</div>
 				<a
 					href="https://www.eventbrite.com/e/1990812678312?aff=oddtdtcreator"
@@ -294,6 +309,57 @@
 	.register-venue {
 		color: rgba(255, 255, 255, 0.55);
 		font-size: 0.875rem;
+	}
+
+	/* Pricing in detail card */
+	.price-early {
+		font-weight: 700;
+		color: var(--color-primary);
+	}
+
+	.price-deadline {
+		font-weight: 400;
+		color: var(--color-text-muted);
+		font-size: 0.85em;
+	}
+
+	.price-regular {
+		font-size: 0.85rem;
+		color: var(--color-text-muted);
+	}
+
+	/* Pricing in register sidebar */
+	.pricing-block {
+		background: rgba(255, 255, 255, 0.05);
+		border: 1px solid rgba(255, 255, 255, 0.1);
+		border-radius: var(--radius);
+		padding: 1rem 1.125rem;
+		margin-bottom: 1.25rem;
+	}
+
+	.pricing-early {
+		display: flex;
+		align-items: baseline;
+		gap: 0.5rem;
+		margin-bottom: 0.25rem;
+	}
+
+	.pricing-amount {
+		font-size: 1.75rem;
+		font-weight: 800;
+		color: var(--color-primary);
+		font-family: var(--font-headings);
+		line-height: 1;
+	}
+
+	.pricing-label {
+		font-size: 0.8rem;
+		color: rgba(255, 255, 255, 0.6);
+	}
+
+	.pricing-regular {
+		font-size: 0.8rem;
+		color: rgba(255, 255, 255, 0.35);
 	}
 
 	.register-btn {

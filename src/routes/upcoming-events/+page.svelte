@@ -57,7 +57,7 @@
 								<td data-label="Event"><strong><a href="/events/ai-for-executives">AI for Executives: What Matters Now</a></strong></td>
 								<td data-label="Date & Time"><strong>Wednesday, July 9, 2026</strong><br />3:30 PM – 7:00 PM</td>
 								<td data-label="Location">Aloft San Juan, Convention Center District</td>
-								<td data-label="Admission">By invitation</td>
+								<td data-label="Admission">$200 early bird / $250</td>
 								<td data-label="Registration"><a href="https://www.eventbrite.com/e/1990812678312?aff=oddtdtcreator" target="_blank" rel="noopener">Eventbrite →</a></td>
 							</tr>
 							<tr>
