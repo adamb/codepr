@@ -49,6 +49,37 @@ To restart after config changes: `sudo systemctl restart cloudflared`
 ### Cloudflare Access (odoo.code.pr)
 `odoo.code.pr` is behind Cloudflare Access (Zero Trust). Employees log in with their `@code.pr` Google/email. The SvelteKit app bypasses the human auth flow using a **service token** — policy action must be **"Service Auth"** (not "Allow") on the `odoo.code.pr` application.
 
+Service token credentials are stored as:
+- Cloudflare Pages secrets: `CF_ACCESS_CLIENT_ID`, `CF_ACCESS_CLIENT_SECRET`
+- Claude Code MCP config: `~/.claude.json` under `projects["/home/adam/code/codepr"].mcpServers.odoo.env`
+
+### Odoo MCP server (Claude Code)
+`mcp-server-odoo` is configured in `~/.claude.json` for the `/home/adam/code/codepr` project. Because `odoo.code.pr` is behind Cloudflare Access and `mcp-server-odoo` has no native support for CF Access headers, the installed package is **patched** to inject them.
+
+**Patched files** (both archive paths must be kept in sync):
+- `~/.cache/uv/archive-v0/iYIirAeVwrzVOwtNPnCIv/mcp_server_odoo/performance.py`
+- `~/.cache/uv/archive-v0/iYIirAeVwrzVOwtNPnCIv/mcp_server_odoo/config.py`
+- `~/.cache/uv/archive-v0/rG9-6SuwEeV8fDe0BXp7G/lib/python3.11/site-packages/mcp_server_odoo/performance.py`
+- `~/.cache/uv/archive-v0/rG9-6SuwEeV8fDe0BXp7G/lib/python3.11/site-packages/mcp_server_odoo/config.py`
+
+**What the patch does:**
+1. `config.py` — reads `CF_ACCESS_CLIENT_ID` and `CF_ACCESS_CLIENT_SECRET` from env and stores them on `OdooConfig`
+2. `performance.py` — passes those values into `OdooSafeTransport`/`OdooTransport`, which call `connection.putheader(...)` in `send_headers()` on every XML-RPC request
+
+**If the MCP stops connecting after a `uvx` cache update** (new archive path), re-apply the patch:
+```bash
+# Find the active archive used by uvx
+uvx mcp-server-odoo --help 2>&1 | head -1   # will fail but shows which archive errors
+
+# Copy patches from the known-good archive to the new one
+cp ~/.cache/uv/archive-v0/iYIirAeVwrzVOwtNPnCIv/mcp_server_odoo/performance.py \
+   ~/.cache/uv/archive-v0/<NEW_ARCHIVE>/lib/python3.11/site-packages/mcp_server_odoo/performance.py
+cp ~/.cache/uv/archive-v0/iYIirAeVwrzVOwtNPnCIv/mcp_server_odoo/config.py \
+   ~/.cache/uv/archive-v0/<NEW_ARCHIVE>/lib/python3.11/site-packages/mcp_server_odoo/config.py
+```
+
+Then reconnect with `/mcp reconnect all` in Claude Code.
+
 ### DNS (code.pr zone — separate Cloudflare account)
 - `code.pr` → Cloudflare Pages (custom domain, managed by Pages)
 - `odoo.code.pr` → `odoo-prod` tunnel (CNAME to tunnel ID)
