@@ -99,7 +99,6 @@
 					<li>🎤 Strategic AI Leadership Briefing</li>
 					<li>💡 Live AI Demonstrations</li>
 					<li>🤝 Executive Networking Opportunities</li>
-					<li>🥘 Paella Dinner</li>
 					<li>🍷 Wine &amp; Cocktail Reception</li>
 					<li>🚗 Valet Parking Available</li>
 				</ul>
