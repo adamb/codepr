@@ -1,5 +1,7 @@
 <!-- Header.svelte -->
 <script lang="ts">
+	import { page } from '$app/stores';
+
 	let mobileOpen = $state(false);
 
 	const nav = [
@@ -8,6 +10,16 @@
 		{ label: 'Blog', href: '/blog' },
 		{ label: 'About', href: '/about-us' }
 	];
+
+	// Custom CTA for specific pages
+	const customCtaPages: Record<string, { label: string; href: string }> = {
+		'/events/ai-for-executives': {
+			label: 'Register on Eventbrite →',
+			href: 'https://www.eventbrite.com/e/1990812678312?aff=oddtdtcreator'
+		}
+	};
+
+	const ctaOverride = $derived(customCtaPages[$page.url.pathname]);
 
 	function toggleMobile() {
 		mobileOpen = !mobileOpen;
@@ -29,7 +41,11 @@
 				<li><a {href}>{label}</a></li>
 			{/each}
 		</ul>
-		<a href="/contactus" class="nav-cta">Start a project →</a>
+		{#if ctaOverride}
+			<a href={ctaOverride.href} class="nav-cta" target={ctaOverride.href.startsWith('http') ? '_blank' : undefined} rel={ctaOverride.href.startsWith('http') ? 'noopener' : undefined}>{ctaOverride.label}</a>
+		{:else}
+			<a href="/contactus" class="nav-cta">Start a project →</a>
+		{/if}
 		<button
 			class="mobile-toggle"
 			type="button"
@@ -52,7 +68,11 @@
 					<li><a {href} onclick={closeMobile}>{label}</a></li>
 				{/each}
 			</ul>
-			<a href="/contactus" class="mobile-cta" onclick={closeMobile}>Start a project →</a>
+			{#if ctaOverride}
+				<a href={ctaOverride.href} class="mobile-cta" onclick={closeMobile} target={ctaOverride.href.startsWith('http') ? '_blank' : undefined} rel={ctaOverride.href.startsWith('http') ? 'noopener' : undefined}>{ctaOverride.label}</a>
+			{:else}
+				<a href="/contactus" class="mobile-cta" onclick={closeMobile}>Start a project →</a>
+			{/if}
 		</div>
 	{/if}
 </header>
