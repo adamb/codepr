@@ -13,8 +13,8 @@
 		<span class="eyebrow">Executive Briefing · July 9, 2026</span>
 		<h1>AI for Executives: What Matters Now</h1>
 		<p class="page-lead">
-			An exclusive briefing for business leaders, executives, and decision-makers who want to understand
-			how AI is reshaping the future of business — and how to act on it.
+			Learn from three industry leaders as they demonstrate how executives can use AI to improve
+			productivity, drive innovation, and build competitive advantage.
 		</p>
 	</div>
 </section>
@@ -65,6 +65,11 @@
 
 			<section class="speakers">
 				<h2>Featured Speakers</h2>
+				<p class="speakers-intro">
+					Learn from experienced entrepreneurs, AI practitioners, and business leaders who are actively
+					helping organizations adopt AI today. Each speaker brings a different perspective—from
+					technology and education to executive leadership and real-world AI implementation.
+				</p>
 				<div class="speakers-list">
 					<div class="speaker-card">
 						<div class="speaker-name">Adam Beguelin, PhD</div>
@@ -76,19 +81,35 @@
 						<div class="speaker-title">President</div>
 						<div class="speaker-org">San Juan Export Services</div>
 					</div>
+					<div class="speaker-card">
+						<div class="speaker-name">Will Rosellini, JD, MBA</div>
+						<div class="speaker-title">Founder &amp; CEO</div>
+						<div class="speaker-org">Darrow Industries</div>
+						<p class="speaker-bio">
+							Will Rosellini is an entrepreneur and technology executive focused on helping
+							organizations apply artificial intelligence to solve real business problems. As Founder
+							&amp; CEO of Darrow Industries, he works with business leaders to identify high-impact
+							AI opportunities, streamline operations, and develop practical strategies for AI
+							adoption.
+						</p>
+						<p class="speaker-session">
+							Will will share practical executive strategies for moving beyond AI hype, evaluating
+							opportunities, and leading successful AI initiatives.
+						</p>
+					</div>
 				</div>
 			</section>
 
 			<section class="topics">
-				<h2>Topics Include</h2>
+				<h2>What You'll Learn</h2>
 				<ul class="topics-list">
-					<li>Understanding the AI Landscape in 2026</li>
-					<li>AI Assistants, AI Agents, and the Future of Work</li>
-					<li>Practical Applications Across Marketing, Sales, Finance, Operations, and Customer Service</li>
-					<li>Identifying High-Impact Opportunities Within Your Organization</li>
-					<li>AI Governance, Risk Management, and Responsible Adoption</li>
-					<li>Live Demonstrations of AI-Powered Business Solutions</li>
-					<li>Real-World Examples of AI-Driven Business Transformation</li>
+					<li>The current state of AI and what every executive should know</li>
+					<li>How organizations are successfully adopting AI today</li>
+					<li>Live demonstrations of today's most powerful AI tools</li>
+					<li>Practical leadership strategies for implementing AI</li>
+					<li>Identifying high-value AI opportunities inside your business</li>
+					<li>Common mistakes organizations make when adopting AI</li>
+					<li>Networking with fellow executives and business leaders</li>
 				</ul>
 			</section>
 
@@ -205,6 +226,13 @@
 	}
 
 	/* Speakers */
+	.speakers-intro {
+		color: var(--color-text-muted);
+		font-size: 0.95rem;
+		line-height: 1.7;
+		margin-bottom: 1.25rem;
+	}
+
 	.speakers-list {
 		display: flex;
 		flex-direction: column;
@@ -232,6 +260,19 @@
 		font-size: 0.875rem;
 		color: var(--color-accent);
 		font-weight: 600;
+	}
+
+	.speaker-bio,
+	.speaker-session {
+		font-size: 0.875rem;
+		color: var(--color-text-muted);
+		line-height: 1.65;
+		margin-top: 0.75rem;
+		margin-bottom: 0;
+	}
+
+	.speaker-session {
+		font-style: italic;
 	}
 
 	/* Topics */
