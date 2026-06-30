@@ -66,36 +66,61 @@
 			<section class="speakers">
 				<h2>Featured Speakers</h2>
 				<p class="speakers-intro">
-					Learn from experienced entrepreneurs, AI practitioners, and business leaders who are actively
-					helping organizations adopt AI today. Each speaker brings a different perspective—from
-					technology and education to executive leadership and real-world AI implementation.
+					Learn from three AI practitioners and business leaders who are actively helping organizations
+					understand, adopt, and lead with AI. Each speaker brings a different perspective: AI strategy,
+					executive education, entrepreneurship, and real-world implementation.
 				</p>
 				<div class="speakers-list">
 					<div class="speaker-card">
 						<div class="speaker-name">Adam Beguelin, PhD</div>
-						<div class="speaker-title">Co-Founder and Chief Mentor</div>
+						<div class="speaker-title">Co-Founder &amp; Chief Mentor</div>
 						<div class="speaker-org">Holberton School Puerto Rico</div>
+						<p class="speaker-bio">
+							Adam is a computer scientist, entrepreneur, and educator with decades of experience
+							building technology companies and training software engineers. He will lead practical
+							AI demonstrations and explain what executives need to understand about how AI is changing
+							work, productivity, and competitive advantage.
+						</p>
+						<a href="https://www.linkedin.com/in/beguelin/" target="_blank" rel="noopener" class="speaker-link">
+							<svg class="linkedin-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+								<path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+							</svg>
+							LinkedIn
+						</a>
 					</div>
 					<div class="speaker-card">
 						<div class="speaker-name">Vincent Guarino</div>
 						<div class="speaker-title">President</div>
 						<div class="speaker-org">San Juan Export Services</div>
+						<p class="speaker-bio">
+							Vincent works with Puerto Rico businesses and export-services leaders on growth,
+							operations, and strategic execution. He brings the executive adoption perspective: how
+							leaders can evaluate AI opportunities, build internal alignment, and turn new tools into
+							measurable business value.
+						</p>
+						<a href="https://www.linkedin.com/in/vinjguarino/" target="_blank" rel="noopener" class="speaker-link">
+							<svg class="linkedin-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+								<path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+							</svg>
+							LinkedIn
+						</a>
 					</div>
 					<div class="speaker-card">
 						<div class="speaker-name">Will Rosellini, JD, MBA</div>
 						<div class="speaker-title">Founder &amp; CEO</div>
 						<div class="speaker-org">Darrow Industries</div>
 						<p class="speaker-bio">
-							Will Rosellini is an entrepreneur and technology executive focused on helping
-							organizations apply artificial intelligence to solve real business problems. As Founder
-							&amp; CEO of Darrow Industries, he works with business leaders to identify high-impact
-							AI opportunities, streamline operations, and develop practical strategies for AI
-							adoption.
+							Will is an entrepreneur and technology executive focused on helping organizations apply
+							artificial intelligence to solve real business problems. As Founder &amp; CEO of Darrow
+							Industries, he works with business leaders to identify high-impact AI opportunities,
+							streamline operations, and develop practical strategies for AI adoption.
 						</p>
-						<p class="speaker-session">
-							Will will share practical executive strategies for moving beyond AI hype, evaluating
-							opportunities, and leading successful AI initiatives.
-						</p>
+						<a href="https://www.linkedin.com/in/willrosellini/" target="_blank" rel="noopener" class="speaker-link">
+							<svg class="linkedin-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+								<path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+							</svg>
+							LinkedIn
+						</a>
 					</div>
 				</div>
 			</section>
@@ -262,8 +287,7 @@
 		font-weight: 600;
 	}
 
-	.speaker-bio,
-	.speaker-session {
+	.speaker-bio {
 		font-size: 0.875rem;
 		color: var(--color-text-muted);
 		line-height: 1.65;
@@ -271,8 +295,23 @@
 		margin-bottom: 0;
 	}
 
-	.speaker-session {
-		font-style: italic;
+	.speaker-link {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.35rem;
+		margin-top: 0.75rem;
+		font-size: 0.875rem;
+		color: var(--color-accent);
+		text-decoration: none;
+	}
+
+	.speaker-link:hover {
+		text-decoration: underline;
+	}
+
+	.linkedin-icon {
+		width: 1rem;
+		height: 1rem;
 	}
 
 	/* Topics */
