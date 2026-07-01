@@ -26,7 +26,7 @@
 			<div class="detail-card">
 				<div class="detail-row">
 					<span class="detail-label">Date</span>
-					<span>Wednesday, July 9, 2026</span>
+					<span>Thursday, July 9, 2026</span>
 				</div>
 				<div class="detail-row">
 					<span class="detail-label">Time</span>
