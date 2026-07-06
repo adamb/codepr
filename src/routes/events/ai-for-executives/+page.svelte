@@ -43,8 +43,7 @@
 				<div class="detail-row">
 					<span class="detail-label">Cost</span>
 					<span>
-						<a href="https://www.eventbrite.com/e/1990812678312?aff=oddtdtcreator" target="_blank" rel="noopener" class="price-early">$200 Early Bird <span class="price-deadline">— through July 2</span></a><br />
-						<span class="price-regular">$250 after July 2</span>
+						<a href="https://www.eventbrite.com/e/1990812678312?aff=oddtdtcreator" target="_blank" rel="noopener" class="price-early">$250</a>
 					</span>
 				</div>
 			</div>
@@ -159,13 +158,9 @@
 					<div class="register-time">3:30 PM – 7:00 PM AST</div>
 					<div class="register-venue">Aloft San Juan</div>
 				</div>
-				<div class="pricing-block">
-					<div class="pricing-early">
-						<a href="https://www.eventbrite.com/e/1990812678312?aff=oddtdtcreator" target="_blank" rel="noopener" class="pricing-amount">$200</a>
-						<span class="pricing-label">Early Bird — ends July 2</span>
+					<div class="pricing-block">
+						<a href="https://www.eventbrite.com/e/1990812678312?aff=oddtdtcreator" target="_blank" rel="noopener" class="pricing-amount">$250</a>
 					</div>
-					<div class="pricing-regular">$250 after July 2</div>
-				</div>
 				<a
 					href="https://www.eventbrite.com/e/1990812678312?aff=oddtdtcreator"
 					target="_blank"
