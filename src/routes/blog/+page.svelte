@@ -17,6 +17,20 @@
 
 <div class="page-body">
 	<div class="container posts-wrap">
+
+		<article class="post">
+			<div class="meta">
+				<img src="/team/adam.jpeg" alt="Adam Beguelin" class="avatar" width="48" height="48" />
+				<div>
+					<p class="author">Adam Beguelin</p>
+					<p class="date">Sep 23, 2026</p>
+				</div>
+			</div>
+			<h2><a href="/blog/3/caribbean-ai-summit-2026-san-juan">Caribbean AI Summit 2026 Comes to San Juan</a></h2>
+			<p class="excerpt">Holberton Puerto Rico is an educational sponsor of Caribbean AI Summit, Oct 9–10 at the Convention Center — plus a $10k “AI for Puerto Rico” hackathon.</p>
+			<a href="/blog/3/caribbean-ai-summit-2026-san-juan" class="read-more">Read more →</a>
+		</article>
+
 		<article class="post">
 			<div class="meta">
 				<img src="/team/adam.jpeg" alt="Adam Beguelin" class="avatar" width="48" height="48" />
