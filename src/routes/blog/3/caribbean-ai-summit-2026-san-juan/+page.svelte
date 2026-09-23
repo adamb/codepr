@@ -39,7 +39,7 @@
 	<section class="content">
 		<p>In October the Caribbean’s biggest in-person AI conference lands in San Juan. <strong>Caribbean AI Summit 2026</strong> (organized with the Puerto Rico AI Community, PRAIC) runs <strong>Friday, October 9–Saturday, October 10</strong> at the <strong>Puerto Rico Convention Center</strong> (doors about 8:45am; program roughly 9am–6pm).</p>
 
-		<p><strong>Holberton Coding School Puerto Rico</strong> is an in-kind <strong>Educational Sponsor</strong> — listed on the summit site under Community Partners and Collaborators. Code Puerto Rico is Holberton’s parent tech hub; we help students and local builders show up. Code PR is not a named summit sponsor on the site, and this post is not a claim that we are.</p>
+		<p><strong>Holberton Coding School Puerto Rico</strong> is a sponsor — listed on the summit site under Community Partners and Collaborators. Code Puerto Rico is Holberton’s parent tech hub; we help students and local builders show up.</p>
 
 		<p>This is not a spectator sport. The useful question is simple: what are you going to make?</p>
 
