@@ -8,7 +8,7 @@
 	canonical="https://code.pr/blog/3/caribbean-ai-summit-2026-san-juan"
 	type="article"
 	publishedTime="2026-09-23"
-	modifiedTime="2026-09-23"
+	modifiedTime="2026-09-24"
 	image="https://code.pr/blog/caribbean-ai-summit-2026/og-banner.jpg"
 />
 
@@ -39,7 +39,7 @@
 	<section class="content">
 		<p>In October the Caribbean’s biggest in-person AI conference lands in San Juan. <strong>Caribbean AI Summit 2026</strong> (organized with the Puerto Rico AI Community, PRAIC) runs <strong>Friday, October 9–Saturday, October 10</strong> at the <strong>Puerto Rico Convention Center</strong> (doors about 8:45am; program roughly 9am–6pm).</p>
 
-		<p><strong>Holberton Coding School Puerto Rico</strong> is a sponsor — listed on the summit site under Community Partners and Collaborators. Code Puerto Rico is Holberton’s parent tech hub; we help students and local builders show up.</p>
+		<p><strong>Holberton Coding School Puerto Rico</strong> is proud to be a sponsor! We’ll be there with a booth and some fun AI demos. We’re also providing volunteers from our students and grads.</p>
 
 		<p>This is not a spectator sport. The useful question is simple: what are you going to make?</p>
 
@@ -63,7 +63,7 @@
 		</ul>
 
 		<h2>The hackathon is the point for builders</h2>
-		<p>If you only have bandwidth for one track, make it the build. Mentors on the floor. Judging on what you ship for Puerto Rico — not a slide deck about what you might ship later. Pedro Cruz is listed as Hackathon Director on the public program.</p>
+		<p>If you only have bandwidth for one track, make it the build. Mentors on the floor. Judging on what you ship for Puerto Rico — not a slide deck about what you might ship later. <a href="https://www.linkedin.com/in/pedrocruztech/" target="_blank" rel="noopener">Pedro Cruz</a> is the Hackathon Director on the public program. Pedro is amazing. If you have ever been to a Pedro Cruz event, you will remember. I’m sure this hackathon will be one to remember.</p>
 
 		<figure>
 			<img src="/blog/caribbean-ai-summit-2026/morro.jpg" alt="El Morro fortress graphic from the Caribbean AI Summit hackathon page" />
@@ -87,9 +87,6 @@
 		</figure>
 
 		<p>The Summit is the larger stage. Same island. More builders in one building. Better chance to meet the people who will hire, fund, or ship with you next year.</p>
-
-		<h2>How Holberton shows up</h2>
-		<p>Holberton Puerto Rico’s deal with the Summit is in-kind education sponsorship — not a paid Gold, Silver, or Bronze package. On site we expect a standard exhibition booth with an interactive demo, plus students and staff in the room and in the hackathon. I’m writing this as Code Puerto Rico / Holberton’s local builder network, not as a Summit keynote. (I’m not on the public speaker list.)</p>
 
 		<figure class="partner-mark">
 			<img src="/blog/caribbean-ai-summit-2026/sp-holberton.png" alt="Holberton mark from the Caribbean AI Summit community partners grid" width="280" />
