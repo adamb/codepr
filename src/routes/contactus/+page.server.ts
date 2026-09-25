@@ -1,9 +1,10 @@
 import { fail, redirect } from '@sveltejs/kit';
 import { env } from '$env/dynamic/private';
+import { forwardContactToN8n } from '$lib/n8n';
 import type { Actions } from './$types';
 
 export const actions: Actions = {
-	contact: async ({ request }) => {
+	contact: async ({ request, platform }) => {
 		const data = await request.formData();
 
 		const name = String(data.get('name') ?? '').trim();
@@ -12,12 +13,35 @@ export const actions: Actions = {
 		const company = String(data.get('company') ?? '').trim();
 		const subject = String(data.get('subject') ?? '').trim();
 		const question = String(data.get('question') ?? '').trim();
+		const website = String(data.get('website') ?? '').trim(); // honeypot
 
 		if (!name || !email || !subject || !question) {
 			return fail(400, {
 				message: 'Please fill out all required fields.',
 				values: { name, phone, email, company, subject, question }
 			});
+		}
+
+		// Best-effort: send the lead to Odoo via n8n. Runs in the background on Cloudflare
+		// (waitUntil) so it never delays or breaks the visitor's submission.
+		const crmForward = forwardContactToN8n(
+			{
+				name,
+				email,
+				phone,
+				company,
+				subject,
+				message: question,
+				website,
+				page: 'https://code.pr/contactus',
+				submitted_at: new Date().toISOString()
+			},
+			{ url: env.N8N_CONTACT_WEBHOOK_URL, secret: env.N8N_CONTACT_WEBHOOK_SECRET }
+		);
+		if (platform?.ctx?.waitUntil) {
+			platform.ctx.waitUntil(crmForward);
+		} else {
+			await crmForward;
 		}
 
 		const resendKey = env.RESEND_API_KEY;
