@@ -4,7 +4,7 @@
 
 <SEO
 	title="We Made This Reel on a 4090 in San Juan"
-	description="Grok Bot plus a local RTX 4090 at Code Puerto Rico, generating Instagram reels for @codepr and Holberton Coding School Puerto Rico."
+	description="Grok Bot plus a local RTX 4090 at Code Puerto Rico, generating Instagram reels for @code_puertorico and Holberton Coding School Puerto Rico."
 	canonical="https://code.pr/blog/2/we-made-this-reel-on-a-4090-in-san-juan"
 	type="article"
 	publishedTime="2026-09-01"
@@ -16,7 +16,7 @@
 	<header>
 		<p class="kicker">Studio Notes</p>
 		<h1>We Made This Reel on a 4090 in San Juan</h1>
-		<p class="subtitle">Grok Bot plus a local RTX 4090 at Code Puerto Rico, generating Instagram reels for @codepr and Holberton Coding School Puerto Rico — and writing this post on the same Cloudflare site.</p>
+		<p class="subtitle">Grok Bot plus a local RTX 4090 at Code Puerto Rico, generating Instagram reels for @code_puertorico and Holberton Coding School Puerto Rico — and writing this post on the same Cloudflare site.</p>
 		<div class="meta">
 			<img src="/team/adam.jpeg" alt="Adam Beguelin" class="avatar" width="56" height="56" />
 			<div>
@@ -28,7 +28,7 @@
 
 	<section class="content">
 		<p>Most of the AI video you see is a cloud API. Ours is a box in Puerto Rico.</p>
-		<p>This week I used <strong>Grok Bot</strong> as the operator and a local <strong>RTX 4090</strong> as the muscle. The bot talks to ComfyUI on Roux, our Linux workstation: Flux stills, LTX image-to-video, then ffmpeg into a 9:16 Reel. The file is meant for two accounts we actually run: <a href="https://instagram.com/codepr" target="_blank" rel="noopener">@codepr</a> (still slim) and Holberton Coding School Puerto Rico (the busy one). Not Holberton Global.</p>
+		<p>This week I used <strong>Grok Bot</strong> as the operator and a local <strong>RTX 4090</strong> as the muscle. The bot talks to ComfyUI on Roux, our Linux workstation: Flux stills, LTX image-to-video, then ffmpeg into a 9:16 Reel. The file is meant for two accounts we actually run: <a href="https://www.instagram.com/code_puertorico/" target="_blank" rel="noopener">@code_puertorico</a> (still slim) and Holberton Coding School Puerto Rico (the busy one). Not Holberton Global.</p>
 		<p>The first reel is a little meta on purpose. Shot one is San Juan from a second-floor tech-hub window. Shot two is the 4090 and the node graph. Shot three is stylized Holbies at laptops — no real student faces. Captions in English and Spanish. End card: <a href="https://code.pr/">code.pr</a> and the Caribbean AI Summit, October 9–10 at the Puerto Rico Convention Center.</p>
 
 		<h2>Why local</h2>
@@ -55,7 +55,7 @@
 		<h2>Links</h2>
 		<ul>
 			<li><a href="https://code.pr/">code.pr</a></li>
-			<li><a href="https://instagram.com/codepr" target="_blank" rel="noopener">Instagram @codepr</a></li>
+			<li><a href="https://www.instagram.com/code_puertorico/" target="_blank" rel="noopener">Instagram @code_puertorico</a></li>
 			<li><a href="https://holbertonschoolpr.com" target="_blank" rel="noopener">Holberton Coding School Puerto Rico</a></li>
 			<li><a href="/upcoming-events">Upcoming events</a></li>
 		</ul>

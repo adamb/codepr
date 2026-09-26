@@ -23,6 +23,19 @@
 				<img src="/team/adam.jpeg" alt="Adam Beguelin" class="avatar" width="48" height="48" />
 				<div>
 					<p class="author">Adam Beguelin</p>
+					<p class="date">Sep 26, 2026</p>
+				</div>
+			</div>
+			<h2><a href="/blog/4/beach-gate-vision-classifier">Four AI Models Said Our Open Gate Was Closed. So We Trained Our Own.</a></h2>
+			<p class="excerpt">Four AI models called our open beach gate closed, so we trained a tiny model on one scene and let Home Assistant alerts collect the corrections.</p>
+			<a href="/blog/4/beach-gate-vision-classifier" class="read-more">Read more →</a>
+		</article>
+
+		<article class="post">
+			<div class="meta">
+				<img src="/team/adam.jpeg" alt="Adam Beguelin" class="avatar" width="48" height="48" />
+				<div>
+					<p class="author">Adam Beguelin</p>
 					<p class="date">Sep 23, 2026</p>
 				</div>
 			</div>
