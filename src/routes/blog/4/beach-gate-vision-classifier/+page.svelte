@@ -84,6 +84,16 @@
 
 		<p>Reviewing every labeled photo that day turned up a second problem: me. Three frames I had tapped “Gate is closed” clearly show the gate open. The model had called all three open, with scores of 0.98 to 0.99. My taps came seven hours to four days later. I was probably describing the gate as it was when I tapped, or reading “Gate is closed” as “I closed it.” One of those labels went into the September 6 retrain, and that model learned my mistake: it scored that wide-open frame 0.00.</p>
 
+		<p>My labeling page shows each alert frame with the model’s guess, my label, and Open and Closed buttons to change it.</p>
+
+		<figure class="phone-shot">
+			<img src="/blog/beach-gate-vision-classifier/labeling-queue.jpg" alt="Tall phone screenshot of a dark-mode web page titled Beach gate: 29 open alerts, 0 still unlabeled, with links for Alerts sent, Unlabeled and All frames. Below are eight cards from September 26 back to September 20, day and night, each with a gate camera frame, a timestamp, a pred open badge with a confidence percentage, a labeled open or labeled closed badge, and green Open and red Closed buttons." width="804" height="5710" loading="lazy" />
+			<figcaption>
+				The top of my labeling page: each alert frame, the model’s guess and confidence, my label, and two buttons to fix it. In the last two cards, the model said open and my label said closed.
+				<span class="credit">Screenshot: Code Puerto Rico</span>
+			</figcaption>
+		</figure>
+
 		<p>Then a surprise: rerun on those three frames, our first model, from September 5, scored them 0.99, 0.55 and 0.55. Did my bad label break the retrain? I can’t show that. Retraining on the same photos with different random starting points swung the scores from near 0 to 0.8, and removing the label didn’t reliably help. One training run proves little.</p>
 
 		<figure>
