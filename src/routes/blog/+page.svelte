@@ -53,7 +53,7 @@
 				</div>
 			</div>
 			<h2><a href="/blog/2/we-made-this-reel-on-a-4090-in-san-juan">We Made This Reel on a 4090 in San Juan</a></h2>
-			<p class="excerpt">Grok Bot plus a local RTX 4090 at Code Puerto Rico, generating Instagram reels for @codepr and Holberton Coding School Puerto Rico.</p>
+			<p class="excerpt">Grok Bot plus a local RTX 4090 at Code Puerto Rico, generating Instagram reels for @code_puertorico and Holberton Coding School Puerto Rico.</p>
 			<a href="/blog/2/we-made-this-reel-on-a-4090-in-san-juan" class="read-more">Read more →</a>
 		</article>
 		<article class="post">
