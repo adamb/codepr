@@ -76,7 +76,7 @@ npx wrangler pages deploy
 These are expected for a static SvelteKit mirror:
 
 - **Navigation:** preview includes `/workshops` in the main nav; production does not. Production has a `/web/login` "Sign in" link; preview does not.
-- **Social links:** preview links directly to `x.com/codepr` and `instagram.com/codepr`; production routes through `/website/social/*` redirects.
+- **Social links:** preview links directly to `instagram.com/code_puertorico` and the Facebook Page (`facebook.com/profile.php?id=61564742363745`); production routes through `/website/social/*` redirects.
 - **Assets:** local `/images/...` and `/team/...` paths instead of Odoo `/web/image/...` URLs.
 - **Forms:** event notification and contact forms are static; production submits through Odoo workflows.
 - **Pricing:** preview uses concise plan summaries; production includes detailed bullet lists per plan.

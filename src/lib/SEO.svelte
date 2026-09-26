@@ -49,7 +49,6 @@
 
 	<!-- Twitter -->
 	<meta name="twitter:card" content="summary_large_image" />
-	<meta name="twitter:site" content="@CodePuerto" />
 	<meta name="twitter:title" content={fullTitle} />
 	<meta name="twitter:description" content={description ?? defaultDescription} />
 	<meta name="twitter:image" content={ogImage} />
