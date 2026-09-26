@@ -71,6 +71,14 @@
 			</figcaption>
 		</figure>
 
+		<figure class="phone-shot">
+			<img src="/blog/beach-gate-vision-classifier/phone-alert-open.png" alt="iPhone notification titled Beach gate OPEN, showing the camera photo of the beach gate and two buttons: Gate is open and Gate is closed." width="1206" height="1583" loading="lazy" />
+			<figcaption>
+				The real alert on my phone: the classifier’s guess, the photo, and two buttons to label it.
+				<span class="credit">Screenshot: Code Puerto Rico</span>
+			</figcaption>
+		</figure>
+
 		<h2>The miss, and my own bad labels</h2>
 		<p>On September 25 I left the gate open for about 18 minutes one afternoon and got no alert. In low afternoon sun and hard shadows, the model gave three open frames an open score (0 to 1, where 0.5 or more means open) of 0.13, 0.001 and 0.001. That is a miss, or false negative. The opposite error, calling a closed gate open, is a false alarm (false positive).</p>
 
@@ -214,6 +222,12 @@
 
 	.hero-cover img {
 		max-width: 1400px;
+	}
+
+	.content figure.phone-shot {
+		max-width: 380px;
+		margin-left: auto;
+		margin-right: auto;
 	}
 
 	figcaption {
