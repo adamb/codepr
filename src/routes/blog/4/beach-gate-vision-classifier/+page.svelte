@@ -161,7 +161,7 @@
 			<li><strong>Connect the model to something real.</strong> Home Assistant is what turns a score into a reminder, and a reminder into new training data.</li>
 		</ul>
 
-		<p>Test, measure, fix the data, ship, repeat: that loop is applied AI, and it’s the habit we build at <strong><a href="https://holbertonschoolpr.com" target="_blank" rel="noopener">Holberton Coding School Puerto Rico</a></strong>, Code Puerto Rico’s school, through its AI Software Engineering program and the part-time AI for Developers program for working developers. Ask us about the gate at the Holberton Coding School Puerto Rico booth at the <a href="https://www.caribbeansummit.ai/" target="_blank" rel="noopener">Caribbean AI Summit</a>, October 9–10 at the Puerto Rico Convention Center.</p>
+		<p>Test, measure, fix the data, ship, repeat: that loop is applied AI, and it’s the habit we build at <strong><a href="https://holbertonschoolpr.com" target="_blank" rel="noopener">Holberton Coding School Puerto Rico</a></strong>, Code Puerto Rico’s school, through its <a href="https://holbertonschoolpr.com/foundation/" target="_blank" rel="noopener">AI Software Engineering</a> program and the part-time <a href="https://holbertonschoolpr.com/ai-for-developers/" target="_blank" rel="noopener">AI for Developers</a> program for working developers. Ask us about the gate at the Holberton Coding School Puerto Rico booth at the <a href="https://www.caribbeansummit.ai/" target="_blank" rel="noopener">Caribbean AI Summit</a>, October 9–10 at the Puerto Rico Convention Center.</p>
 
 		<p><em>Follow Code Puerto Rico on Instagram: <a href="https://www.instagram.com/code_puertorico/" target="_blank" rel="noopener">@code_puertorico</a></em></p>
 	</section>
