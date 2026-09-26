@@ -36,17 +36,17 @@
 	</figure>
 
 	<section class="content">
-		<p>Four of the five local AI vision models we tested side by side looked at our beach gate standing ajar and said it was closed. They gave nearly the same reason: the panels were “parallel and flush.” What runs today is a 6 MB classifier fine-tuned on this one gate and wired into Home Assistant, so every alert on my phone can double as a training label. It still makes mistakes, and I’ll show you those too.</p>
+		<p>Four of the five local AI vision models we tested side by side looked at our beach gate standing ajar and said it was closed. They gave nearly the same reason: the panels were “parallel and flush.” What runs today is a 6 MB classifier fine-tuned on this one gate and wired into <a href="https://www.home-assistant.io/" target="_blank" rel="noopener">Home Assistant</a>, so every alert on my phone can double as a training label. It still makes mistakes, and I’ll show you those too.</p>
 
 		<h2>¿Abierto o cerrado?</h2>
 		<p>A camera already watches the gate at a property in Río Grande. I wanted the house to notice when someone leaves the gate open and tell me. The obvious first try was an off-the-shelf <strong>vision-language model</strong>, an AI that answers questions about images.</p>
 
-		<p>On September 3 we ran a quick check with five freely downloadable (open-weight) models through <strong>Ollama</strong>, which runs models locally, on our GPU workstation (an NVIDIA RTX 4090 we already use for video work). Each got the same crop and the same prompt, not tuned per model, which told them to say open only when the panels were clearly apart. They saw two frames: the gate closed in daylight and ajar at dusk. Four of them (qwen3.5:9b, qwen3.8:27b, qwen3-vl:4b and mistral-small3.1) got the closed frame right and called the ajar one closed. The fifth, moondream:1.8b, gave no usable answer.</p>
+		<p>On September 3 we ran a quick check with five freely downloadable (open-weight) models through <strong><a href="https://ollama.com/" target="_blank" rel="noopener">Ollama</a></strong>, which runs models locally, on our GPU workstation (an NVIDIA RTX 4090 we already use for <a href="/blog/2/we-made-this-reel-on-a-4090-in-san-juan">video work</a>). Each got the same crop and the same prompt, not tuned per model, which told them to say open only when the panels were clearly apart. They saw two frames: the gate closed in daylight and ajar at dusk. Four of them (<a href="https://ollama.com/library/qwen3.5" target="_blank" rel="noopener">qwen3.5:9b</a>, qwen3.8:27b, qwen3-vl:4b and <a href="https://ollama.com/library/mistral-small3.1" target="_blank" rel="noopener">mistral-small3.1</a>) got the closed frame right and called the ajar one closed. The fifth, moondream:1.8b, gave no usable answer.</p>
 
 		<p>One very large cloud model, qwen3.5:397b on Ollama Cloud, did catch the ajar frame. We ran it in production for about a day, asking it three times per check and going with the majority. Two frames is not a benchmark, and we never tested that model on our full photo set. Still, I wanted the decision made inside the house, not by three cloud calls every check.</p>
 
 		<h2>A small model for one scene</h2>
-		<p>So we trained a classifier. It is <strong>MobileNetV3-Small</strong>, a compact image network pretrained on ImageNet, fine-tuned in <strong>PyTorch</strong> to answer a single question. We chose it because it is small enough to run without a GPU. A first version went live September 5. The one we ran until September 25 was retrained September 6 on 108 labeled frames and got 21 of 22 held-out images right. Held-out images are photos kept out of training to test the model. Only 6 of those 22 show the gate open, so the score says less than it seems.</p>
+		<p>So we trained a classifier. It is <strong><a href="https://arxiv.org/abs/1905.02244" target="_blank" rel="noopener">MobileNetV3-Small</a></strong>, a compact image network pretrained on <a href="https://www.image-net.org/" target="_blank" rel="noopener">ImageNet</a>, fine-tuned in <strong><a href="https://pytorch.org/" target="_blank" rel="noopener">PyTorch</a></strong> to answer a single question. We chose it because it is small enough to run without a GPU. A first version went live September 5. The one we ran until September 25 was retrained September 6 on 108 labeled frames and got 21 of 22 held-out images right. Held-out images are photos kept out of training to test the model. Only 6 of those 22 show the gate open, so the score says less than it seems.</p>
 
 		<p>Training happens on the 4090: the September 25 run took 16.5 seconds wall-clock (40 passes over 120 photos, start-up included). The day-to-day checks run on a small CPU-only server; the workstation is needed elsewhere. Every five minutes the server grabs a still, crops it to the gate and classifies it. Each check takes about six seconds, model loading included.</p>
 
@@ -152,7 +152,7 @@
 
 		<p>Held-out accuracy didn’t move, and both models still miss a night frame with a person standing in the open gateway. The retrained model catches the September 25 misses mostly because it has seen them; with them held out, it caught one of three. Our test scores also flatter the model: some test photos are near-twins of training photos taken minutes apart. The fix is more afternoon examples, which the phone votes can now supply.</p>
 
-		<h2>What students should take from this</h2>
+		<h2>What anyone using AI can take from this</h2>
 		<ul class="tips">
 			<li><strong>Test before you trust.</strong> A two-frame test told us more than any model card.</li>
 			<li><strong>Go small and specific</strong> when the camera never moves and the question never changes.</li>
@@ -161,7 +161,7 @@
 			<li><strong>Connect the model to something real.</strong> Home Assistant is what turns a score into a reminder, and a reminder into new training data.</li>
 		</ul>
 
-		<p>Test, measure, fix the data, ship, repeat: that loop is applied AI, and it’s the habit we build at <strong>Holberton Coding School Puerto Rico</strong>, Code Puerto Rico’s school, through its AI Software Engineering program and the part-time AI for Developers program for working developers. Ask us about the gate at the Holberton Coding School Puerto Rico booth at the Caribbean AI Summit, October 9–10 at the Puerto Rico Convention Center.</p>
+		<p>Test, measure, fix the data, ship, repeat: that loop is applied AI, and it’s the habit we build at <strong><a href="https://holbertonschoolpr.com" target="_blank" rel="noopener">Holberton Coding School Puerto Rico</a></strong>, Code Puerto Rico’s school, through its AI Software Engineering program and the part-time AI for Developers program for working developers. Ask us about the gate at the Holberton Coding School Puerto Rico booth at the <a href="https://www.caribbeansummit.ai/" target="_blank" rel="noopener">Caribbean AI Summit</a>, October 9–10 at the Puerto Rico Convention Center.</p>
 
 		<p><em>Follow Code Puerto Rico on Instagram: <a href="https://www.instagram.com/code_puertorico/" target="_blank" rel="noopener">@code_puertorico</a></em></p>
 	</section>
