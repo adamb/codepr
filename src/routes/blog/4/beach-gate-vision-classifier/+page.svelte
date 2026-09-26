@@ -61,6 +61,14 @@
 		<h2>Home Assistant closes the loop</h2>
 		<p>The classifier’s verdict flips a switch in <strong>Home Assistant</strong>, the open-source platform that already runs our lights, AC and cameras. If the gate reads open for 15 minutes, Home Assistant sends a reminder.</p>
 
+		<figure class="phone-shot">
+			<img src="/blog/beach-gate-vision-classifier/phone-alert-still-open.jpg" alt="iPhone notification titled Gate Still Open Alert: Beach Gate has been open for 45 minutes, with the camera view of the open gate and three buttons: Gate is open, Gate is closed, and Snooze until tomorrow." width="1206" height="1896" loading="lazy" />
+			<figcaption>
+				The reminder when the gate stays open: 45 minutes in, with a third button to snooze until tomorrow.
+				<span class="credit">Screenshot: Code Puerto Rico</span>
+			</figcaption>
+		</figure>
+
 		<p>Each time the verdict changes, my phone gets a push with the photo and two buttons: “Gate is open” and “Gate is closed.” A tap saves that frame, with my label, for the next retrain. If the gate flips to closed and I tap “Gate is open,” the frame becomes an open example and the alerts keep coming until I tap “Gate is closed.” If I ignore an alert, the verdict stands and the alerts stop. As of September 25, a vote only counts if it arrives within about 20 minutes of the photo. The catch: I can only correct the model when it changes its mind. A gate it wrongly calls closed sends no alert, as I found out.</p>
 
 		<figure>
@@ -72,7 +80,7 @@
 		</figure>
 
 		<figure class="phone-shot">
-			<img src="/blog/beach-gate-vision-classifier/phone-alert-open.png" alt="iPhone notification titled Beach gate OPEN, showing the camera photo of the beach gate and two buttons: Gate is open and Gate is closed." width="1206" height="1583" loading="lazy" />
+			<img src="/blog/beach-gate-vision-classifier/phone-alert-open.png" alt="iPhone notification titled Beach gate OPEN, showing the camera view of the beach gate and two buttons: Gate is open and Gate is closed." width="1206" height="1583" loading="lazy" />
 			<figcaption>
 				The real alert on my phone: the classifier’s guess, the photo, and two buttons to label it.
 				<span class="credit">Screenshot: Code Puerto Rico</span>
