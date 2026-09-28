@@ -30,7 +30,7 @@ function odooAuth() {
 }
 
 export const POST: RequestHandler = async ({ request }) => {
-	const secret = env.STRIPE_WEBHOOK_SECRET;
+	const secret = env.STRIPE_WEBHOOK_SECRET?.trim().replace(/^["']|["']$/g, '');
 	if (!secret) {
 		// Fail closed: this endpoint creates contacts, portal users and paid invoices.
 		// A 5xx makes Stripe keep retrying (up to 3 days) until the secret is configured.
