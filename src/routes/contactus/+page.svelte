@@ -122,6 +122,12 @@
 					<textarea id="question" name="question" rows="6" required>{form?.values?.question ?? ''}</textarea>
 				</div>
 
+				<!-- Honeypot: hidden from people, often filled by bots. Leave empty. -->
+				<div class="hp-field" aria-hidden="true">
+					<label for="website">Website</label>
+					<input type="text" id="website" name="website" tabindex="-1" autocomplete="off" />
+				</div>
+
 				<button type="submit" class="btn btn-lg">Send Message →</button>
 			</form>
 		</div>
@@ -267,6 +273,14 @@
 		outline: none;
 		border-color: var(--color-accent);
 		box-shadow: 0 0 0 3px rgba(27, 169, 202, 0.12);
+	}
+
+	.hp-field {
+		position: absolute;
+		left: -10000px;
+		width: 1px;
+		height: 1px;
+		overflow: hidden;
 	}
 
 	@media (max-width: 900px) {
