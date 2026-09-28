@@ -4,6 +4,7 @@ import type { RequestHandler } from './$types';
 import { authenticate, callKw } from '$lib/odoo';
 import { verifyStripeSignature } from '$lib/server/stripe-signature';
 import { fulfillStripeEvent, HANDLED_EVENT_TYPES, type StripeEvent } from '$lib/server/stripe-fulfillment';
+import { CHARGE_NOTIFY_EVENT_TYPES, notifyCharge } from '$lib/server/charge-notify';
 
 /**
  * Stripe live-mode webhook endpoint: https://code.pr/cpr_membership/stripe/webhook
@@ -14,6 +15,10 @@ import { fulfillStripeEvent, HANDLED_EVENT_TYPES, type StripeEvent } from '$lib/
  *   ODOO_API_KEY, CF_ACCESS_CLIENT_ID, CF_ACCESS_CLIENT_SECRET – already used by other routes
  * Optional:
  *   STRIPE_PORTAL_INVITES=true – also create Odoo portal users + send invite emails (old addon behaviour)
+ *   STRIPE_CHARGE_EMAILS=off   – disable the charge alert emails to info@code.pr (on by default)
+ *
+ * charge.succeeded / charge.refunded / charge.failed send an alert email to info@code.pr via Odoo
+ * mail (see $lib/server/charge-notify). Email problems are logged and never turn into a non-2xx.
  */
 
 function odooAuth() {
@@ -50,6 +55,25 @@ export const POST: RequestHandler = async ({ request }) => {
 		event = JSON.parse(rawBody);
 	} catch {
 		return json({ error: 'Invalid JSON' }, { status: 400 });
+	}
+
+	if (CHARGE_NOTIFY_EVENT_TYPES.has(event.type)) {
+		if (env.STRIPE_CHARGE_EMAILS === 'off') {
+			return json({ received: true, handled: false, action: 'charge emails disabled' });
+		}
+		let notify: { sent: boolean; reason: string; mailId?: number } = { sent: false, reason: 'error' };
+		try {
+			const auth = await odooAuth();
+			notify = await notifyCharge(
+				(model, method, args, kwargs) => callKw(auth, model, method, args, kwargs),
+				event,
+				(...a) => console.log('[stripe]', ...a)
+			);
+		} catch (err) {
+			console.error(`Stripe webhook ${event.id} ${event.type}: charge alert failed (Odoo auth)`, err);
+		}
+		// Always 2xx: a missing alert email must not make Stripe retry or disable the endpoint.
+		return json({ received: true, handled: true, action: `charge alert: ${notify.reason}`, mailId: notify.mailId });
 	}
 
 	if (!HANDLED_EVENT_TYPES.has(event.type)) {
