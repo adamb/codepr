@@ -146,3 +146,12 @@ so the URL 404'd. This route keeps the same URL and ports the addon's logic to X
 - `invoice.paid` → same, ref `Stripe: in_…` (dedupes with the checkout event for a subscription's first invoice)
 - Idempotent on `ref`, so Stripe retries / manual resends never duplicate invoices.
 - Verifies `Stripe-Signature` with Pages secret `STRIPE_WEBHOOK_SECRET` (fails closed with 500 if unset).
+
+### Stripe charge alert emails
+`charge.succeeded` (and `charge.refunded` / `charge.failed` if the Stripe endpoint is subscribed to them)
+sends an alert to **info@code.pr** (only recipient) via Odoo `mail.mail` (Postfix → ImprovMX, From info@code.pr),
+the same mail path as Notify Me — no Resend key needed. Code: `src/lib/server/charge-notify.ts`.
+- Dedup: deterministic Message-Id `<stripe-charge-succeeded-ch_…@code.pr>` stored in Odoo (`auto_delete` off), checked before sending.
+- Events older than 72h are skipped (quiet bulk replays).
+- Email failures are logged; the webhook still returns 2xx. Kill switch: Pages env `STRIPE_CHARGE_EMAILS=off`.
+- Note: `RESEND_API_KEY` is NOT set in Pages, so `/contactus` and the Linux workshop form's Resend email don't work today.
