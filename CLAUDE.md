@@ -133,3 +133,16 @@ Note: `mail.mail.send` returns `None`, which Odoo can't marshal back over XML-RP
 - `svelte.config.js` — Cloudflare adapter config
 - `wrangler.toml` — except `[vars]` section for non-secret env config
 - Cloudflare adapter internals
+
+### Stripe webhook (membership / day-pass fulfillment)
+Route: `src/routes/cpr_membership/stripe/webhook/+server.ts` → `https://code.pr/cpr_membership/stripe/webhook`
+
+The Stripe live-mode endpoint was originally served by the Odoo addon `cpr_membership` (adamb/cprodoo).
+That addon was uninstalled on 2026-06-17 along with Odoo's `website` module during the move to SvelteKit,
+so the URL 404'd. This route keeps the same URL and ports the addon's logic to XML-RPC
+(`src/lib/server/stripe-fulfillment.ts`):
+- `checkout.session.completed` / `checkout.session.async_payment_succeeded` → find/create `res.partner`,
+  (optionally, `STRIPE_PORTAL_INVITES=true`) create portal user + invitation for new contacts, create posted + paid `account.move` (ref `Stripe: <cs_… or in_…>`)
+- `invoice.paid` → same, ref `Stripe: in_…` (dedupes with the checkout event for a subscription's first invoice)
+- Idempotent on `ref`, so Stripe retries / manual resends never duplicate invoices.
+- Verifies `Stripe-Signature` with Pages secret `STRIPE_WEBHOOK_SECRET` (fails closed with 500 if unset).
