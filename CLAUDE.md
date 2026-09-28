@@ -142,7 +142,7 @@ That addon was uninstalled on 2026-06-17 along with Odoo's `website` module duri
 so the URL 404'd. This route keeps the same URL and ports the addon's logic to XML-RPC
 (`src/lib/server/stripe-fulfillment.ts`):
 - `checkout.session.completed` / `checkout.session.async_payment_succeeded` → find/create `res.partner`,
-  create portal user + invitation for new contacts, create posted + paid `account.move` (ref `Stripe: <cs_… or in_…>`)
+  (optionally, `STRIPE_PORTAL_INVITES=true`) create portal user + invitation for new contacts, create posted + paid `account.move` (ref `Stripe: <cs_… or in_…>`)
 - `invoice.paid` → same, ref `Stripe: in_…` (dedupes with the checkout event for a subscription's first invoice)
 - Idempotent on `ref`, so Stripe retries / manual resends never duplicate invoices.
 - Verifies `Stripe-Signature` with Pages secret `STRIPE_WEBHOOK_SECRET` (fails closed with 500 if unset).

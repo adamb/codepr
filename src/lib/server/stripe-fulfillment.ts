@@ -8,6 +8,7 @@
  * (same service-token path as the other server routes).
  *
  * Differences from the original Python controller:
+ *  - Portal user + invite email for new contacts is opt-in (STRIPE_PORTAL_INVITES=true), see FulfillmentOptions.
  *  - Idempotent: invoices are keyed by `ref` ("Stripe: <id>") and never duplicated on
  *    retries / manual resends. A half-finished invoice (draft or unpaid) is completed.
  *  - Checkout sessions that created a Stripe invoice (subscriptions) use that invoice id
@@ -167,10 +168,21 @@ async function ensurePaidInvoice(
 	return invoiceId;
 }
 
+export interface FulfillmentOptions {
+	/**
+	 * Create an Odoo portal user + send the signup/invite email for new contacts (the old addon did).
+	 * Off by default: since 2026-06-17 Odoo lives only at odoo.code.pr behind Cloudflare Access
+	 * (code.pr emails only), so members can't open the invite link. Replaying months-old events
+	 * would also email customers out of the blue.
+	 */
+	portalInvites?: boolean;
+}
+
 export async function fulfillStripeEvent(
 	rpc: Rpc,
 	event: StripeEvent,
-	log: Log = console.log
+	log: Log = console.log,
+	opts: FulfillmentOptions = {}
 ): Promise<FulfillmentResult> {
 	const obj = event.data?.object ?? {};
 	const date = prDate(event.created);
@@ -188,7 +200,7 @@ export async function fulfillStripeEvent(
 			if (!email) return { handled: false, action: 'no customer email' };
 
 			const partner = await findOrCreatePartner(rpc, email, name, log);
-			if (partner.created) await ensurePortalUser(rpc, partner.id, email, log);
+			if (partner.created && opts.portalInvites) await ensurePortalUser(rpc, partner.id, email, log);
 
 			if (obj.payment_status === 'unpaid') {
 				return { handled: true, action: 'contact only; payment pending', partnerId: partner.id };
@@ -215,7 +227,7 @@ export async function fulfillStripeEvent(
 			if (amount <= 0) return { handled: true, action: 'zero amount' };
 
 			const partner = await findOrCreatePartner(rpc, email, name, log);
-			if (partner.created) await ensurePortalUser(rpc, partner.id, email, log);
+			if (partner.created && opts.portalInvites) await ensurePortalUser(rpc, partner.id, email, log);
 			const invoiceId = await ensurePaidInvoice(rpc, partner.id, amount, description, ref, date, log);
 			return { handled: true, action: 'invoice', ref, partnerId: partner.id, invoiceId };
 		}

@@ -12,6 +12,8 @@ import { fulfillStripeEvent, HANDLED_EVENT_TYPES, type StripeEvent } from '$lib/
  * (and its signing secret) doesn't change. Requires Pages secrets:
  *   STRIPE_WEBHOOK_SECRET  – the endpoint's "Signing secret" (whsec_...) from the Stripe Dashboard
  *   ODOO_API_KEY, CF_ACCESS_CLIENT_ID, CF_ACCESS_CLIENT_SECRET – already used by other routes
+ * Optional:
+ *   STRIPE_PORTAL_INVITES=true – also create Odoo portal users + send invite emails (old addon behaviour)
  */
 
 function odooAuth() {
@@ -58,7 +60,9 @@ export const POST: RequestHandler = async ({ request }) => {
 		const auth = await odooAuth();
 		const rpc = (model: string, method: string, args: unknown[], kwargs?: Record<string, unknown>) =>
 			callKw(auth, model, method, args, kwargs);
-		const result = await fulfillStripeEvent(rpc, event, (...a) => console.log('[stripe]', ...a));
+		const result = await fulfillStripeEvent(rpc, event, (...a) => console.log('[stripe]', ...a), {
+			portalInvites: env.STRIPE_PORTAL_INVITES === 'true'
+		});
 		console.log(`Stripe webhook ${event.id} ${event.type}: ${result.action}`);
 		return json({ received: true, ...result });
 	} catch (err) {
