@@ -154,4 +154,9 @@ the same mail path as Notify Me — no Resend key needed. Code: `src/lib/server/
 - Dedup: deterministic Message-Id `<stripe-charge-succeeded-ch_…@code.pr>` stored in Odoo (`auto_delete` off), checked before sending.
 - Events older than 72h are skipped (quiet bulk replays).
 - Email failures are logged; the webhook still returns 2xx. Kill switch: Pages env `STRIPE_CHARGE_EMAILS=off`.
-- Note: `RESEND_API_KEY` is NOT set in Pages, so `/contactus` and the Linux workshop form's Resend email don't work today.
+
+### Form notification emails (/contactus, Linux workshop)
+Both forms email **info@code.pr** (From info@code.pr, Reply-To = submitter) via Odoo `mail.mail`
+using `src/lib/server/odoo-mail.ts` — the same path as Notify Me and the Stripe charge alerts.
+Resend is no longer used (it was never configured in Pages). If Odoo mail fails, the form shows an
+error and keeps the visitor's input. Tests: `npm test` (vitest, fake Odoo).
