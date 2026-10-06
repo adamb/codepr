@@ -208,7 +208,7 @@
 			<p>
 				Code Puerto Rico combines a software development team with a physical tech hub in San
 				Juan. In addition to our development team, we operate a flexible technology workspace with
-				floating desks, meeting space, and event capacity for groups of up to approximately 70
+				floating desks, meeting space, and event capacity for groups of up to 75
 				people.
 			</p>
 			<p class="workspace-actions">
@@ -220,7 +220,7 @@
 		<ul class="workspace-facts">
 			<li><strong>Floating desks</strong> for developers, founders and remote teams</li>
 			<li><strong>Meeting space</strong> for client sessions and workshops</li>
-			<li><strong>Event space</strong> for groups of up to approximately 70</li>
+			<li><strong>Event space</strong> for groups of up to 75</li>
 		</ul>
 	</div>
 </section>

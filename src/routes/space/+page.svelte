@@ -38,7 +38,7 @@
 			title: 'Event rentals',
 			text: 'A large, adaptable room for meetups, workshops, panels and company events.',
 			items: [
-				'Groups of up to approximately 70 people',
+				'Groups of up to 75 people',
 				'Projector and A/V equipment',
 				'Adaptable layout and on-site support'
 			]
@@ -48,7 +48,7 @@
 
 <SEO
 	title="Coworking & Event Space in San Juan"
-	description="Hot desks, a meeting room and event space for up to approximately 70 people at Code Puerto Rico's tech hub in San Juan, Puerto Rico."
+	description="Hot desks, a meeting room and event space for up to 75 people at Code Puerto Rico's tech hub in San Juan, Puerto Rico."
 	canonical="https://code.pr/space"
 />
 

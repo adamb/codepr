@@ -46,7 +46,7 @@
 			stripe: 'https://buy.stripe.com/7sYdR995naCg5uQb2w5c404',
 			cta: 'Book Now',
 			description:
-				'Large venue for up to approximately 70 guests with projector and A/V equipment, adaptable layout, and on-site support for workshops, panels, and similar events.'
+				'Large venue for up to 75 guests with projector and A/V equipment, adaptable layout, and on-site support for workshops, panels, and similar events.'
 		},
 		{
 			name: 'Holberton Grad',
