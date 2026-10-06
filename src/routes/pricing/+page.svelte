@@ -46,7 +46,7 @@
 			stripe: 'https://buy.stripe.com/7sYdR995naCg5uQb2w5c404',
 			cta: 'Book Now',
 			description:
-				'Large venue for up to 75 guests with projector and A/V equipment, adaptable layout, and on-site support for workshops, panels, and similar events.'
+				'Large venue for up to approximately 70 guests with projector and A/V equipment, adaptable layout, and on-site support for workshops, panels, and similar events.'
 		},
 		{
 			name: 'Holberton Grad',
@@ -61,15 +61,15 @@
 </script>
 
 <SEO
-	title="Pricing"
-	description="Coworking, virtual office, and event space pricing at Code Puerto Rico in San Juan."
+	title="Coworking & Event Space Pricing in San Juan"
+	description="Hot desk, virtual office, meeting room and event space pricing at Code Puerto Rico's tech hub in San Juan, Puerto Rico."
 	canonical="https://code.pr/pricing"
 />
 
 <section class="page-hero">
 	<div class="container">
 		<h1>Pricing</h1>
-		<p class="page-lead">Flexible coworking, virtual office, and event space plans in San Juan.</p>
+		<p class="page-lead">Flexible desks, meeting space and event space at our San Juan tech hub. <a href="/space">About the workspace →</a></p>
 	</div>
 </section>
 
@@ -108,7 +108,7 @@
 		</section>
 
 		<section class="contact-cta">
-			<p>Questions about which plan is right for you? <a href="/contactus">Get in touch →</a></p>
+			<p>Questions about which plan is right for you, or planning an event? <a href="/contactus?inquiry=workspace">Ask about workspace →</a> · Looking for software or AI development? <a href="/development">See Code PR Development →</a></p>
 		</section>
 	</div>
 </div>

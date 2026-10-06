@@ -8,6 +8,7 @@
 		type?: string;
 		publishedTime?: string;
 		modifiedTime?: string;
+		jsonLd?: Record<string, unknown> | Record<string, unknown>[];
 	}
 
 	const {
@@ -17,16 +18,24 @@
 		canonical,
 		type = 'website',
 		publishedTime,
-		modifiedTime
+		modifiedTime,
+		jsonLd
 	}: Props = $props();
 
 	const siteName = 'Code Puerto Rico';
-	const defaultDescription = 'Tech Hub, Coworking & Events in San Juan, Puerto Rico.';
+	const defaultDescription =
+		'Software and AI development from San Juan, Puerto Rico, plus a tech hub with workspace and events.';
 	const defaultImage = 'https://code.pr/images/code-pr-big.webp';
 	const fullTitle = $derived(
-		title === siteName || title.includes(siteName) ? title : `${title} | ${siteName} Tech Hub`
+		title === siteName || title.includes(siteName) ? title : `${title} | ${siteName}`
 	);
 	const ogImage = $derived(image ?? defaultImage);
+	// Escape "<" so JSON content can never close the script tag.
+	const jsonLdTag = $derived(
+		jsonLd
+			? `<script type="application/ld+json">${JSON.stringify(jsonLd).replace(/</g, '\\u003c')}<\/script>`
+			: ''
+	);
 </script>
 
 <svelte:head>
@@ -39,6 +48,7 @@
 
 	<!-- Open Graph -->
 	<meta property="og:site_name" content={siteName} />
+	<meta property="og:locale" content="en_US" />
 	<meta property="og:title" content={fullTitle} />
 	<meta property="og:description" content={description ?? defaultDescription} />
 	<meta property="og:type" content={type} />
@@ -61,5 +71,9 @@
 		{#if modifiedTime}
 			<meta property="article:modified_time" content={modifiedTime} />
 		{/if}
+	{/if}
+
+	{#if jsonLdTag}
+		{@html jsonLdTag}
 	{/if}
 </svelte:head>

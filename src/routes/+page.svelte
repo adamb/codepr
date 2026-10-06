@@ -1,144 +1,274 @@
 <script lang="ts">
 	import SEO from '$lib/SEO.svelte';
+	import { services, projects } from '$lib/content';
+
+	const jsonLd = {
+		'@context': 'https://schema.org',
+		'@type': 'Organization',
+		'@id': 'https://code.pr/#organization',
+		name: 'Code Puerto Rico',
+		legalName: 'Code Puerto Rico, LLC',
+		url: 'https://code.pr/',
+		logo: 'https://code.pr/images/logo.webp',
+		description:
+			'Software and AI development company and technology hub in San Juan, Puerto Rico. Builds custom software, AI-enabled systems and integrations with Puerto Rico-based engineers, and operates workspace and event space.',
+		email: 'info@code.pr',
+		telephone: '+1-787-296-9300',
+		address: {
+			'@type': 'PostalAddress',
+			streetAddress: '1550 PR-25, 2nd Floor',
+			addressLocality: 'San Juan',
+			addressRegion: 'PR',
+			postalCode: '00909',
+			addressCountry: 'US'
+		},
+		areaServed: 'Puerto Rico',
+		sameAs: [
+			'https://instagram.com/code_puertorico',
+			'https://www.facebook.com/profile.php?id=61564742363745'
+		]
+	};
+
+	const aiPoints = [
+		'AI-enabled software',
+		'AI automation',
+		'LLM integrations',
+		'AI-assisted workflows',
+		'Intelligent internal tools',
+		'Rapid AI prototypes'
+	];
 </script>
 
 <SEO
-	title="Code Puerto Rico | Tech Hub, Coworking & Events in San Juan"
-	description="A tech hub in San Juan offering coworking, community events, and a space for builders, founders, and creatives. Join Puerto Rico's growing tech ecosystem."
+	title="Software & AI Development in Puerto Rico | Code Puerto Rico"
+	description="Custom software, AI applications and integrations built by Puerto Rico-based engineers from our San Juan tech hub, plus coworking, meeting and event space."
 	canonical="https://code.pr/"
+	{jsonLd}
 />
 
-<!-- Hero Cover -->
+<!-- Hero -->
 <section class="hero-cover">
 	<div class="hero-overlay"></div>
 	<div class="container">
 		<div class="hero-content">
-			<h1>Puerto Rico's tech hub for builders, founders & innovators.</h1>
-			<p><a href="/upcoming-events" class="btn btn-lg btn-white">See upcoming events</a></p>
+			<p class="hero-eyebrow">Code Puerto Rico Development · San Juan, PR</p>
+			<h1>AI &amp; Software Development from Puerto Rico</h1>
+			<p class="hero-sub">
+				We build custom software, AI-enabled systems and integrations for businesses, with a
+				Puerto Rico-based engineering team working from our tech hub in San Juan.
+			</p>
+			<p class="hero-actions">
+				<a href="/contactus?inquiry=custom-software" class="btn btn-lg">Start a Software Project</a>
+				<a href="/development" class="btn btn-lg btn-ghost-white">See what we build</a>
+			</p>
+			<p class="hero-meta">
+				Built in San Juan · 1550 PR-25 · Also home to a
+				<a href="/space">workspace and event space</a>
+			</p>
 		</div>
 	</div>
 </section>
 
-<!-- Agency Section -->
-<section class="agency-section">
+<!-- Services -->
+<section class="services" id="services">
 	<div class="container">
-		<div class="agency-grid">
-			<div class="agency-text">
-				<div class="section-tag">New</div>
-				<h2>We now build software<br />for <em>your</em> business too.</h2>
-				<p>Our new <strong>Development Agency</strong> puts Code PR's best Holberton-trained engineers on your project — delivering professional websites and modern CRM systems with AI-First workflows at nearshore rates.</p>
+		<h2>Software &amp; AI engineering for business</h2>
+		<p class="lead">
+			Code Puerto Rico Development is our commercial engineering practice: nearshore engineering
+			from Puerto Rico, with senior review on every deliverable.
+		</p>
 
-				<div class="agency-services">
-					<div class="agency-service">
-						<div class="service-icon-sm">🌐</div>
-						<div>
-							<h4>Website Development</h4>
-							<p>React, Next.js, WordPress, Webflow — mobile-responsive, SEO-optimized, built to last. Starting at $3,000.</p>
-						</div>
-					</div>
-					<div class="agency-service">
-						<div class="service-icon-sm">🔄</div>
-						<div>
-							<h4>CRM Outmigration (Salesforce → Odoo)</h4>
-							<p>Move off Salesforce to open-source Odoo. Typical savings: 60–80% on licensing. Full data migration included.</p>
-						</div>
-					</div>
+		<div class="service-grid">
+			{#each services as service}
+				<div class="service-tile">
+					<h3>{service.title}</h3>
+					<p>{service.blurb}</p>
 				</div>
-
-				<div class="agency-cta">
-					<a href="/agency" class="btn-accent">See all services</a>
-					<a href="/contactus" class="btn-ghost">Start a project →</a>
-				</div>
-			</div>
-
-			<div class="agency-side">
-				<div class="agency-stats-grid">
-					<div class="agency-stat">
-						<div class="num">9<span>mo</span></div>
-						<div class="label">Holberton Training</div>
-					</div>
-					<div class="agency-stat">
-						<div class="num">AI</div>
-						<div class="label">First Workflows</div>
-					</div>
-					<div class="agency-stat">
-						<div class="num">60%</div>
-						<div class="label">Avg CRM Savings</div>
-					</div>
-					<div class="agency-stat">
-						<div class="num">PR</div>
-						<div class="label">Nearshore Talent</div>
-					</div>
-				</div>
-
-				<div class="agency-proof">
-					<h4>🔨 Current Projects</h4>
-					<div class="proof-item"><span class="proof-dot"></span><span>Advent-Morro Equity Partners — website</span></div>
-					<div class="proof-item"><span class="proof-dot"></span><span>Local Brewing Company — website</span></div>
-					<div class="proof-item"><span class="proof-dot"></span><span>Code PR — Salesforce → Odoo migration</span></div>
-				</div>
-			</div>
+			{/each}
 		</div>
+
+		<p class="section-link"><a href="/development">Explore our software &amp; AI development services →</a></p>
 	</div>
 </section>
 
-<!-- What We Offer -->
-<section class="offerings">
+<!-- AI as development -->
+<section class="ai-section">
 	<div class="container">
-		<h2>What we offer</h2>
-		<p class="lead">A tech-forward space for coworking, events, and community in San Juan.</p>
-
-		<div class="offerings-grid">
-			<div class="offering">
-				<hr />
-				<div class="offering-icon">
-					<svg viewBox="0 0 24 24" width="32" height="32" aria-hidden="true">
-						<path fill="currentColor" d="M9.4 16.6 4.8 12l4.6-4.6L8 6l-6 6 6 6 1.4-1.4zm5.2 0 4.6-4.6-4.6-4.6L16 6l6 6-6 6-1.4-1.4z" />
-					</svg>
-				</div>
-				<h3 class="offering-title">Bespoke Dev Agency</h3>
-				<p>Our development agency puts Holberton-trained engineers on your project — websites, CRM migrations, and custom software at nearshore rates.</p>
+		<div class="ai-grid">
+			<div>
+				<p class="eyebrow">AI development</p>
+				<h2>We use AI to build technology.</h2>
+				<p>
+					AI is part of how we engineer and what we engineer. We build AI into custom software,
+					automate business processes with it, and use AI-assisted workflows so a small team
+					ships working systems quickly, with senior engineers reviewing the result.
+				</p>
+				<ul class="ai-points">
+					{#each aiPoints as point}
+						<li>{point}</li>
+					{/each}
+				</ul>
+				<p class="ai-note">
+					Training and workshops are a separate community activity at Code PR and Holberton. They
+					are not what this section is about.
+				</p>
 			</div>
-			<div class="offering">
-				<hr />
-				<div class="offering-icon">
-					<svg viewBox="0 0 24 24" width="32" height="32" aria-hidden="true">
-						<path fill="currentColor" d="M7 2v11h3v9l7-12h-4l4-8z" />
-					</svg>
-				</div>
-				<h3 class="offering-title">Events & Meetups</h3>
-				<p>Workshops, lightning talks, hack nights, and community gatherings that bring Puerto Rico's tech scene together.</p>
-			</div>
-			<div class="offering">
-				<hr />
-				<div class="offering-icon">
-					<svg viewBox="0 0 24 24" width="32" height="32" aria-hidden="true">
-						<path fill="currentColor" d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5s-3 1.34-3 3 1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z" />
-					</svg>
-				</div>
-				<h3 class="offering-title">Tech Community</h3>
-				<p>Connect with developers, founders, designers, and remote workers building cool things in Puerto Rico.</p>
-			</div>
+			<aside class="ai-example">
+				<p class="eyebrow">From our lab</p>
+				<h3>A small model for one real problem</h3>
+				<p>
+					Off-the-shelf vision models kept reading a gate that was standing open as closed. We
+					fine-tuned a 6 MB image classifier and connected it to Home Assistant, so every phone
+					alert doubles as a training label. It still makes mistakes, and the write-up shows them.
+				</p>
+				<a href="/blog/4/beach-gate-vision-classifier">Read the write-up →</a>
+			</aside>
 		</div>
 	</div>
 </section>
 
-<!-- Community CTA -->
+<!-- Talent and growth -->
+<section class="talent">
+	<div class="container">
+		<div class="talent-head">
+			<h2>Puerto Rico engineering talent, applied to commercial software.</h2>
+			<p class="lead">
+				Code PR spent years building a developer community and a talent pipeline in San Juan. That
+				engineering capacity now works on commercial software and AI projects.
+			</p>
+		</div>
+
+		<ol class="story">
+			<li>
+				<span class="story-step">1</span>
+				<h3>Community</h3>
+				<p>A tech hub in San Juan where developers, founders and teams meet, build and host events.</p>
+			</li>
+			<li>
+				<span class="story-step">2</span>
+				<h3>Talent pipeline</h3>
+				<p>Holberton Coding School Puerto Rico trains software engineers in the same building.</p>
+			</li>
+			<li>
+				<span class="story-step">3</span>
+				<h3>Commercial engineering</h3>
+				<p>Code Puerto Rico Development puts that talent to work on client software and AI projects.</p>
+			</li>
+		</ol>
+
+		<ul class="talent-points">
+			<li>We hire and work with Puerto Rico-based software engineers.</li>
+			<li>Client projects create professional technology opportunities on the island.</li>
+			<li>Holberton-trained engineers are part of our talent pipeline.</li>
+			<li>Real client work gives engineers real-world experience.</li>
+			<li>Code PR connects local technical talent with commercial software work.</li>
+		</ul>
+	</div>
+</section>
+
+<!-- Projects -->
+<section class="projects">
+	<div class="container">
+		<h2>Current &amp; recent work</h2>
+		<p class="lead">Client projects, the systems we run ourselves, and prototypes from our lab.</p>
+
+		<div class="project-grid">
+			{#each projects as project}
+				<article class="project-card">
+					<div class="project-top">
+						<span class="project-kind">{project.kind}</span>
+						<span class="project-status">{project.status}</span>
+					</div>
+					<h3>{project.client}</h3>
+					<dl>
+						<dt>Need</dt>
+						<dd>{project.need}</dd>
+						<dt>Work</dt>
+						<dd>{project.work}</dd>
+						<dt>Category</dt>
+						<dd>{project.category}</dd>
+					</dl>
+					{#if project.href}
+						<a href={project.href}>{project.hrefLabel} →</a>
+					{/if}
+				</article>
+			{/each}
+		</div>
+
+		<p class="section-link"><a href="/development#projects">More on how we work →</a></p>
+	</div>
+</section>
+
+<!-- Workspace (secondary) -->
+<section class="workspace">
+	<div class="container workspace-inner">
+		<div class="workspace-text">
+			<p class="eyebrow">Our San Juan home</p>
+			<h2>Work, Meet &amp; Build in San Juan</h2>
+			<p>
+				Code Puerto Rico combines a software development team with a physical tech hub in San
+				Juan. In addition to our development team, we operate a flexible technology workspace with
+				floating desks, meeting space, and event capacity for groups of up to approximately 70
+				people.
+			</p>
+			<p class="workspace-actions">
+				<a href="/pricing" class="btn btn-outline">Rent a Desk</a>
+				<a href="/contactus?inquiry=host-an-event" class="btn btn-outline">Host an Event</a>
+				<a href="/space" class="btn btn-outline">View Workspace</a>
+			</p>
+		</div>
+		<ul class="workspace-facts">
+			<li><strong>Floating desks</strong> for developers, founders and remote teams</li>
+			<li><strong>Meeting space</strong> for client sessions and workshops</li>
+			<li><strong>Event space</strong> for groups of up to approximately 70</li>
+		</ul>
+	</div>
+</section>
+
+<!-- Education and community (separate from development) -->
 <section class="community">
 	<div class="community-shape"></div>
-	<div class="container community-content">
-		<h2>More Than a Space — A Tech Hub</h2>
-		<p>Code Puerto Rico is where the island's tech community comes together. We host lightning talks, hack nights, workshops, demo days, and community meetups — all in our San Juan space. Whether you want to learn, present, or just meet other builders, there's something on the calendar for you.</p>
-		<p>We also run Holberton Coding School Puerto Rico out of the same building, so you'll be surrounded by students, alumni, and mentors who are all building things.</p>
-		<p class="community-actions">
-			<a href="/upcoming-events" class="btn">See upcoming events</a>
-			<a href="/about-us" class="btn btn-outline">About us</a>
+	<div class="container">
+		<h2>Education and community</h2>
+		<p class="lead">
+			Learning and community live alongside the development team. They are separate from it.
+		</p>
+		<div class="community-grid">
+			<div class="community-card">
+				<h3>Holberton Coding School Puerto Rico</h3>
+				<p>
+					Technical education and talent development, run from the same building. Holberton
+					trains software engineers; Code PR Development is the commercial engineering practice
+					where that talent can work.
+				</p>
+				<a href="https://www.holbertonschoolpr.com" target="_blank" rel="noopener">Visit Holberton Puerto Rico →</a>
+			</div>
+			<div class="community-card">
+				<h3>Events, meetups &amp; workshops</h3>
+				<p>
+					Lightning talks, hack nights, demo days and hands-on workshops that bring Puerto Rico's
+					tech community together in San Juan.
+				</p>
+				<a href="/upcoming-events">See upcoming events →</a>
+			</div>
+		</div>
+	</div>
+</section>
+
+<!-- Final CTA -->
+<section class="final-cta">
+	<div class="container final-inner">
+		<h2>Have a software or AI project in mind?</h2>
+		<p>Tell us what you need. We respond within one business day.</p>
+		<p class="final-actions">
+			<a href="/contactus?inquiry=custom-software" class="btn btn-lg">Discuss Your Project</a>
+			<a href="/about-us" class="btn btn-lg btn-ghost-white">About Code PR</a>
 		</p>
 	</div>
 </section>
 
 <style>
-	/* Hero Cover */
+	/* Hero */
 	.hero-cover {
 		position: relative;
 		display: flex;
@@ -151,317 +281,379 @@
 	.hero-overlay {
 		position: absolute;
 		inset: 0;
-		background: rgba(0, 0, 0, 0.5);
+		background: linear-gradient(105deg, rgba(13, 27, 42, 0.9) 0%, rgba(13, 27, 42, 0.7) 60%, rgba(13, 27, 42, 0.5) 100%);
 	}
 
 	.hero-content {
 		position: relative;
 		z-index: 1;
-		max-width: 66.6667%;
+		max-width: 780px;
 		color: #fff;
+	}
+
+	.hero-eyebrow,
+	.eyebrow {
+		font-family: var(--font-mono);
+		font-size: 0.75rem;
+		letter-spacing: 0.08em;
+		text-transform: uppercase;
+		color: var(--color-accent);
+		margin-bottom: 1rem;
 	}
 
 	.hero-content h1 {
-		font-size: calc(1.5125rem + 3.15vw);
-		font-weight: 700;
-		line-height: 1.2;
-		color: #fff;
-		margin-bottom: 1.5rem;
-	}
-
-	@media (min-width: 1200px) {
-		.hero-content h1 {
-			font-size: 3.875rem;
-		}
-	}
-
-	/* Agency Section */
-	.agency-section {
-		background: linear-gradient(135deg, #0d1f3c 0%, #1b3b6b 100%);
-		padding: 80px 0;
-		width: 100%;
-	}
-
-	.section-tag {
-		display: inline-block;
-		background: rgba(249, 115, 22, 0.2);
-		color: #fdba74;
-		padding: 0.25rem 0.75rem;
-		border-radius: 100px;
-		font-size: 0.78rem;
-		font-weight: 700;
-		letter-spacing: 0.05em;
-		text-transform: uppercase;
-		margin-bottom: 0.875rem;
-	}
-
-	.agency-grid {
-		display: grid;
-		grid-template-columns: 1fr 1fr;
-		gap: 56px;
-		align-items: center;
-	}
-
-	.agency-text h2 {
-		font-size: clamp(1.7rem, 3vw, 2.3rem);
+		font-size: clamp(2.2rem, 5vw, 3.9rem);
 		font-weight: 800;
+		line-height: 1.1;
 		color: #fff;
 		margin-bottom: 1.25rem;
-		line-height: 1.2;
 	}
 
-	.agency-text h2 em {
-		font-style: normal;
-		color: #f97316;
+	.hero-sub {
+		font-size: clamp(1.05rem, 1.6vw, 1.3rem);
+		line-height: 1.6;
+		color: rgba(255, 255, 255, 0.85);
+		max-width: 640px;
+		margin-bottom: 1.75rem;
 	}
 
-	.agency-text p {
-		color: rgba(255, 255, 255, 0.72);
-		font-size: 0.95rem;
-		line-height: 1.75;
-		margin-bottom: 1rem;
-	}
-
-	.agency-text strong {
-		color: #fff;
-	}
-
-	.agency-services {
-		display: flex;
-		flex-direction: column;
-		gap: 1rem;
-		margin: 1.75rem 0;
-	}
-
-	.agency-service {
-		display: flex;
-		gap: 1rem;
-		align-items: flex-start;
-		background: rgba(255, 255, 255, 0.06);
-		border: 1px solid rgba(255, 255, 255, 0.1);
-		border-radius: 10px;
-		padding: 1.25rem;
-	}
-
-	.service-icon-sm {
-		font-size: 1.4rem;
-		width: 44px;
-		height: 44px;
-		background: rgba(249, 115, 22, 0.15);
-		border-radius: 8px;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		flex-shrink: 0;
-	}
-
-	.agency-service h4 {
-		font-size: 0.95rem;
-		font-weight: 700;
-		color: #fff;
-		margin-bottom: 0.25rem;
-	}
-
-	.agency-service p {
-		font-size: 0.85rem;
-		color: rgba(255, 255, 255, 0.6);
-		line-height: 1.5;
-		margin: 0;
-	}
-
-	.agency-cta {
+	.hero-actions,
+	.final-actions {
 		display: flex;
 		gap: 0.875rem;
 		flex-wrap: wrap;
-		margin-top: 0.5rem;
+		margin-bottom: 1.5rem;
 	}
 
-	.btn-accent {
-		background: #f97316;
+	.hero-meta {
+		font-size: 0.875rem;
+		color: rgba(255, 255, 255, 0.65);
+		margin: 0;
+	}
+
+	.hero-meta a {
 		color: #fff;
-		padding: 0.8rem 1.75rem;
-		border-radius: 8px;
-		font-weight: 700;
-		font-size: 0.95rem;
-		transition: all 0.2s;
-		display: inline-block;
-		border: 2px solid #f97316;
-		text-decoration: none;
+		text-decoration: underline;
 	}
 
-	.btn-accent:hover {
-		background: #ea6d0c;
-		border-color: #ea6d0c;
-		transform: translateY(-1px);
-		text-decoration: none;
+	/* Services */
+	.services {
+		padding: 80px 0;
+		background: var(--color-light);
 	}
 
-	.btn-ghost {
-		background: transparent;
-		color: rgba(255, 255, 255, 0.8);
-		padding: 0.8rem 1.75rem;
-		border-radius: 8px;
-		font-weight: 600;
-		font-size: 0.95rem;
-		transition: all 0.2s;
-		display: inline-block;
-		border: 2px solid rgba(255, 255, 255, 0.25);
-		text-decoration: none;
+	.services h2,
+	.talent h2,
+	.projects h2,
+	.community h2,
+	.ai-section h2,
+	.workspace h2,
+	.final-cta h2 {
+		font-size: clamp(1.7rem, 3.2vw, 2.5rem);
+		margin-bottom: 0.75rem;
 	}
 
-	.btn-ghost:hover {
-		border-color: rgba(255, 255, 255, 0.6);
-		color: #fff;
-		text-decoration: none;
+	.services .lead,
+	.projects .lead,
+	.community .lead,
+	.talent .lead {
+		max-width: 760px;
+		font-size: 1.1rem;
 	}
 
-	.agency-stats-grid {
-		display: grid;
-		grid-template-columns: 1fr 1fr;
-		gap: 1rem;
-	}
-
-	.agency-stat {
-		background: rgba(255, 255, 255, 0.06);
-		border: 1px solid rgba(255, 255, 255, 0.1);
-		border-radius: 10px;
-		padding: 1.5rem;
-		text-align: center;
-	}
-
-	.agency-stat .num {
-		font-size: 2rem;
-		font-weight: 900;
-		color: #f97316;
-		line-height: 1;
-	}
-
-	.agency-stat .num span {
-		font-size: 1rem;
-		margin-left: 0.1rem;
-	}
-
-	.agency-stat .label {
-		font-size: 0.8rem;
-		color: rgba(255, 255, 255, 0.5);
-		margin-top: 0.375rem;
-		text-transform: uppercase;
-		letter-spacing: 0.05em;
-	}
-
-	.agency-proof {
-		background: rgba(255, 255, 255, 0.06);
-		border: 1px solid rgba(255, 255, 255, 0.1);
-		border-radius: 10px;
-		padding: 1.5rem;
-		margin-top: 1rem;
-	}
-
-	.agency-proof h4 {
-		font-size: 0.8rem;
-		font-weight: 700;
-		color: rgba(255, 255, 255, 0.5);
-		text-transform: uppercase;
-		letter-spacing: 0.05em;
-		margin-bottom: 0.875rem;
-	}
-
-	.proof-item {
-		display: flex;
-		align-items: center;
-		gap: 0.625rem;
-		padding: 0.5rem 0;
-		border-top: 1px solid rgba(255, 255, 255, 0.07);
-		font-size: 0.85rem;
-		color: rgba(255, 255, 255, 0.7);
-	}
-
-	.proof-item:first-of-type {
-		border-top: none;
-		padding-top: 0;
-	}
-
-	.proof-dot {
-		width: 8px;
-		height: 8px;
-		border-radius: 50%;
-		flex-shrink: 0;
-		background: #f97316;
-	}
-
-	/* What We Offer */
-	.offerings {
-		padding: 64px 0;
-	}
-
-	.offerings :global(h2) {
-		font-size: calc(1.425rem + 2.1vw);
-		font-weight: 700;
-		margin-bottom: 0.5rem;
-	}
-
-	@media (min-width: 1200px) {
-		.offerings :global(h2) {
-			font-size: 3rem;
-		}
-	}
-
-	.offerings :global(.lead) {
-		font-size: 1.125rem;
-		font-weight: 300;
-		color: var(--color-text-muted);
-	}
-
-	.offerings-grid {
+	.service-grid {
 		display: grid;
 		grid-template-columns: repeat(3, 1fr);
-		gap: 2rem;
+		gap: 1rem;
 		margin-top: 2rem;
 	}
 
-	.offering {
-		padding: 1rem 0.5rem;
+	.service-tile {
+		background: #fff;
+		border: 1px solid var(--color-border);
+		border-top: 3px solid var(--color-accent);
+		border-radius: var(--radius);
+		padding: 1.25rem 1.25rem 1.1rem;
 	}
 
-	.offering hr {
-		width: 100%;
-		border: 0;
-		border-top: 1px solid var(--color-border);
-		margin: 0 0 1.5rem;
+	.service-tile h3 {
+		font-size: 1.05rem;
+		margin-bottom: 0.4rem;
 	}
 
-	.offering-icon {
-		width: 56px;
-		height: 56px;
-		border-radius: 10px;
-		background: rgba(27, 169, 202, 0.1);
-		color: var(--color-accent);
-		display: flex;
+	.service-tile p {
+		font-size: 0.9rem;
+		color: var(--color-text-muted);
+		line-height: 1.55;
+		margin: 0;
+	}
+
+	.section-link {
+		margin: 1.75rem 0 0;
+		font-weight: 600;
+	}
+
+	/* AI */
+	.ai-section {
+		padding: 80px 0;
+		background: linear-gradient(135deg, #0d1f3c 0%, #1b3b6b 100%);
+		color: rgba(255, 255, 255, 0.8);
+	}
+
+	.ai-section h2,
+	.ai-section h3 {
+		color: #fff;
+	}
+
+	.ai-grid {
+		display: grid;
+		grid-template-columns: 1.2fr 1fr;
+		gap: 3.5rem;
+		align-items: start;
+	}
+
+	.ai-points {
+		list-style: none;
+		margin: 1.25rem 0;
+		padding: 0;
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 0.6rem 1.5rem;
+	}
+
+	.ai-points li {
+		position: relative;
+		padding-left: 1.25rem;
+		color: #fff;
+		font-weight: 500;
+	}
+
+	.ai-points li::before {
+		content: '';
+		position: absolute;
+		left: 0;
+		top: 0.55em;
+		width: 8px;
+		height: 8px;
+		border-radius: 50%;
+		background: var(--color-primary);
+	}
+
+	.ai-note {
+		font-size: 0.875rem;
+		color: rgba(255, 255, 255, 0.55);
+		margin: 0;
+	}
+
+	.ai-example {
+		background: rgba(255, 255, 255, 0.07);
+		border: 1px solid rgba(255, 255, 255, 0.14);
+		border-radius: var(--radius-lg);
+		padding: 1.75rem;
+	}
+
+	.ai-example h3 {
+		font-size: 1.35rem;
+	}
+
+	.ai-example p {
+		font-size: 0.95rem;
+	}
+
+	.ai-example a {
+		color: #fdba74;
+		font-weight: 600;
+	}
+
+	/* Talent */
+	.talent {
+		padding: 80px 0;
+	}
+
+	.story {
+		list-style: none;
+		margin: 2rem 0;
+		padding: 0;
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: 1.25rem;
+	}
+
+	.story li {
+		padding: 1.5rem;
+		border: 1px solid var(--color-border);
+		border-radius: var(--radius-lg);
+	}
+
+	.story li:last-child {
+		border-color: var(--color-primary);
+		background: #fffaf7;
+	}
+
+	.story h3 {
+		font-size: 1.2rem;
+	}
+
+	.story p {
+		margin: 0;
+		font-size: 0.95rem;
+		color: var(--color-text-muted);
+	}
+
+	.story-step {
+		display: inline-flex;
 		align-items: center;
 		justify-content: center;
-		margin-bottom: 1rem;
-	}
-
-	.offering-title {
-		font-size: 1.35rem;
+		width: 28px;
+		height: 28px;
+		border-radius: 50%;
+		background: var(--color-dark);
+		color: #fff;
 		font-weight: 700;
-		margin-bottom: 0.625rem;
-		font-family: var(--font-headings);
-		letter-spacing: -0.02em;
+		font-size: 0.85rem;
+		margin-bottom: 0.75rem;
 	}
 
-	.offering p {
-		color: #212529;
+	.talent-points {
+		list-style: none;
+		padding: 0;
+		margin: 0;
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 0.6rem 2rem;
+	}
+
+	.talent-points li {
+		position: relative;
+		padding-left: 1.5rem;
+	}
+
+	.talent-points li::before {
+		content: '✓';
+		position: absolute;
+		left: 0;
+		color: var(--color-accent);
+		font-weight: 700;
+	}
+
+	/* Projects */
+	.projects {
+		padding: 80px 0;
+		background: var(--color-light);
+	}
+
+	.project-grid {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: 1.25rem;
+		margin-top: 2rem;
+	}
+
+	.project-card {
+		background: #fff;
+		border: 1px solid var(--color-border);
+		border-radius: var(--radius-lg);
+		padding: 1.5rem;
+		display: flex;
+		flex-direction: column;
+	}
+
+	.project-top {
+		display: flex;
+		justify-content: space-between;
+		gap: 0.5rem;
+		margin-bottom: 0.75rem;
+		font-size: 0.72rem;
+		font-weight: 700;
+		letter-spacing: 0.05em;
+		text-transform: uppercase;
+	}
+
+	.project-kind {
+		color: var(--color-accent);
+	}
+
+	.project-status {
+		color: var(--color-text-muted);
+		text-align: right;
+		text-transform: none;
+		letter-spacing: 0;
+		font-weight: 600;
+	}
+
+	.project-card h3 {
+		font-size: 1.15rem;
+		margin-bottom: 0.75rem;
+	}
+
+	.project-card dl {
+		margin: 0 0 1rem;
+		flex: 1;
+	}
+
+	.project-card dt {
+		font-size: 0.7rem;
+		font-weight: 700;
+		letter-spacing: 0.06em;
+		text-transform: uppercase;
+		color: var(--color-text-muted);
+		margin-top: 0.6rem;
+	}
+
+	.project-card dd {
+		margin: 0.1rem 0 0;
+		font-size: 0.92rem;
+		line-height: 1.5;
+	}
+
+	.project-card a {
+		font-weight: 600;
+		font-size: 0.9rem;
+	}
+
+	/* Workspace */
+	.workspace {
+		padding: 64px 0;
+		background: #fff;
+		border-top: 1px solid var(--color-border);
+	}
+
+	.workspace-inner {
+		display: grid;
+		grid-template-columns: 1.4fr 1fr;
+		gap: 3rem;
+		align-items: center;
+	}
+
+	.workspace-text .eyebrow {
+		margin-bottom: 0.5rem;
+	}
+
+	.workspace-actions {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.75rem;
+		margin: 1.25rem 0 0;
+	}
+
+	.workspace-facts {
+		list-style: none;
+		margin: 0;
+		padding: 1.5rem;
+		background: var(--color-light);
+		border: 1px solid var(--color-border);
+		border-radius: var(--radius-lg);
+		display: flex;
+		flex-direction: column;
+		gap: 0.9rem;
 		font-size: 0.95rem;
-		line-height: 1.6;
-		margin-bottom: 0;
 	}
 
 	/* Community */
 	.community {
 		position: relative;
-		padding: 96px 0;
-		background: #fff;
+		padding: 80px 0;
+		background: var(--color-light);
 		overflow: hidden;
 		width: 100%;
 	}
@@ -470,73 +662,98 @@
 		position: absolute;
 		inset: 0;
 		background: url('/images/hero-shape.svg') center center / cover no-repeat;
-		opacity: 0.35;
+		opacity: 0.3;
 		z-index: 0;
 	}
 
-	.community-content {
+	.community .container {
 		position: relative;
 		z-index: 1;
-		max-width: 66.6667%;
 	}
 
-	.community-content h2 {
-		margin-bottom: 1.25rem;
+	.community-grid {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 1.25rem;
+		margin-top: 2rem;
 	}
 
-	.community-content p {
+	.community-card {
+		background: #fff;
+		border: 1px solid var(--color-border);
+		border-radius: var(--radius-lg);
+		padding: 1.75rem;
+	}
+
+	.community-card h3 {
+		font-size: 1.3rem;
+	}
+
+	.community-card p {
 		color: var(--color-text-muted);
-		font-size: 1rem;
-		line-height: 1.7;
+		font-size: 0.95rem;
 	}
 
-	.community-actions {
-		margin-top: 1.5rem;
-		display: flex;
-		gap: 0.75rem;
-		flex-wrap: wrap;
+	.community-card a {
+		font-weight: 600;
 	}
 
-	.community-actions .btn-outline {
-		margin-left: 0;
+	/* Final CTA */
+	.final-cta {
+		background: var(--color-dark);
+		padding: 72px 0;
+		color: rgba(255, 255, 255, 0.75);
+	}
+
+	.final-cta h2 {
+		color: #fff;
+	}
+
+	.final-inner p:not(.final-actions) {
+		font-size: 1.1rem;
 	}
 
 	@media (max-width: 900px) {
-		.hero-content,
-		.community-content {
-			max-width: 100%;
+		.service-grid,
+		.project-grid {
+			grid-template-columns: 1fr 1fr;
 		}
 
-		.agency-grid {
+		.ai-grid,
+		.workspace-inner,
+		.community-grid {
 			grid-template-columns: 1fr;
-			gap: 2.5rem;
+			gap: 2rem;
 		}
 
-		.agency-stats-grid {
-			grid-template-columns: repeat(4, 1fr);
-		}
-
-		.offerings-grid {
+		.story {
 			grid-template-columns: 1fr;
 		}
 	}
 
-	@media (max-width: 768px) {
-		.hero-cover,
+	@media (max-width: 640px) {
+		.hero-cover {
+			padding: 64px 0;
+		}
+
+		.services,
+		.ai-section,
+		.talent,
+		.projects,
 		.community {
-			padding: 64px 0;
+			padding: 56px 0;
 		}
 
-		.agency-section {
-			padding: 64px 0;
+		.service-grid,
+		.project-grid,
+		.ai-points,
+		.talent-points {
+			grid-template-columns: 1fr;
 		}
 
-		.agency-stats-grid {
-			grid-template-columns: 1fr 1fr;
-		}
-
-		.offerings {
-			padding: 48px 0;
+		.hero-actions :global(.btn),
+		.final-actions :global(.btn) {
+			width: 100%;
 		}
 	}
 </style>

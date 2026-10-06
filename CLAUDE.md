@@ -29,6 +29,12 @@ User → code.pr (Cloudflare Pages) → SvelteKit app
 - Pushes to `main` auto-deploy. No build command needed — Cloudflare runs `npm run build`.
 - `code.pr` is in a **different Cloudflare account** than the Pages project, but cross-account custom domain was possible because the same user has access to both accounts.
 
+### Branches, previews and staging
+- Production branch: `main` (auto-deploys to code.pr). Every other branch gets a Pages preview at `https://<branch-alias>.codepr.pages.dev` (e.g. `staging-ai-dev-positioning.codepr.pages.dev`).
+- `staging.code.pr` is NOT configured in this repo. To expose a branch there: Cloudflare Pages → `codepr` → Custom domains → add `staging.code.pr`, then set the CNAME `staging` → `<branch-alias>.codepr.pages.dev` in the code.pr zone (separate Cloudflare account). Pages maps custom domains to production only, so the CNAME to the branch alias is what pins it to a branch.
+- `src/hooks.server.ts` sends `X-Robots-Tag: noindex` on every host except `code.pr`/`www.code.pr`, so staging and previews are never indexed and nothing needs removing at merge time.
+- Contact form (`/contactus`) emails from any non-production host are subject-tagged `[STAGING TEST]`.
+
 ### Odoo (CRM backend)
 - URL: `https://odoo.code.pr`
 - Running on a Linode server via **Cloudflare Tunnel** (tunnel name: `odoo-prod`, systemd service `cloudflared`)
@@ -123,6 +129,10 @@ Uses **XML-RPC** (not JSON-RPC). Odoo's `/web/session/authenticate` JSON-RPC end
 
 Note: `mail.mail.send` returns `None`, which Odoo can't marshal back over XML-RPC (`allow_none=False`). The client treats the "cannot marshal None" fault as a success (the mail was already sent before the response serialization fails).
 
+## Positioning and content
+
+Primary story: software & AI development from San Juan (`/development`, homepage hero). Workspace/events (`/space`, `/pricing`) is secondary; Holberton and workshops are presented as education/community, separate from development. Shared service and project copy lives in `src/lib/content.ts` — only add claims the operation can back up. `/agency` 301-redirects to `/development`.
+
 ## Design System
 
 - **Fonts**: Space Grotesk (headings), Inter (body), JetBrains Mono (code)
@@ -154,4 +164,4 @@ the same mail path as Notify Me — no Resend key needed. Code: `src/lib/server/
 - Dedup: deterministic Message-Id `<stripe-charge-succeeded-ch_…@code.pr>` stored in Odoo (`auto_delete` off), checked before sending.
 - Events older than 72h are skipped (quiet bulk replays).
 - Email failures are logged; the webhook still returns 2xx. Kill switch: Pages env `STRIPE_CHARGE_EMAILS=off`.
-- Note: `RESEND_API_KEY` is NOT set in Pages, so `/contactus` and the Linux workshop form's Resend email don't work today.
+- Note: `RESEND_API_KEY` is NOT set in Pages. `/contactus` now falls back to sending through Odoo `mail.mail` (same path as Notify Me) when Resend is absent; the Linux workshop form still needs Resend.

@@ -5,8 +5,9 @@
 	let mobileOpen = $state(false);
 
 	const nav = [
+		{ label: 'Development', href: '/development' },
+		{ label: 'Workspace', href: '/space' },
 		{ label: 'Events', href: '/upcoming-events' },
-		{ label: 'Dev Agency', href: '/agency' },
 		{ label: 'Blog', href: '/blog' },
 		{ label: 'About', href: '/about-us' }
 	];
@@ -33,7 +34,7 @@
 <header>
 	<a href="#wrap" class="skip-link">Skip to Content</a>
 	<nav aria-label="Main navigation">
-		<a href="/" class="logo-link" aria-label="Code Puerto Rico Tech Hub home">
+		<a href="/" class="logo-link" aria-label="Code Puerto Rico home">
 			<img src="/images/logo.webp" alt="Code Puerto Rico" width="100" height="100" />
 		</a>
 		<ul class="primary">
@@ -44,7 +45,7 @@
 		{#if ctaOverride}
 			<a href={ctaOverride.href} class="nav-cta" target={ctaOverride.href.startsWith('http') ? '_blank' : undefined} rel={ctaOverride.href.startsWith('http') ? 'noopener' : undefined}>{ctaOverride.label}</a>
 		{:else}
-			<a href="/contactus" class="nav-cta">Start a project →</a>
+			<a href="/contactus?inquiry=custom-software" class="nav-cta">Start a Software Project →</a>
 		{/if}
 		<button
 			class="mobile-toggle"
@@ -71,7 +72,7 @@
 			{#if ctaOverride}
 				<a href={ctaOverride.href} class="mobile-cta" onclick={closeMobile} target={ctaOverride.href.startsWith('http') ? '_blank' : undefined} rel={ctaOverride.href.startsWith('http') ? 'noopener' : undefined}>{ctaOverride.label}</a>
 			{:else}
-				<a href="/contactus" class="mobile-cta" onclick={closeMobile}>Start a project →</a>
+				<a href="/contactus?inquiry=custom-software" class="mobile-cta" onclick={closeMobile}>Start a Software Project →</a>
 			{/if}
 		</div>
 	{/if}
@@ -152,7 +153,7 @@
 		display: flex;
 		align-items: center;
 		height: 100%;
-		padding: 0 1rem;
+		padding: 0 0.85rem;
 		color: #444;
 		font-weight: 500;
 		font-size: 0.9rem;

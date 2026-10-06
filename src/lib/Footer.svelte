@@ -6,7 +6,7 @@
 				<a href="/" aria-label="Code Puerto Rico home" class="footer-logo-link">
 					<img src="/images/code-pr-big.webp" alt="Code Puerto Rico" width="160" height="54" />
 				</a>
-				<p class="tagline">Puerto Rico's tech hub for builders,<br />founders & innovators.</p>
+				<p class="tagline">Software &amp; AI development, built in San Juan.<br />Home of Puerto Rico's tech community.</p>
 				<div class="social">
 					<a href="https://instagram.com/code_puertorico" target="_blank" rel="noopener" aria-label="Instagram">
 						<svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
@@ -22,14 +22,25 @@
 			</div>
 
 			<div class="footer-nav">
-				<h4>Explore</h4>
+				<h4>Development</h4>
 				<ul>
-					<li><a href="/upcoming-events">Events</a></li>
-					<li><a href="/workshops">Workshops</a></li>
-					<li><a href="/agency">Dev Agency</a></li>
+					<li><a href="/development">Software &amp; AI Development</a></li>
+					<li><a href="/development#crm-erp-migration">Salesforce → Odoo Migration</a></li>
+					<li><a href="/contactus?inquiry=custom-software">Start a Software Project</a></li>
 					<li><a href="/blog">Blog</a></li>
 					<li><a href="/about-us">About Us</a></li>
+				</ul>
+			</div>
+
+			<div class="footer-nav">
+				<h4>Workspace &amp; Community</h4>
+				<ul>
+					<li><a href="/space">Workspace in San Juan</a></li>
 					<li><a href="/pricing">Pricing</a></li>
+					<li><a href="/contactus?inquiry=host-an-event">Host an Event</a></li>
+					<li><a href="/upcoming-events">Events</a></li>
+					<li><a href="/workshops">Workshops</a></li>
+					<li><a href="https://www.holbertonschoolpr.com" target="_blank" rel="noopener">Holberton Coding School PR</a></li>
 				</ul>
 			</div>
 
@@ -46,7 +57,7 @@
 
 	<div class="copyright-bar">
 		<div class="container">
-			<p>Copyright © Code Puerto Rico, LLC</p>
+			<p>Copyright © Code Puerto Rico, LLC · Built in San Juan, Puerto Rico</p>
 		</div>
 	</div>
 </footer>
@@ -63,7 +74,7 @@
 
 	.footer-inner {
 		display: grid;
-		grid-template-columns: 2fr 1fr 1fr;
+		grid-template-columns: 2fr 1.2fr 1.2fr 1.2fr;
 		gap: 3rem;
 		align-items: start;
 	}

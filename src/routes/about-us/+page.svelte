@@ -43,14 +43,14 @@
 
 <SEO
 	title="About Us"
-	description="Code Puerto Rico is the umbrella organization for Holberton Coding School Puerto Rico and a growing coworking + events community in San Juan."
+	description="Code Puerto Rico is a San Juan software and AI development company and tech hub. Puerto Rico-based engineers, workspace and events, and Holberton Coding School Puerto Rico under one roof."
 	canonical="https://code.pr/about-us"
 />
 
 <section class="page-hero">
 	<div class="container">
-		<h1>Where Puerto Rico Builds Tech</h1>
-		<p class="page-lead">AI-first dev shop, coding school, tech hub, and community — all in San Juan.</p>
+		<h1>Where Puerto Rico Builds Technology</h1>
+		<p class="page-lead">A software and AI development company and tech hub, built in San Juan.</p>
 	</div>
 </section>
 
@@ -59,8 +59,10 @@
 		<div class="container">
 			<div class="intro-inner">
 				<h2>About Code Puerto Rico</h2>
-				<p class="lead">Code Puerto Rico is the parent organization behind Holberton Coding School Puerto Rico and our growing coworking + events community. We share one space in San Juan: the school trains the next generation of developers, and Code PR opens the doors to builders, founders, and the broader tech community.</p>
-				<p>Whether you're here to take a class, rent a desk, host a meetup, or just meet other people building things in Puerto Rico — you're in the right place.</p>
+				<p class="lead">Code Puerto Rico is a San Juan-based technology company and tech hub. <a href="/development">Code Puerto Rico Development</a> hires and works with Puerto Rico-based engineers to build custom software, AI-enabled systems and integrations for businesses.</p>
+				<p>The company grew out of a developer community. We built that community and a talent pipeline first, and that engineering capacity is now applied to commercial software and AI projects.</p>
+				<p>We share one building at 1550 PR-25 in San Juan. <a href="https://www.holbertonschoolpr.com" target="_blank" rel="noopener">Holberton Coding School Puerto Rico</a> provides technical education and talent development there, and Code PR also operates <a href="/space">flexible workspace, meeting space and event space</a> for the local technology and business community.</p>
+				<p class="about-actions"><a href="/contactus?inquiry=custom-software" class="btn">Start a Software Project</a> <a href="/upcoming-events" class="btn btn-outline">See upcoming events</a></p>
 			</div>
 		</div>
 	</section>
@@ -91,6 +93,13 @@
 <style>
 	.intro {
 		padding-bottom: 0;
+	}
+
+	.about-actions {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.75rem;
+		margin-top: 1.5rem;
 	}
 
 	.intro-inner {

@@ -1,5 +1,7 @@
 <script lang="ts">
 	import SEO from '$lib/SEO.svelte';
+	import { page } from '$app/state';
+	import { developmentInquiries, workspaceInquiries, generalInquiry } from '$lib/content';
 	import type { ActionData } from './$types';
 
 	interface Props {
@@ -7,18 +9,21 @@
 	}
 
 	let { form }: Props = $props();
+
+	// Links such as /contactus?inquiry=host-an-event preselect the inquiry type.
+	const selectedInquiry = $derived(form?.values?.inquiry ?? page.url.searchParams.get('inquiry') ?? '');
 </script>
 
 <SEO
-	title="Contact Us"
-	description="Contact us about anything related to our company or services. We'll do our best to get back to you as soon as possible."
+	title="Start a Software Project or Contact Us"
+	description="Tell Code Puerto Rico about your software, AI or integration project, or ask about desks and event space in San Juan. We respond within one business day."
 	canonical="https://code.pr/contactus"
 />
 
 <section class="page-hero">
 	<div class="container">
-		<h1>Contact Us</h1>
-		<p class="page-lead">Tell us about your project or ask us anything. We respond within one business day.</p>
+		<h1>Start a Project or Get in Touch</h1>
+		<p class="page-lead">Tell us about your software or AI project, or ask about workspace and events in San Juan. We respond within one business day.</p>
 	</div>
 </section>
 
@@ -81,7 +86,7 @@
 		</aside>
 
 		<div class="form-section">
-			<h2>Send us a message</h2>
+			<h2>Tell us what you need</h2>
 
 			{#if form?.message}
 				<div class="form-error" role="alert">
@@ -113,16 +118,34 @@
 				</div>
 
 				<div class="form-group">
-					<label for="subject">Subject *</label>
-					<input type="text" id="subject" name="subject" value={form?.values?.subject ?? ''} required />
+					<label for="inquiry">What can we help with? *</label>
+					<select id="inquiry" name="inquiry" required>
+						<option value="" disabled selected={selectedInquiry === ''}>Select a project or inquiry type</option>
+						<optgroup label="Software &amp; AI development">
+							{#each developmentInquiries as type}
+								<option value={type.value} selected={selectedInquiry === type.value}>{type.label}</option>
+							{/each}
+						</optgroup>
+						<optgroup label="Workspace &amp; events">
+							{#each workspaceInquiries as type}
+								<option value={type.value} selected={selectedInquiry === type.value}>{type.label}</option>
+							{/each}
+						</optgroup>
+						<option value={generalInquiry.value} selected={selectedInquiry === generalInquiry.value}>{generalInquiry.label}</option>
+					</select>
 				</div>
 
 				<div class="form-group">
-					<label for="question">Message *</label>
+					<label for="subject">Subject</label>
+					<input type="text" id="subject" name="subject" value={form?.values?.subject ?? ''} placeholder="Optional" />
+				</div>
+
+				<div class="form-group">
+					<label for="question">Tell us about your project or question *</label>
 					<textarea id="question" name="question" rows="6" required>{form?.values?.question ?? ''}</textarea>
 				</div>
 
-				<button type="submit" class="btn btn-lg">Send Message →</button>
+				<button type="submit" class="btn btn-lg">Send →</button>
 			</form>
 		</div>
 	</div>
@@ -251,6 +274,7 @@
 	}
 
 	.form-group input,
+	.form-group select,
 	.form-group textarea {
 		padding: 0.7rem 0.875rem;
 		border: 1.5px solid var(--color-border);
@@ -263,6 +287,7 @@
 	}
 
 	.form-group input:focus,
+	.form-group select:focus,
 	.form-group textarea:focus {
 		outline: none;
 		border-color: var(--color-accent);
