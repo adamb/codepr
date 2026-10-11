@@ -9,6 +9,7 @@
 		publishedTime?: string;
 		modifiedTime?: string;
 		jsonLd?: Record<string, unknown> | Record<string, unknown>[];
+		noindex?: boolean;
 	}
 
 	const {
@@ -19,7 +20,8 @@
 		type = 'website',
 		publishedTime,
 		modifiedTime,
-		jsonLd
+		jsonLd,
+		noindex = false
 	}: Props = $props();
 
 	const siteName = 'Code Puerto Rico';
@@ -41,6 +43,10 @@
 <svelte:head>
 	<title>{fullTitle}</title>
 	<meta name="description" content={description ?? defaultDescription} />
+
+	{#if noindex}
+		<meta name="robots" content="noindex" />
+	{/if}
 
 	{#if canonical}
 		<link rel="canonical" href={canonical} />

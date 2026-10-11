@@ -6,6 +6,7 @@
 	title="Thanks (Event Interest)"
 	description="Thanks for signing up. We just sent you a verification email."
 	canonical="https://code.pr/upcoming-events-thanks"
+	noindex
 />
 
 <div class="page-body container">

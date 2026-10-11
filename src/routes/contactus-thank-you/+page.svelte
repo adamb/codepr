@@ -6,6 +6,7 @@
 	title="Thanks for Contacting Us"
 	description="Thank you for reaching out to Code Puerto Rico. We'll get back to you as soon as possible."
 	canonical="https://code.pr/contactus-thank-you"
+	noindex
 />
 
 <div class="page-body container">

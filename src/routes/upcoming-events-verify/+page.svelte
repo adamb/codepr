@@ -6,6 +6,7 @@
 	title="Email Verification"
 	description="Event signup verification."
 	canonical="https://code.pr/upcoming-events-verify"
+	noindex
 />
 
 <div class="page-body container">
