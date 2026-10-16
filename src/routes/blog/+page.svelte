@@ -23,6 +23,19 @@
 				<img src="/team/adam.jpeg" alt="Adam Beguelin" class="avatar" width="48" height="48" />
 				<div>
 					<p class="author">Adam Beguelin</p>
+					<p class="date">Oct 16, 2026</p>
+				</div>
+			</div>
+			<h2><a href="/blog/5/install-self-hosted-n8n-agentic-ai">How to Install n8n Self-Hosted (2026): One-Line Script, Docker Compose, and Agentic AI Wiring</a></h2>
+			<p class="excerpt">Yes — self-host n8n free (Community edition): one-line script or Docker Compose as of October 2026, and wire Grok and Hermes in via its AI Agent node and MCP server.</p>
+			<a href="/blog/5/install-self-hosted-n8n-agentic-ai" class="read-more">Read more →</a>
+		</article>
+
+		<article class="post">
+			<div class="meta">
+				<img src="/team/adam.jpeg" alt="Adam Beguelin" class="avatar" width="48" height="48" />
+				<div>
+					<p class="author">Adam Beguelin</p>
 					<p class="date">Sep 26, 2026</p>
 				</div>
 			</div>
