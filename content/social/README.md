@@ -24,3 +24,9 @@ Nothing is posted or scheduled without Adam's explicit OK.
 | Item | Status | File |
 |---|---|---|
 | Free seminar giveaway: Instagram to Odoo pipeline | draft | [2026-11-seminar/](2026-11-seminar/README.md) |
+| Beach-gate post 4: IG carousel + FB link post | draft (rewritten Nov 3) | [2026-11-beach-gate/](2026-11-beach-gate/instagram-carousel.md) |
+| Two-week calendar Nov 4–17 | draft | [calendar-2026-11.md](calendar-2026-11.md) |
+| ManyChat setup checklist | for Adam | [checklists/manychat-setup.md](checklists/manychat-setup.md) |
+| Meta publishing permission checklist | for Adam | [checklists/meta-publish-permission.md](checklists/meta-publish-permission.md) |
+| Blockers | live | [blockers.md](blockers.md) |
+| Adam's to-do | live | [adam-todo.md](adam-todo.md) |
