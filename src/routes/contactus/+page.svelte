@@ -73,7 +73,7 @@
 			<div class="map-wrap">
 				<iframe
 					title="Code Puerto Rico Location Map"
-					src="https://www.google.com/maps/embed?origin=mfesrc="https://maps.google.com/maps?q=18.4450712,-66.0673953&z=17&output=embed"pb=!1m3!2m1!1s18.4450712,-66.0673953!6i17"
+					src="https://maps.google.com/maps?q=18.4450712,-66.0673953&amp;z=17&amp;output=embed"
 					width="100%"
 					height="240"
 					style="border:0; display:block;"
