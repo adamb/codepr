@@ -85,11 +85,11 @@
 						</thead>
 						<tbody>
 							<tr>
-								<td data-label="Event"><strong><a href="https://www.caribbeansummit.ai/en" target="_blank" rel="noopener">Caribbean AI Summit 2026</a></strong></td>
+								<td data-label="Event"><strong><a href="https://www.caribbeansummit.ai/en#sponsors" target="_blank" rel="noopener">Caribbean AI Summit 2026</a></strong><br />Code Puerto Rico was a sponsor</td>
 								<td data-label="Date & Time">Fri–Sat, Oct 9–10, 2026</td>
 								<td data-label="Location">Puerto Rico Convention Center, San Juan</td>
 								<td data-label="Admission">Summit ticket</td>
-								<td data-label="Link"><a href="https://www.caribbeansummit.ai/en" target="_blank" rel="noopener">Official site →</a><br /><a href="/blog/3/caribbean-ai-summit-2026-san-juan">Our blog post →</a></td>
+								<td data-label="Link"><a href="https://www.caribbeansummit.ai/en#sponsors" target="_blank" rel="noopener">Official site →</a><br /><a href="/blog/3/caribbean-ai-summit-2026-san-juan">Our blog post →</a></td>
 							</tr>
 							<tr>
 								<td data-label="Event"><strong>Demo Day — Cohort 28</strong></td>
