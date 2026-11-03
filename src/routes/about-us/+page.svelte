@@ -15,12 +15,6 @@
 			bio: 'Raphael leads the software engineering education program, bringing hands-on technical expertise and a passion for mentoring the next generation of developers. He shapes the curriculum and supports students and community members on their coding journeys.'
 		},
 		{
-			name: 'Jeandres Zapata',
-			role: 'Marketing and Admissions Manager',
-			photo: '/team/jeandres.jpeg',
-			bio: 'Jeandres handles marketing and admissions, helping spread the word about Code Puerto Rico and welcoming new members into the community. He connects people with the right programs and opportunities.'
-		},
-		{
 			name: 'Ellen Calabrese',
 			role: 'Student Success Manager',
 			photo: '/team/ellen.jpeg',
@@ -124,13 +118,16 @@
 		margin-bottom: 0.5rem;
 	}
 
+	/* Flex-wrap (not grid) so a short last row stays centered. */
 	.team-grid {
-		display: grid;
-		grid-template-columns: repeat(3, 1fr);
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
 		gap: 2.5rem 2rem;
 	}
 
 	.team-member {
+		flex: 0 1 calc((100% - 4rem) / 3);
 		display: flex;
 		flex-direction: column;
 		align-items: center;
@@ -172,14 +169,14 @@
 	}
 
 	@media (max-width: 900px) {
-		.team-grid {
-			grid-template-columns: repeat(2, 1fr);
+		.team-member {
+			flex-basis: calc((100% - 2rem) / 2);
 		}
 	}
 
 	@media (max-width: 540px) {
-		.team-grid {
-			grid-template-columns: 1fr;
+		.team-member {
+			flex-basis: 100%;
 		}
 	}
 </style>
