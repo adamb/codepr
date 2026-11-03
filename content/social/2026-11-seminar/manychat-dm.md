@@ -10,7 +10,7 @@ Status: draft. Trigger: a comment containing `SEMINAR` or `SEMINARIO` on the sem
 
 ## DM (English)
 
-Hey {first name}! Thanks for your interest in our free seminar on turning Instagram comments into leads.
+Hey @{{instagram_username}}! Thanks for your interest in our free seminar on turning Instagram comments into leads.
 
 📅 [DATE], [TIME]
 📍 [FORMAT]
@@ -20,7 +20,7 @@ Grab your spot here (takes 20 seconds):
 
 ## DM (Spanish)
 
-¡Hola {first name}! Gracias por tu interés en nuestro seminario gratis sobre cómo convertir comentarios de Instagram en clientes.
+¡Hola @{{instagram_username}}! Gracias por tu interés en nuestro seminario gratis sobre cómo convertir comentarios de Instagram en clientes.
 
 📅 [DATE], [TIME]
 📍 [FORMAT]
