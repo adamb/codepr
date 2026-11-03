@@ -54,13 +54,6 @@
 						</thead>
 						<tbody>
 							<tr>
-								<td data-label="Event"><strong>Demo Day — Cohort 28</strong></td>
-								<td data-label="Date & Time"><strong>Friday, July 31, 2026</strong><br />9:00 AM – 12:00 PM</td>
-								<td data-label="Location"><a href="https://maps.app.goo.gl/e6p69iQqdQpftG4g9" target="_blank" rel="noopener">Code Puerto Rico, San Juan</a></td>
-								<td data-label="Admission">Free</td>
-								<td data-label="Registration">Email info@code.pr</td>
-							</tr>
-							<tr>
 								<td data-label="Event"><strong>Demo Day — Cohort 29</strong></td>
 								<td data-label="Date & Time"><strong>Friday, November 13, 2026</strong><br />9:00 AM – 12:00 PM</td>
 								<td data-label="Location"><a href="https://maps.app.goo.gl/e6p69iQqdQpftG4g9" target="_blank" rel="noopener">Code Puerto Rico, San Juan</a></td>
@@ -91,6 +84,20 @@
 							</tr>
 						</thead>
 						<tbody>
+							<tr>
+								<td data-label="Event"><strong><a href="https://www.caribbeansummit.ai/en" target="_blank" rel="noopener">Caribbean AI Summit 2026</a></strong></td>
+								<td data-label="Date & Time">Fri–Sat, Oct 9–10, 2026</td>
+								<td data-label="Location">Puerto Rico Convention Center, San Juan</td>
+								<td data-label="Admission">Summit ticket</td>
+								<td data-label="Link"><a href="https://www.caribbeansummit.ai/en" target="_blank" rel="noopener">Official site →</a><br /><a href="/blog/3/caribbean-ai-summit-2026-san-juan">Our blog post →</a></td>
+							</tr>
+							<tr>
+								<td data-label="Event"><strong>Demo Day — Cohort 28</strong></td>
+								<td data-label="Date & Time">Friday, July 31, 2026 · 9:00 AM – 12:00 PM</td>
+								<td data-label="Location"><a href="https://maps.app.goo.gl/e6p69iQqdQpftG4g9" target="_blank" rel="noopener">Code Puerto Rico, San Juan</a></td>
+								<td data-label="Admission">Free</td>
+								<td data-label="Link">—</td>
+							</tr>
 							<tr>
 								<td data-label="Event"><strong><a href="/events/ai-for-executives">AI for Executives: What Matters Now</a></strong></td>
 								<td data-label="Date & Time">Wednesday, July 9, 2026 · 3:30 PM – 7:00 PM</td>
