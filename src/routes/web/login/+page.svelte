@@ -6,6 +6,7 @@
 	title="Sign in"
 	description="Sign in to Code Puerto Rico."
 	canonical="https://code.pr/web/login"
+	noindex
 />
 
 <div class="page-body container">

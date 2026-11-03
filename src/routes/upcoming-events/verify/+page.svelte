@@ -9,6 +9,7 @@
 	title={data.verified ? 'Email Verified — Code Puerto Rico' : 'Verification Failed'}
 	description="Event notification verification for Code Puerto Rico."
 	canonical="https://code.pr/upcoming-events/verify"
+	noindex
 />
 
 <section class="page-hero">
