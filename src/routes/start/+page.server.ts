@@ -1,9 +1,12 @@
 import { fail } from '@sveltejs/kit';
 import { env } from '$env/dynamic/private';
 import type { Actions, PageServerLoad } from './$types';
+import { cleanIgHandle, cleanSubscriberId, firstParam, IG_PARAMS } from '$lib/server/start-params';
 
 // Landing page for Instagram / ManyChat DM links, e.g.
-//   https://code.pr/start?service=seminar&name=Ana&ig=ana_pr&lang=es
+//   https://code.pr/start?service=seminar&ig=ana_pr&sid=123456789&lang=es
+// The IG handle may also come as ?username= / ?ig_username= / ?instagram_username= (ManyChat
+// "Instagram Username" field); invalid values such as an unfilled {{placeholder}} are dropped.
 // Submissions are POSTed to an n8n webhook (CODEPR_START_WEBHOOK_URL) which dedups and
 // creates a crm.lead in the "Code PR Services" team. See adamb/N8N_CodePR codepr-start/README.md.
 const SERVICES = ['seminar', 'migration', 'web-seo', 'ai-content'] as const;
@@ -20,8 +23,8 @@ export const load: PageServerLoad = ({ url }) => {
 			name: p(url, 'name'),
 			email: p(url, 'email', 160),
 			whatsapp: p(url, 'whatsapp', 40) || p(url, 'phone', 40),
-			ig: p(url, 'ig', 60).replace(/^@/, ''),
-			subscriber_id: p(url, 'sid', 80),
+			ig: cleanIgHandle(firstParam(url, IG_PARAMS, 60)),
+			subscriber_id: cleanSubscriberId(p(url, 'sid', 80)),
 			source: p(url, 'utm_source', 60) || 'Instagram',
 			medium: p(url, 'utm_medium', 60) || 'ManyChat',
 			campaign: p(url, 'utm_campaign', 80),
@@ -76,8 +79,8 @@ export const actions: Actions = {
 				body: JSON.stringify({
 					...values,
 					service: asService(g('service', 30)),
-					ig: g('ig', 60).replace(/^@/, ''),
-					subscriber_id: g('subscriber_id', 80),
+					ig: cleanIgHandle(g('ig', 60)),
+					subscriber_id: cleanSubscriberId(g('subscriber_id', 80)),
 					source: g('source', 60) || 'Instagram',
 					medium: g('medium', 60) || 'ManyChat',
 					// n8n today only reads `campaign` (shown as "Campaign:" in the Odoo lead description),
