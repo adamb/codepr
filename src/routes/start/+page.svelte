@@ -54,6 +54,8 @@
 				<input type="hidden" name="source" value={f.source} />
 				<input type="hidden" name="medium" value={f.medium} />
 				<input type="hidden" name="campaign" value={f.campaign} />
+				<input type="hidden" name="src" value={f.src} />
+				<input type="hidden" name="content" value={f.content} />
 				<div class="hp" aria-hidden="true">
 					<label>Website <input type="text" name="website" tabindex="-1" autocomplete="off" /></label>
 				</div>

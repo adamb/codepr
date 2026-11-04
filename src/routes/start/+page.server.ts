@@ -24,7 +24,10 @@ export const load: PageServerLoad = ({ url }) => {
 			subscriber_id: p(url, 'sid', 80),
 			source: p(url, 'utm_source', 60) || 'Instagram',
 			medium: p(url, 'utm_medium', 60) || 'ManyChat',
-			campaign: p(url, 'utm_campaign', 80)
+			campaign: p(url, 'utm_campaign', 80),
+			// Per-post tag from the ManyChat DM link, e.g. ?src=beachgate
+			src: p(url, 'src', 60),
+			content: p(url, 'utm_content', 80)
 		}
 	};
 };
@@ -77,7 +80,14 @@ export const actions: Actions = {
 					subscriber_id: g('subscriber_id', 80),
 					source: g('source', 60) || 'Instagram',
 					medium: g('medium', 60) || 'ManyChat',
-					campaign: g('campaign', 80),
+					// n8n today only reads `campaign` (shown as "Campaign:" in the Odoo lead description),
+					// so fold the per-post tag into it as well as sending src/content on their own.
+					campaign: [g('campaign', 80), g('src', 60), g('content', 80)]
+						.filter((v, i, a) => v && a.indexOf(v) === i)
+						.join(' · ')
+						.slice(0, 80),
+					src: g('src', 60),
+					content: g('content', 80),
 					lang,
 					page: url.hostname + url.pathname
 				})
