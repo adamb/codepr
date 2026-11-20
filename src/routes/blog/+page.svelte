@@ -23,6 +23,19 @@
 				<img src="/team/adam.jpeg" alt="Adam Beguelin" class="avatar" width="48" height="48" />
 				<div>
 					<p class="author">Adam Beguelin</p>
+					<p class="date">Nov 20, 2026</p>
+				</div>
+			</div>
+			<h2><a href="/blog/6/holberton-demo-day-recap-cuts-rtx-4090">18 Demo Day Cuts From One Livestream, Made on Our Own 4090</a></h2>
+			<p class="excerpt">How a 45-minute Demo Day livestream became 18 vertical recap videos overnight, with open models on a local RTX 4090 and no cloud AI. Plus what failed and what we threw out.</p>
+			<a href="/blog/6/holberton-demo-day-recap-cuts-rtx-4090" class="read-more">Read more →</a>
+		</article>
+
+		<article class="post">
+			<div class="meta">
+				<img src="/team/adam.jpeg" alt="Adam Beguelin" class="avatar" width="48" height="48" />
+				<div>
+					<p class="author">Adam Beguelin</p>
 					<p class="date">Oct 16, 2026</p>
 				</div>
 			</div>
