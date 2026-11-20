@@ -80,7 +80,7 @@
 		<figure>
 			<img src="/blog/holberton-demo-day-recap/roux-overnight-load.png" alt="Line chart of Roux's load from about 8 PM on November 19 to about 3:30 AM on November 20. GPU utilization, VRAM, CPU load and RAM sit near idle until about 11 PM. GPU utilization then jumps to 100 percent in bursts until a little before 1 AM, VRAM runs at roughly 60 to 85 percent with one spike to about 95 percent around 1:40 AM, CPU load swings up to about 60 percent and RAM climbs to about 50 percent. After about 1:50 AM everything drops back near idle except VRAM, which holds at 23 percent. Disk use stays flat near 76 to 78 percent." width="1279" height="1169" loading="lazy" />
 			<figcaption>
-				This is Roux’s monitoring graph from that night. Nearly idle until about 11 PM, then the 4090 pegs at 100% in bursts until a little before 1 AM, with VRAM mostly at 60 to 85% and one spike near 95% around 1:40 AM. CPU and RAM do the compositing and encoding in between. By about 2 AM it’s back near idle, with 23% of VRAM still in use.
+				This is Roux’s monitoring graph from that night. Nearly idle until about 11 PM, then the 4090 pegs at 100% in bursts until a little before 1 AM, with VRAM mostly at 60 to 85% and one spike near 95% around 1:40 AM. CPU load swings up to about 60% and RAM climbs to about 50%. By about 2 AM it’s back near idle, with 23% of VRAM still in use.
 				<span class="credit">Screenshot: Roux’s monitoring history, Nov 19–20</span>
 			</figcaption>
 		</figure>
